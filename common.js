@@ -48,23 +48,6 @@ function initNav(){
   }
 }
 
-/* ===================== Brand logo (falls back to inline mark until assets/brand/logo.* exists) ===================== */
-function initBrandLogo(){
-  const candidates = [BASE + 'assets/brand/logo.svg', BASE + 'assets/brand/logo.png'];
-  function tryNext(i){
-    if (i >= candidates.length) return;
-    const probe = new Image();
-    probe.onload = () => {
-      document.querySelectorAll('.logo-mark').forEach(mark => {
-        mark.innerHTML = `<img src="${candidates[i]}" alt="Zyberworks" class="logo-img">`;
-      });
-    };
-    probe.onerror = () => tryNext(i + 1);
-    probe.src = candidates[i];
-  }
-  tryNext(0);
-}
-
 /* ===================== Scroll reveal (re-usable for dynamically injected content) ===================== */
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -79,18 +62,24 @@ function observeReveal(root = document){
   root.querySelectorAll('.reveal, .reveal-lines').forEach(el => revealObserver.observe(el));
 }
 
-/* ===================== Cursor glow (hero only) ===================== */
+/* ===================== Cursor glow (site-wide) ===================== */
 function initCursorGlow(){
-  const glow = document.getElementById('cursorGlow');
-  const heroEl = document.querySelector('.hero');
-  if (!glow || !heroEl) return;
+  if (window.matchMedia && window.matchMedia('(hover: none)').matches) return; // skip on touch devices
+  let glow = document.getElementById('cursorGlow');
+  if (!glow){
+    glow = document.createElement('div');
+    glow.id = 'cursorGlow';
+    glow.className = 'cursor-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(glow);
+  }
   let raf = null;
   function move(x, y){
     if (raf) return;
     raf = requestAnimationFrame(() => { glow.style.left = x + 'px'; glow.style.top = y + 'px'; raf = null; });
   }
-  heroEl.addEventListener('mousemove', e => { glow.classList.add('active'); move(e.clientX, e.clientY); });
-  heroEl.addEventListener('mouseleave', () => glow.classList.remove('active'));
+  window.addEventListener('mousemove', e => { glow.classList.add('active'); move(e.clientX, e.clientY); }, { passive:true });
+  document.addEventListener('mouseleave', () => glow.classList.remove('active'));
 }
 
 /* ===================== Parallax blobs ===================== */
@@ -106,7 +95,6 @@ function initParallax(){
 
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
-  initBrandLogo();
   initCursorGlow();
   initParallax();
   observeReveal();
