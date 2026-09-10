@@ -1,8 +1,8 @@
 [
-  { "name": "Client One" },
-  { "name": "Demo Partner Co." },
-  { "name": "Sample Organisation" },
-  { "name": "Placeholder Group" },
-  { "name": "Example Enterprises" },
-  { "name": "Preview Partner" }
+  { "name": "Client One", "logo": "client-one.svg" },
+  { "name": "Demo Partner Co.", "logo": "demo-partner.svg" },
+  { "name": "Sample Organisation", "logo": "sample-org.svg" },
+  { "name": "Placeholder Group", "logo": "placeholder-group.svg" },
+  { "name": "Example Enterprises", "logo": "example-enterprises.svg" },
+  { "name": "Preview Partner", "logo": "preview-partner.svg" }
 ]
