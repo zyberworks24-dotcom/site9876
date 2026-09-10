@@ -1,212 +1,248 @@
 [
   {
+    "id": "edr-mdr", "cat": "security", "icon": "radar", "partner": "CrowdStrike",
+    "title": "EDR & MDR Solutions",
+    "tagline": "Endpoint detection and response, backed by round the clock managed threat hunting.",
+    "blurb": "Modern attacks move in minutes, so your defence cannot wait for a human to notice. We deploy and manage best in class endpoint detection and response across your fleet, then wrap it in a managed detection and response service that watches every endpoint 24 hours a day. Suspicious behaviour is contained automatically and investigated by real analysts, so an intrusion never gets the time it needs to become an incident.",
+    "points": [
+      {"h":"EDR deployment & tuning","t":"CrowdStrike Falcon and equivalent platforms rolled out across every endpoint, tuned to your environment instead of left on noisy defaults."},
+      {"h":"24/7 managed detection & response","t":"A dedicated security operations team watching your telemetry every hour of every day, so alerts reach a trained analyst, not an empty inbox."},
+      {"h":"Proactive threat hunting","t":"Analysts actively searching your environment for the quiet, hands on keyboard activity that automated tooling alone will miss."},
+      {"h":"Rapid containment & response","t":"Compromised hosts isolated in seconds and a documented response playbook that turns a scramble into a procedure."}
+    ],
+    "idealFor": ["Organisations without a 24/7 security team", "Boards and insurers demanding managed detection", "Anyone who has outgrown basic antivirus"],
+    "deliverable": "A fully deployed EDR platform, a 24/7 managed detection and response service, and a tested incident response plan.",
+    "faqs": [
+      {"q":"How is this different from antivirus?","a":"Traditional antivirus looks for known bad files. EDR watches behaviour across the whole endpoint and flags the subtle activity of a real attacker, while MDR adds human analysts who investigate and respond on your behalf."},
+      {"q":"Do you use CrowdStrike?","a":"Yes. Zyberworks is a CrowdStrike partner and deploys the Falcon platform, alongside other leading tools where they fit your environment better."}
+    ]
+  },
+  {
+    "id": "filtering", "cat": "security", "icon": "filter", "partner": "Blocksi",
+    "title": "Web & Content Filtering",
+    "tagline": "Keep users safe online with DNS filtering, category controls, and classroom management.",
+    "blurb": "The web is where most threats now begin and where productivity quietly leaks away. We design and manage layered filtering that blocks malicious and inappropriate content before it ever loads, gives you clean category based policy, and reports on what is actually happening across your network. For schools and colleges we deliver classroom management and student safety built on Blocksi, our authorised technology partner for Australia and New Zealand.",
+    "points": [
+      {"h":"DNS & content filtering","t":"Malicious, phishing, and inappropriate sites blocked at the network layer before a browser ever renders them."},
+      {"h":"Category & policy controls","t":"Granular, group based policy so different teams, year levels, or sites get exactly the access they should."},
+      {"h":"Classroom management for education","t":"Live screen visibility, tab control, and focus tools for teachers, delivered through our Blocksi partnership."},
+      {"h":"Safeguarding & reporting","t":"Wellbeing and safeguarding alerts plus clear reporting for leadership, IT, and compliance obligations."}
+    ],
+    "idealFor": ["Schools, colleges, and universities", "Organisations with duty of care obligations", "Anyone tightening web based risk"],
+    "deliverable": "A deployed filtering platform, group based policy, and safeguarding reporting your leadership team can rely on.",
+    "faqs": [
+      {"q":"Does this work for schools?","a":"Yes. Education is a core focus. Through our Blocksi partnership we deliver web filtering, classroom management, and student safety tools designed specifically for schools across Australia and New Zealand."},
+      {"q":"Will it slow the network down?","a":"No. Filtering happens at the DNS and content layer and is engineered so protection never becomes the bottleneck."}
+    ]
+  },
+  {
     "id": "pentest", "cat": "security", "icon": "pentest",
     "title": "Penetration Testing",
     "tagline": "Comprehensive testing across web apps, APIs, cloud environments, and internal networks.",
-    "blurb": "We test the way an actual attacker would — chaining small weaknesses into real impact, not just running a scanner and handing you the output. Every engagement is scoped to your environment, executed by hand, and reported in language both your engineers and your board can act on.",
+    "blurb": "We test the way an actual attacker would, chaining small weaknesses into real impact rather than running a scanner and handing you the output. Every engagement is scoped to your environment, executed by hand, and reported in language both your engineers and your board can act on.",
     "points": [
-      {"h":"Web application & API testing","t":"OWASP-aligned methodology covering authentication, session management, business logic abuse, and injection classes."},
-      {"h":"Internal & external network assessments","t":"Simulated attack paths from perimeter access through to domain compromise, scoped to your environment."},
-      {"h":"Cloud configuration review","t":"Azure, AWS, and Microsoft 365 identity, storage, and access-control misconfigurations that scanners miss."},
-      {"h":"Social engineering","t":"Phishing simulations and physical access testing to validate your human and facility controls."}
+      {"h":"Web application & API testing","t":"Methodology aligned to the OWASP standard, covering authentication, session management, business logic abuse, and injection classes."},
+      {"h":"Internal & external assessments","t":"Simulated attack paths from perimeter access through to full domain compromise, scoped to your environment."},
+      {"h":"Cloud configuration review","t":"Azure, AWS, and Microsoft 365 identity, storage, and access control gaps that automated scanners routinely miss."},
+      {"h":"Social engineering","t":"Phishing simulations and physical access testing to validate your human and facility controls, not just the technology."}
     ],
-    "idealFor": ["Regulated industries needing annual testing", "Pre go-live security validation", "Post-incident verification"],
-    "deliverable": "A report an engineer can action and an executive can read — CVSS-rated findings, proof of exploitation, and prioritised remediation."
+    "idealFor": ["Regulated industries needing annual testing", "Validation before a major go live", "Verification after a security incident"],
+    "deliverable": "A report an engineer can action and an executive can read, with severity rated findings, proof of exploitation, and prioritised remediation."
   },
   {
     "id": "iso-nist", "cat": "security", "icon": "iso",
     "title": "ISO 27001 & NIST CSF 2.0",
     "tagline": "Mapping ISO 27001 Annex A controls to NIST CSF functions.",
-    "blurb": "One control, assessed once, reported against every framework you need to satisfy — board, insurer, regulator, and customer due-diligence questionnaires. We build the control matrix once and keep it current as both standards evolve.",
+    "blurb": "One control, assessed once, reported against every framework you need to satisfy, whether that is your board, your insurer, a regulator, or a customer due diligence questionnaire. We build the control matrix once and keep it current as both standards evolve, so you never have to answer the same question twice.",
     "points": [
-      {"h":"Gap analysis","t":"Current-state assessment against every Annex A control, scored and prioritised by risk."},
-      {"h":"Cross-framework mapping","t":"Your controls translated across Identify, Protect, Detect, Respond, Recover, and Govern."},
-      {"h":"ISMS documentation","t":"Policies, procedures, and risk registers built to survive a real audit — not shelfware."},
-      {"h":"Certification readiness","t":"Internal audit runs and stage 1/2 preparation ahead of your certification body visit."}
+      {"h":"Gap analysis","t":"A current state assessment against every Annex A control, scored and prioritised by real risk to your business."},
+      {"h":"Cross framework mapping","t":"Your controls translated across Identify, Protect, Detect, Respond, Recover, and Govern in a single view."},
+      {"h":"ISMS documentation","t":"Policies, procedures, and risk registers built to survive a genuine certification audit, not to gather dust."},
+      {"h":"Certification readiness","t":"Internal audit runs and stage one and stage two preparation ahead of your certification body visit."}
     ],
     "idealFor": ["Organisations pursuing ISO 27001 certification", "Boards needing a common risk language", "Vendors completing security questionnaires"],
-    "deliverable": "A live control matrix mapping ISO 27001 to NIST CSF 2.0, plus an ISMS ready for external audit."
+    "deliverable": "A live control matrix mapping ISO 27001 to NIST CSF 2.0, plus a management system ready for external audit."
   },
   {
     "id": "e8", "cat": "security", "icon": "e8",
     "title": "ASD Essential Eight",
     "tagline": "Mitigation strategies to strengthen your cyber posture.",
-    "blurb": "The Australian Signals Directorate baseline, implemented properly — not just scored on a spreadsheet once a year. We take you from a maturity score to a funded, sequenced plan and then do the implementation work ourselves.",
+    "blurb": "The Australian Signals Directorate baseline, implemented properly, not just scored on a spreadsheet once a year. We take you from a maturity score to a funded, sequenced plan, and then carry out the implementation work ourselves so the numbers on the page match reality.",
     "points": [
-      {"h":"Maturity assessment","t":"Scored against all eight strategies — application control, patching, macro settings, MFA, admin privilege restriction, and more."},
-      {"h":"Uplift roadmap","t":"A sequenced plan from your current maturity level to the target level your risk appetite requires."},
-      {"h":"Implementation support","t":"Hands-on delivery of patch management, application allow-listing, and privileged access controls."},
+      {"h":"Maturity assessment","t":"Scored against all eight strategies, from application control and patching through to macro settings, multi factor authentication, and admin privilege restriction."},
+      {"h":"Uplift roadmap","t":"A sequenced plan that moves you from your current maturity level to the target your risk appetite requires."},
+      {"h":"Implementation support","t":"Hands on delivery of patch management, application allow listing, and privileged access controls."},
       {"h":"Ongoing reporting","t":"Maturity trend reporting formatted for leadership, audit, and government reporting obligations."}
     ],
-    "idealFor": ["Australian government & PSPF-aligned entities", "Cyber insurance maturity requirements", "Organisations starting their Essential Eight journey"],
+    "idealFor": ["Government and PSPF aligned entities", "Cyber insurance maturity requirements", "Teams beginning their Essential Eight journey"],
     "deliverable": "A maturity scorecard against all eight strategies and a funded, sequenced uplift plan."
   },
   {
     "id": "infra-mgmt", "cat": "infra", "icon": "infra",
     "title": "IT Infrastructure Management",
-    "tagline": "End-to-end management of on-prem and cloud infrastructure.",
-    "blurb": "One team accountable for servers, storage, and virtualisation — wherever they physically live. We run the environment day to day so failures get caught in monitoring, not discovered by your staff.",
+    "tagline": "End to end management of on premise and cloud infrastructure.",
+    "blurb": "One team accountable for servers, storage, and virtualisation, wherever they physically live. We run the environment day to day so failures get caught in monitoring rather than discovered by your staff, and so growth is planned for instead of survived.",
     "points": [
-      {"h":"Servers, storage & virtualisation","t":"Day-to-day operation and lifecycle management of your compute and storage estate."},
-      {"h":"Hybrid integration","t":"Consistent identity, backup, and monitoring across on-prem and cloud, not two separate worlds."},
-      {"h":"Capacity planning","t":"Performance tuning and forward capacity planning so growth doesn't become an outage."},
-      {"h":"Patch, backup & DR","t":"Scheduled patching, verified backups, and disaster recovery runbooks that are actually tested."}
+      {"h":"Servers, storage & virtualisation","t":"Day to day operation and full lifecycle management of your compute and storage estate."},
+      {"h":"Hybrid integration","t":"Consistent identity, backup, and monitoring across on premise and cloud, run as one environment rather than two."},
+      {"h":"Capacity planning","t":"Performance tuning and forward capacity planning so that growth never turns into an outage."},
+      {"h":"Patch, backup & recovery","t":"Scheduled patching, verified backups, and disaster recovery runbooks that are genuinely tested, not just written."}
     ],
-    "idealFor": ["Businesses without a dedicated infrastructure team", "Hybrid on-prem/cloud environments", "Organisations preparing for a refresh cycle"],
-    "deliverable": "A managed infrastructure environment with documented runbooks, backup verification, and DR test results."
+    "idealFor": ["Businesses without a dedicated infrastructure team", "Hybrid on premise and cloud environments", "Organisations approaching a refresh cycle"],
+    "deliverable": "A managed infrastructure environment with documented runbooks, verified backups, and real disaster recovery test results."
   },
   {
     "id": "managed-support", "cat": "strategy", "icon": "support",
     "title": "Managed IT Support",
     "tagline": "Proactive monitoring and support for servers, users, and applications.",
-    "blurb": "Support that catches the problem before your staff notice it, backed by response times you can hold us to. Our help desk is staffed by people who know your environment, not a rotating queue reading from a script.",
+    "blurb": "Support that catches the problem before your staff notice it, backed by response times you can hold us to. Our help desk is staffed by people who know your environment, so you reach someone who already understands your setup rather than a rotating queue reading from a script.",
     "points": [
-      {"h":"24/7 monitoring & alerting","t":"Continuous visibility across servers, endpoints, and critical applications."},
-      {"h":"Help desk & end-user support","t":"Responsive, friendly support for the people actually using the systems."},
-      {"h":"SLA-backed response","t":"Defined priority tiers and response times, reported against every month."},
-      {"h":"Asset & license management","t":"A single source of truth for what you own, what's deployed, and what's about to expire."}
+      {"h":"24/7 monitoring & alerting","t":"Continuous visibility across servers, endpoints, and the applications your business actually depends on."},
+      {"h":"Help desk & end user support","t":"Responsive, friendly support for the people using the systems every day."},
+      {"h":"Service level agreements","t":"Defined priority tiers and response times, measured and reported against every single month."},
+      {"h":"Asset & licence management","t":"A single source of truth for what you own, what is deployed, and what is about to expire."}
     ],
-    "idealFor": ["Growing teams without in-house IT", "Organisations wanting predictable IT costs", "Businesses needing after-hours coverage"],
-    "deliverable": "A monitored environment with a documented SLA and monthly service reporting."
+    "idealFor": ["Growing teams without in house IT", "Organisations wanting predictable IT costs", "Businesses needing after hours coverage"],
+    "deliverable": "A monitored environment with a documented service level agreement and clear monthly service reporting."
   },
   {
     "id": "project-consulting", "cat": "strategy", "icon": "project",
     "title": "IT Project Consulting",
     "tagline": "Designing and executing IT transformation projects.",
-    "blurb": "Vendor-neutral advice from scoping through to go-live — we design the outcome you need, not the product we'd like to sell you. Every project runs against a real roadmap with milestones you can hold us to.",
+    "blurb": "Vendor neutral advice from scoping through to go live. We design the outcome you need rather than the product we would like to sell you, and every project runs against a real roadmap with milestones you can hold us to.",
     "points": [
-      {"h":"Scoping & business case","t":"Clear roadmaps and business cases that survive budget scrutiny."},
-      {"h":"Vendor-neutral design","t":"Technical architecture built around your requirements, not a reseller margin."},
-      {"h":"Delivery management","t":"Structured change control and milestone tracking through to completion."},
-      {"h":"Post-implementation review","t":"A formal handover and lessons-learned review, not a project that just fades out."}
+      {"h":"Scoping & business case","t":"Clear roadmaps and business cases that survive genuine budget scrutiny."},
+      {"h":"Vendor neutral design","t":"Technical architecture built around your requirements, never around a reseller margin."},
+      {"h":"Delivery management","t":"Structured change control and milestone tracking all the way through to completion."},
+      {"h":"Post implementation review","t":"A formal handover and lessons learned review, not a project that simply fades out."}
     ],
-    "idealFor": ["Multi-site rollouts and office relocations", "System replacement projects", "Organisations without an internal PM"],
-    "deliverable": "A signed-off project plan, delivery tracking, and a documented handover pack."
+    "idealFor": ["Multi site rollouts and office relocations", "System replacement projects", "Organisations without an internal project manager"],
+    "deliverable": "A signed off project plan, live delivery tracking, and a documented handover pack."
   },
   {
     "id": "device-mgmt", "cat": "infra", "icon": "device",
     "title": "Device Management",
-    "tagline": "Lifecycle management for corporate and BYOD devices.",
-    "blurb": "Every device provisioned, patched, and retired the same way, whether it's corporate-owned or BYOD. New starters get a productive, compliant device on day one — no manual imaging, no policy drift.",
+    "tagline": "Lifecycle management for corporate and personal devices.",
+    "blurb": "Every device provisioned, patched, and retired the same way, whether it is corporate owned or personal. New starters get a productive, compliant device on day one with no manual imaging and no policy drift, and every device leaves the fleet cleanly at the end of its life.",
     "points": [
-      {"h":"MDM/UEM deployment","t":"Platforms like Intune or Jamf, configured to your policy — not left on defaults."},
-      {"h":"Provisioning & enrolment","t":"Zero-touch imaging and enrolment so new starters are productive on day one."},
-      {"h":"Compliance & patching","t":"Continuous configuration and patch compliance across the fleet."},
-      {"h":"Secure decommissioning","t":"Certified data wipe and asset disposal at end-of-life."}
+      {"h":"MDM & UEM deployment","t":"Platforms such as Intune and Jamf configured to your policy, not left running on their defaults."},
+      {"h":"Provisioning & enrolment","t":"Zero touch imaging and enrolment so new starters are productive from their first morning."},
+      {"h":"Compliance & patching","t":"Continuous configuration and patch compliance enforced across the whole fleet."},
+      {"h":"Secure decommissioning","t":"Certified data wipe and asset disposal when a device reaches end of life."}
     ],
-    "idealFor": ["Distributed or remote workforces", "BYOD policies needing enforcement", "Fast-growing headcount"],
-    "deliverable": "A managed device fleet with enforced compliance policy and an auditable decommissioning trail."
+    "idealFor": ["Distributed or remote workforces", "Personal device policies needing enforcement", "Fast growing headcount"],
+    "deliverable": "A managed device fleet with enforced compliance policy and a fully auditable decommissioning trail."
   },
   {
     "id": "device-security", "cat": "security", "icon": "devsec",
     "title": "Managed Security on Devices",
     "tagline": "Protection for PCs, mobile devices, and EFTPOS terminals.",
-    "blurb": "Endpoint protection that covers the whole fleet — including the payment terminals most IT teams forget about. One policy set, one console, and alerts that reach a human fast enough to matter.",
+    "blurb": "Endpoint protection that covers the whole fleet, including the payment terminals most IT teams quietly forget about. One policy set, one console, and alerts that reach a human fast enough to matter.",
     "points": [
-      {"h":"Endpoint detection & response","t":"EDR tuned to your environment, not left on noisy factory defaults."},
-      {"h":"Mobile threat defense","t":"Protection and policy enforcement for the phones and tablets in the field."},
-      {"h":"EFTPOS terminal hardening","t":"PCI-aligned configuration and monitoring for point-of-sale hardware."},
-      {"h":"Centralised policy & reporting","t":"One console, one policy set, one report — across every device type."}
+      {"h":"Endpoint detection & response","t":"EDR tuned to your environment rather than left on noisy factory defaults."},
+      {"h":"Mobile threat defence","t":"Protection and policy enforcement for the phones and tablets working out in the field."},
+      {"h":"EFTPOS terminal hardening","t":"Configuration and monitoring aligned to the PCI standard for point of sale hardware."},
+      {"h":"Central policy & reporting","t":"One console, one policy set, and one report across every device type you run."}
     ],
-    "idealFor": ["Retail & hospitality with EFTPOS exposure", "Field teams on mobile devices", "Fleets mixing corporate and personal devices"],
-    "deliverable": "A single-pane endpoint security posture across PCs, mobile, and payment terminals."
+    "idealFor": ["Retail and hospitality with EFTPOS exposure", "Field teams on mobile devices", "Fleets mixing corporate and personal devices"],
+    "deliverable": "A single view of your endpoint security posture across PCs, mobile devices, and payment terminals."
   },
   {
     "id": "infra-consulting", "cat": "infra", "icon": "gauge",
     "title": "Infrastructure Consulting",
-    "tagline": "Modernize and optimize IT infrastructure for performance and resilience.",
-    "blurb": "An honest read on where your infrastructure is holding you back, and a roadmap that doesn't assume an unlimited budget. We sequence the work so the highest-risk gaps close first.",
+    "tagline": "Modernise and optimise IT infrastructure for performance and resilience.",
+    "blurb": "An honest read on where your infrastructure is holding you back, and a roadmap that does not assume an unlimited budget. We sequence the work so the highest risk gaps close first and every dollar of spend is matched to real utilisation.",
     "points": [
-      {"h":"Architecture review","t":"A modernisation roadmap grounded in your actual growth and risk profile."},
-      {"h":"Resilience design","t":"Redundancy planning that matches recovery objectives to what the business actually needs."},
-      {"h":"Cost & performance optimisation","t":"Right-sizing infrastructure spend against real utilisation, not sticker price."},
-      {"h":"Technology refresh planning","t":"A staged refresh plan that avoids a cliff-edge of simultaneous end-of-life hardware."}
+      {"h":"Architecture review","t":"A modernisation roadmap grounded in your actual growth and risk profile, not a generic template."},
+      {"h":"Resilience design","t":"Redundancy planning that matches recovery objectives to what the business genuinely needs."},
+      {"h":"Cost & performance tuning","t":"Right sizing infrastructure spend against real utilisation rather than sticker price."},
+      {"h":"Technology refresh planning","t":"A staged refresh plan that avoids a cliff edge of hardware all reaching end of life at once."}
     ],
-    "idealFor": ["Infrastructure nearing end-of-life", "Performance issues under growth", "Boards asking \"are we resilient enough?\""],
+    "idealFor": ["Infrastructure approaching end of life", "Performance issues under growth", "Boards asking whether they are resilient enough"],
     "deliverable": "An infrastructure roadmap with a prioritised, costed sequence of initiatives."
   },
   {
     "id": "product-consulting", "cat": "strategy", "icon": "product",
     "title": "Product Consulting",
     "tagline": "Advice on IT product selection and implementation.",
-    "blurb": "Independent evaluation before you sign a contract you'll be living with for years. We run the proof-of-concept, model the true cost, and stay through implementation so the choice actually lands.",
+    "blurb": "Independent evaluation before you sign a contract you will be living with for years. We run the proof of concept, model the true cost, and stay through implementation so the choice actually lands the way it was promised.",
     "points": [
-      {"h":"Vendor & product evaluation","t":"Structured comparison against your actual requirements, not vendor marketing."},
-      {"h":"Proof-of-concept design","t":"A test plan that surfaces real limitations before purchase, not after."},
+      {"h":"Vendor & product evaluation","t":"A structured comparison against your real requirements rather than the vendor marketing deck."},
+      {"h":"Proof of concept design","t":"A test plan built to surface genuine limitations before purchase, not after."},
       {"h":"Licensing & cost modelling","t":"True total cost of ownership, including the renewal terms nobody reads."},
-      {"h":"Implementation oversight","t":"Hands-on oversight through rollout so the selected product actually lands as promised."}
+      {"h":"Implementation oversight","t":"Hands on oversight through rollout so the selected product delivers what was promised."}
     ],
-    "idealFor": ["Evaluating ERP/CRM/security platforms", "Avoiding vendor lock-in", "Budget-constrained procurement"],
-    "deliverable": "An evaluation matrix, a costed recommendation, and implementation oversight through go-live."
+    "idealFor": ["Evaluating ERP, CRM, or security platforms", "Avoiding vendor lock in", "Budget constrained procurement"],
+    "deliverable": "An evaluation matrix, a costed recommendation, and implementation oversight all the way through go live."
   },
   {
     "id": "cloud", "cat": "infra", "icon": "cloud",
     "title": "Cloud Strategy & Migration",
-    "tagline": "Plan and execute cloud migration while optimizing costs and security.",
-    "blurb": "Migration planned around your workloads and risk tolerance — lift-and-shift where it's right, re-architected where it isn't. Security and identity are designed in from the first workload, not retrofitted after.",
+    "tagline": "Plan and execute cloud migration while optimising cost and security.",
+    "blurb": "Migration planned around your workloads and your tolerance for risk. We lift and shift where that is right, and re architect where it is not, with security and identity designed in from the very first workload rather than retrofitted afterwards.",
     "points": [
-      {"h":"Cloud readiness assessment","t":"Workload-by-workload analysis of what's ready to move and what needs remediation first."},
-      {"h":"Migration planning","t":"Lift-and-shift, replatform, or refactor — matched to each workload, not a one-size approach."},
-      {"h":"Cloud security & identity","t":"Identity architecture and security baselines built in from the first workload, not bolted on after."},
-      {"h":"Post-migration cost optimisation","t":"FinOps discipline that keeps your cloud bill matched to actual usage."}
+      {"h":"Cloud readiness assessment","t":"A workload by workload analysis of what is ready to move and what needs remediation first."},
+      {"h":"Migration planning","t":"Rehost, replatform, or refactor, matched to each workload instead of a single blanket approach."},
+      {"h":"Cloud security & identity","t":"Identity architecture and security baselines built in from the first workload, never bolted on later."},
+      {"h":"Cost optimisation","t":"Financial governance that keeps your cloud bill matched to actual usage month after month."}
     ],
-    "idealFor": ["Data centre exit or lease expiry", "Scaling beyond on-prem capacity", "Cost-out initiatives on existing cloud spend"],
+    "idealFor": ["A data centre exit or lease expiry", "Scaling beyond on premise capacity", "Reducing spend on existing cloud"],
     "deliverable": "A migration plan by workload, a secure landing zone, and ongoing cost governance."
   },
   {
     "id": "audits", "cat": "security", "icon": "audit",
     "title": "Cybersecurity Audits",
     "tagline": "Identify vulnerabilities and ensure compliance.",
-    "blurb": "A structured, evidence-based view of where you actually stand — separate from whoever built the environment. Every finding is mapped to a specific control and comes with a realistic remediation timeline.",
+    "blurb": "A structured, evidence based view of where you actually stand, independent of whoever built the environment. Every finding is mapped to a specific control and comes with a realistic remediation timeline your team can plan around.",
     "points": [
-      {"h":"Technical control audits","t":"Independent verification that your controls work the way you think they do."},
-      {"h":"Policy & process review","t":"Assessment of whether documented process matches what actually happens."},
-      {"h":"Compliance gap reporting","t":"Findings mapped against the specific standards and obligations that apply to you."},
+      {"h":"Technical control audits","t":"Independent verification that your controls genuinely work the way you believe they do."},
+      {"h":"Policy & process review","t":"An honest assessment of whether documented process matches what actually happens on the ground."},
+      {"h":"Compliance gap reporting","t":"Findings mapped against the specific standards and obligations that apply to your organisation."},
       {"h":"Risk register development","t":"A living risk register your leadership team can actually use to prioritise investment."}
     ],
-    "idealFor": ["Pre-certification readiness checks", "Cyber insurance renewal requirements", "Board and audit-committee reporting"],
-    "deliverable": "An evidence-based audit report with a prioritised risk register and remediation timeline."
+    "idealFor": ["Pre certification readiness checks", "Cyber insurance renewal requirements", "Board and audit committee reporting"],
+    "deliverable": "An evidence based audit report with a prioritised risk register and a clear remediation timeline."
   },
   {
     "id": "network", "cat": "infra", "icon": "network",
     "title": "Network Design & Monitoring",
-    "tagline": "Secure, high-performance networks with 24/7 monitoring.",
-    "blurb": "Networks designed for segmentation and visibility first, throughput second — you need both, in that order. Zone-based design contains an incident instead of letting it spread across the whole environment.",
+    "tagline": "Secure, high performance networks with round the clock monitoring.",
+    "blurb": "Networks designed for segmentation and visibility first and throughput second, because you need both in that order. Zone based design contains an incident instead of letting it spread across the whole environment, and continuous monitoring means a problem reaches a human quickly.",
     "points": [
-      {"h":"Architecture & segmentation","t":"Zone-based design that contains an incident instead of letting it spread."},
-      {"h":"Firewall & zero-trust","t":"Policy-based access control built around identity, not just IP address."},
-      {"h":"24/7 monitoring","t":"Continuous anomaly detection with alerting that reaches a human, fast."},
-      {"h":"Performance optimisation","t":"Bandwidth planning and tuning so security controls don't become the bottleneck."}
+      {"h":"Architecture & segmentation","t":"Zone based design that contains an incident rather than letting it move freely across your network."},
+      {"h":"Firewall & zero trust","t":"Policy based access control built around identity, not just an IP address."},
+      {"h":"24/7 monitoring","t":"Continuous anomaly detection with alerting that actually reaches a person, quickly."},
+      {"h":"Performance optimisation","t":"Bandwidth planning and tuning so that security controls never become the bottleneck."}
     ],
-    "idealFor": ["Multi-site organisations", "Guest/staff network separation needs", "Bandwidth issues under growth"],
+    "idealFor": ["Multi site organisations", "Separating guest and staff networks", "Bandwidth issues under growth"],
     "deliverable": "A segmented network design, deployed monitoring, and documented incident escalation paths."
   },
   {
     "id": "software-deploy", "cat": "strategy", "icon": "software",
     "title": "Software Deployment",
     "tagline": "ERP, CRM, and internal tool rollouts.",
-    "blurb": "Rollouts planned around adoption, not just installation — the software only pays off if people actually use it. Configuration is mapped to how your teams actually work, not the vendor's default workflow.",
+    "blurb": "Rollouts planned around adoption rather than just installation, because the software only pays off if people actually use it. Configuration is mapped to how your teams genuinely work, not to the vendor default workflow.",
     "points": [
-      {"h":"Requirements & solution design","t":"Configuration mapped to how your teams actually work, not the vendor's default workflow."},
-      {"h":"Deployment & integration","t":"Managed rollout with integration into your existing systems, not an isolated silo."},
-      {"h":"Data migration & testing","t":"Verified data migration with structured user-acceptance testing before cutover."},
-      {"h":"Training & adoption","t":"Hands-on training so the new system is actually used the way it was designed."}
+      {"h":"Requirements & solution design","t":"Configuration mapped to how your teams actually work, not to the vendor default."},
+      {"h":"Deployment & integration","t":"A managed rollout with real integration into your existing systems rather than an isolated silo."},
+      {"h":"Data migration & testing","t":"Verified data migration with structured user acceptance testing before any cutover."},
+      {"h":"Training & adoption","t":"Hands on training so the new system is used the way it was actually designed to be."}
     ],
-    "idealFor": ["ERP or CRM replacement projects", "Legacy system retirement", "Multi-department tool rollouts"],
-    "deliverable": "A deployed, integrated system with verified data migration and a trained user base."
+    "idealFor": ["ERP or CRM replacement projects", "Retiring a legacy system", "Multi department tool rollouts"],
+    "deliverable": "A deployed, integrated system with verified data migration and a genuinely trained user base."
   },
   {
     "id": "vendor", "cat": "strategy", "icon": "vendor",
     "title": "Vendor Management",
-    "tagline": "Manage third-party IT vendors and contracts.",
-    "blurb": "One accountable point of contact across every vendor in your stack, so nothing falls between contracts. We track performance against what was actually promised, not what was assumed.",
+    "tagline": "Manage third party IT vendors and contracts.",
+    "blurb": "One accountable point of contact across every vendor in your stack, so nothing falls between contracts. We track performance against what was actually promised rather than what everyone assumed, and we bring you into renewals before you are locked in again.",
     "points": [
-      {"h":"Performance & SLA tracking","t":"Vendors held to the commitments in their contract, tracked and reported."},
-      {"h":"Contract negotiation support","t":"Commercial and technical input at renewal, before you're locked in again."},
-      {"h":"Consolidation & cost review","t":"Overlap and redundant spend identified across your vendor portfolio."},
-      {"h":"Third-party risk assessment","t":"Security and continuity risk assessed for every vendor with access to your environment."}
+      {"h":"Performance & SLA tracking","t":"Vendors held to the commitments in their contract, measured and reported honestly."},
+      {"h":"Contract negotiation support","t":"Commercial and technical input at renewal, before the ink is dry."},
+      {"h":"Consolidation & cost review","t":"Overlap and redundant spend identified across your entire vendor portfolio."},
+      {"h":"Third party risk assessment","t":"Security and continuity risk assessed for every vendor with access to your environment."}
     ],
-    "idealFor": ["Portfolios of 10+ IT vendors", "Upcoming renewal negotiations", "Third-party risk reporting to the board"],
-    "deliverable": "A vendor scorecard, consolidated contract calendar, and third-party risk register."
+    "idealFor": ["Portfolios of ten or more IT vendors", "Upcoming renewal negotiations", "Third party risk reporting to the board"],
+    "deliverable": "A vendor scorecard, a consolidated contract calendar, and a third party risk register."
   }
 ]

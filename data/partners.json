@@ -1,0 +1,17 @@
+[
+  {
+    "name": "CrowdStrike",
+    "tag": "EDR / MDR PARTNER",
+    "blurb": "We deploy and manage the CrowdStrike Falcon platform to bring enterprise grade endpoint detection and 24/7 managed threat hunting to organisations of every size.",
+    "url": "https://www.crowdstrike.com",
+    "service": "edr-mdr"
+  },
+  {
+    "name": "Blocksi",
+    "logo": "blocksi.png",
+    "tag": "AUTHORISED PARTNER / AU & NZ",
+    "blurb": "Our authorised technology partner for Australia and New Zealand. Blocksi delivers web and content filtering plus classroom management built for schools, keeping students safe and teachers in control.",
+    "url": "https://blocksi.net",
+    "service": "filtering"
+  }
+]

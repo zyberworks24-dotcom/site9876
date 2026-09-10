@@ -391,6 +391,34 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
 .clients-placeholder-sub{color:var(--text-faint);font-size:13px;margin-top:6px}
 .clients-placeholder code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px;font-size:12px}
 
+/* ===== Technology partners ===== */
+.partners{padding:clamp(50px,9vw,100px) 24px;max-width:1100px;margin:0 auto}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.partner-card{
+  display:flex;flex-direction:column;align-items:flex-start;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:30px 30px 26px;transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);
+}
+.partner-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.18);background:var(--card-hover)}
+.partner-logo{
+  height:60px;min-width:150px;padding:0 4px;margin-bottom:22px;
+  display:flex;align-items:center;justify-content:flex-start;
+}
+.partner-logo img{max-height:52px;max-width:220px;width:auto;object-fit:contain;border-radius:10px}
+.partner-wordmark{
+  font-size:26px;font-weight:800;letter-spacing:-.02em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.partner-tag{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--cyan);margin-bottom:12px}
+.partner-blurb{font-size:15px;line-height:1.65;color:var(--text-dim);margin-bottom:22px;flex:1}
+.partner-actions{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.partner-link,.partner-visit{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600}
+.partner-link{color:var(--blue)}
+.partner-visit{color:var(--text-dim)}
+.partner-link:hover,.partner-visit:hover{color:var(--text)}
+.partner-link svg,.partner-visit svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.partner-link:hover svg,.partner-visit:hover svg{transform:translateX(4px)}
+
 /* ===== Service detail pages ===== */
 .sp-hero{position:relative;padding:120px 24px 50px;overflow:hidden}
 .sp-hero-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.7}
@@ -446,6 +474,31 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
 .sp-deliverable-label{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--cyan);margin-bottom:10px}
 .sp-deliverable-box p:last-child{font-size:15px;color:var(--text-dim);line-height:1.6}
 .sp-error{max-width:600px;margin:160px auto;text-align:center;color:var(--text-dim);padding:0 24px}
+
+/* Partner callout on service pages */
+.sp-partner{
+  display:flex;gap:28px;align-items:center;flex-wrap:wrap;
+  padding:28px 30px;border:1px solid var(--border);border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,rgba(41,151,255,.1),rgba(191,90,242,.06));
+}
+.sp-partner-logo{
+  flex:none;height:64px;min-width:160px;border-radius:16px;background:#fff;
+  display:flex;align-items:center;justify-content:center;padding:12px 18px;
+}
+.sp-partner-logo img{max-height:44px;max-width:200px;width:auto;object-fit:contain}
+.sp-partner-logo .partner-wordmark{font-size:24px}
+.sp-partner-body{flex:1;min-width:240px}
+.sp-partner-tag{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--cyan);margin-bottom:8px}
+.sp-partner-body p{font-size:15px;line-height:1.6;color:var(--text-dim);margin-bottom:12px}
+.sp-partner-body .partner-visit{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue)}
+.sp-partner-body .partner-visit svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.sp-partner-body .partner-visit:hover svg{transform:translateX(4px)}
+
+/* FAQs on service pages */
+.sp-faqs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.sp-faq{padding:24px 24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card)}
+.sp-faq h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.sp-faq p{font-size:14.5px;color:var(--text-dim);line-height:1.6}
 
 /* ===== Responsive ===== */
 @media (max-width:820px){

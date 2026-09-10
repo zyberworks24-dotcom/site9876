@@ -1,34 +1,36 @@
 const PROCESS_BY_CATEGORY = {
   security: [
-    { h:'Scope & threat model', t:'Define target systems, rules of engagement, and what "success" looks like from an attacker’s perspective.' },
-    { h:'Assess', t:'Hands-on testing, control review, or audit work carried out against the agreed scope.' },
-    { h:'Validate & prioritise', t:'Findings confirmed, false positives removed, and risk ranked by real-world impact.' },
-    { h:'Report & remediate', t:'A clear report plus support closing the highest-priority gaps first.' },
+    { h:'Scope & threat model', t:'We define the target systems, the rules of engagement, and what success looks like from an attacker point of view.' },
+    { h:'Assess', t:'Hands on testing, control review, or audit work carried out against the agreed scope.' },
+    { h:'Validate & prioritise', t:'Findings confirmed, false positives removed, and risk ranked by real world impact.' },
+    { h:'Report & remediate', t:'A clear report plus hands on support closing the highest priority gaps first.' },
   ],
   infra: [
-    { h:'Discover', t:'Audit the current environment, dependencies, and constraints.' },
-    { h:'Design', t:'Target architecture matched to your risk appetite and budget.' },
-    { h:'Implement', t:'Staged delivery with rollback points, not a big-bang cutover.' },
+    { h:'Discover', t:'We audit the current environment, its dependencies, and its constraints.' },
+    { h:'Design', t:'Target architecture matched to your risk appetite and your budget.' },
+    { h:'Implement', t:'Staged delivery with rollback points, never a single risky cutover.' },
     { h:'Operate & optimise', t:'Ongoing monitoring, tuning, and a documented runbook.' },
   ],
   strategy: [
-    { h:'Understand', t:'Stakeholder interviews and current-state mapping.' },
-    { h:'Plan', t:'A scoped roadmap with milestones and a business case.' },
-    { h:'Deliver', t:'Managed execution with regular checkpoints.' },
-    { h:'Handover', t:'Documentation, training, and a clean transition to business-as-usual.' },
+    { h:'Understand', t:'Stakeholder interviews and a clear map of the current state.' },
+    { h:'Plan', t:'A scoped roadmap with real milestones and a business case.' },
+    { h:'Deliver', t:'Managed execution with regular checkpoints along the way.' },
+    { h:'Handover', t:'Documentation, training, and a clean transition to business as usual.' },
   ],
 };
 
 async function renderServicePage(){
   const root = document.getElementById('servicePageRoot');
   const id = document.body.dataset.service;
-  let services;
+  let services, partners = [];
   try {
     services = await fetchJSON('data/services.json');
   } catch (err){
     root.innerHTML = `<div class="sp-error"><p>Couldn't load this page's content. <a href="../index.html">Return home</a>.</p></div>`;
     return;
   }
+  try { partners = await fetchJSON('data/partners.json'); } catch (err){ partners = []; }
+
   const svc = services.find(s => s.id === id);
   if (!svc){
     root.innerHTML = `<div class="sp-error"><p>Service not found. <a href="../index.html">Return home</a>.</p></div>`;
@@ -41,6 +43,36 @@ async function renderServicePage(){
 
   const process = PROCESS_BY_CATEGORY[svc.cat] || PROCESS_BY_CATEGORY.strategy;
   const related = services.filter(s => s.cat === svc.cat && s.id !== svc.id).slice(0, 3);
+  const partner = svc.partner ? partners.find(p => p.name === svc.partner) : null;
+
+  const partnerBlock = partner ? `
+    <section class="sp-section reveal">
+      <div class="sp-partner">
+        <div class="sp-partner-logo">
+          ${partner.logo
+            ? `<img src="../assets/partners/${partner.logo}" alt="${partner.name} logo">`
+            : `<span class="partner-wordmark">${partner.name}</span>`}
+        </div>
+        <div class="sp-partner-body">
+          <p class="sp-partner-tag">${partner.tag || 'TECHNOLOGY PARTNER'}</p>
+          <p>${partner.blurb || ''}</p>
+          ${partner.url ? `<a class="partner-visit" href="${partner.url}" target="_blank" rel="noopener">Visit ${partner.name} ${ARROW_SVG}</a>` : ''}
+        </div>
+      </div>
+    </section>` : '';
+
+  const faqBlock = (svc.faqs && svc.faqs.length) ? `
+    <section class="sp-section">
+      <h2 class="sp-h2 reveal">Common questions</h2>
+      <div class="sp-faqs">
+        ${svc.faqs.map((f, i) => `
+          <div class="sp-faq reveal" style="transition-delay:${i * 70}ms">
+            <h3>${f.q}</h3>
+            <p>${f.a}</p>
+          </div>
+        `).join('')}
+      </div>
+    </section>` : '';
 
   root.innerHTML = `
     <section class="sp-hero">
@@ -63,6 +95,8 @@ async function renderServicePage(){
     <section class="sp-section reveal">
       <p class="sp-intro">${svc.blurb}</p>
     </section>
+
+    ${partnerBlock}
 
     <section class="sp-section">
       <h2 class="sp-h2 reveal">How it works</h2>
@@ -102,6 +136,8 @@ async function renderServicePage(){
       </div>
     </section>
 
+    ${faqBlock}
+
     ${related.length ? `
     <section class="sp-section">
       <h2 class="sp-h2 reveal">Related services</h2>
@@ -120,7 +156,7 @@ async function renderServicePage(){
     <section class="cta reveal">
       <div class="cta-card">
         <h2>Let's talk ${svc.title.toLowerCase()}.</h2>
-        <p>Tell us where you're starting from — we'll bring a tailored approach, not a template.</p>
+        <p>Tell us where you are starting from and we will bring a tailored approach, never a template.</p>
         <a href="https://zyberworks.com.au/#services" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Visit zyberworks.com.au</a>
       </div>
     </section>
