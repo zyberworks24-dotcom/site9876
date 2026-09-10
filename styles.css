@@ -392,13 +392,13 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
 .clients-placeholder code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px;font-size:12px}
 
 /* ===== Service detail pages ===== */
-.sp-hero{position:relative;padding:120px 24px 50px;max-width:900px;margin:0 auto;overflow:hidden}
+.sp-hero{position:relative;padding:120px 24px 50px;overflow:hidden}
 .sp-hero-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.7}
 .sp-hero .blob{opacity:.4}
-.sp-breadcrumb{position:relative;z-index:1;display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text-faint);margin-bottom:32px;flex-wrap:wrap}
+.sp-breadcrumb{position:relative;z-index:1;max-width:900px;margin:0 auto 32px;display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text-faint);flex-wrap:wrap}
 .sp-breadcrumb a{color:var(--text-dim);transition:color .2s}
 .sp-breadcrumb a:hover{color:var(--text)}
-.sp-hero-content{position:relative;z-index:1}
+.sp-hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto}
 .sp-icon{
   width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;color:var(--cyan);margin-bottom:22px;
