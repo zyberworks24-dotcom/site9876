@@ -61,7 +61,52 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold:0.15, rootMargin:'0px 0px -60px 0px' });
 
 function observeReveal(root = document){
-  root.querySelectorAll('.reveal, .reveal-lines').forEach(el => revealObserver.observe(el));
+  root.querySelectorAll('.reveal, .reveal-lines, .reveal-left, .reveal-right, .reveal-scale, .reveal-up').forEach(el => revealObserver.observe(el));
+}
+
+/* ===================== Scroll progress bar (site-wide) ===================== */
+function initScrollProgress(){
+  const bar = document.createElement('div');
+  bar.className = 'scroll-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  let raf = null;
+  const update = () => {
+    raf = null;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  };
+  const schedule = () => { if (!raf) raf = requestAnimationFrame(update); };
+  window.addEventListener('scroll', schedule, { passive:true });
+  window.addEventListener('resize', schedule);
+  update();
+}
+
+/* ===================== Count-up stats (site-wide) ===================== */
+function initCountUp(){
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nums = document.querySelectorAll('.stat-num');
+  if (!nums.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      io.unobserve(el);
+      const raw = el.textContent.trim();
+      if (!/^\d+$/.test(raw)) return; // leave values like "24/7" untouched
+      const target = parseInt(raw, 10);
+      if (reduced){ el.textContent = target; return; }
+      const dur = 1400, start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = target;
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold:0.5 });
+  nums.forEach(el => io.observe(el));
 }
 
 /* ===================== Cursor glow (site-wide) ===================== */
@@ -99,5 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initCursorGlow();
   initParallax();
+  initScrollProgress();
+  initCountUp();
   observeReveal();
 });

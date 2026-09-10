@@ -106,8 +106,9 @@ async function initPartners(){
     const visit = p.url
       ? `<a class="partner-visit" href="${p.url}" target="_blank" rel="noopener">Visit ${p.name} ${ARROW_SVG}</a>`
       : '';
+    const dir = i % 2 === 0 ? 'reveal-left' : 'reveal-right';
     return `
-      <div class="partner-card reveal" style="transition-delay:${i * 90}ms">
+      <div class="partner-card ${dir}" style="transition-delay:${i * 90}ms">
         <div class="partner-logo">${logo}</div>
         <p class="partner-tag">${p.tag || ''}</p>
         <p class="partner-blurb">${p.blurb || ''}</p>

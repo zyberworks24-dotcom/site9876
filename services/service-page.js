@@ -46,7 +46,7 @@ async function renderServicePage(){
   const partner = svc.partner ? partners.find(p => p.name === svc.partner) : null;
 
   const partnerBlock = partner ? `
-    <section class="sp-section reveal">
+    <section class="sp-section reveal-scale">
       <div class="sp-partner">
         <div class="sp-partner-logo">
           ${partner.logo
@@ -66,7 +66,7 @@ async function renderServicePage(){
       <h2 class="sp-h2 reveal">Common questions</h2>
       <div class="sp-faqs">
         ${svc.faqs.map((f, i) => `
-          <div class="sp-faq reveal" style="transition-delay:${i * 70}ms">
+          <div class="sp-faq ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'}">
             <h3>${f.q}</h3>
             <p>${f.a}</p>
           </div>
@@ -102,7 +102,7 @@ async function renderServicePage(){
       <h2 class="sp-h2 reveal">How it works</h2>
       <div class="sp-process">
         ${process.map((p, i) => `
-          <div class="sp-process-step reveal" style="transition-delay:${i * 80}ms">
+          <div class="sp-process-step reveal-left" style="transition-delay:${i * 110}ms">
             <span class="sp-process-num">0${i + 1}</span>
             <h3>${p.h}</h3>
             <p>${p.t}</p>
@@ -115,7 +115,7 @@ async function renderServicePage(){
       <h2 class="sp-h2 reveal">What's included</h2>
       <div class="sp-points">
         ${svc.points.map((p, i) => `
-          <div class="sp-point reveal" style="transition-delay:${i * 70}ms">
+          <div class="sp-point ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'}">
             <span class="sp-point-icon">${CHECK_SVG}</span>
             <div><h3>${p.h}</h3><p>${p.t}</p></div>
           </div>

@@ -1,6 +1,7 @@
 [
   {
     "name": "CrowdStrike",
+    "logo": "crowdstrike.png",
     "tag": "EDR / MDR PARTNER",
     "blurb": "We deploy and manage the CrowdStrike Falcon platform to bring enterprise grade endpoint detection and 24/7 managed threat hunting to organisations of every size.",
     "url": "https://www.crowdstrike.com",

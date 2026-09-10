@@ -201,10 +201,31 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .reveal-lines{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
 .reveal-lines.in-view{opacity:1;transform:translateY(0)}
 .statement-text .grad-text{color:transparent}
+.st-line{display:block}
+.st-line + .st-line{margin-top:.15em}
 
 /* ===== Generic reveal ===== */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .reveal.in-view{opacity:1;transform:translateY(0)}
+
+/* Directional + scale reveals (scroll driven) */
+.reveal-left{opacity:0;transform:translateX(-70px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal-right{opacity:0;transform:translateX(70px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal-scale{opacity:0;transform:scale(.9);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal-up{opacity:0;transform:translateY(60px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal-left.in-view,.reveal-right.in-view,.reveal-scale.in-view,.reveal-up.in-view{opacity:1;transform:none}
+
+/* Scroll progress bar */
+.scroll-progress{
+  position:fixed;top:0;left:0;height:3px;width:0;z-index:1100;
+  background:var(--grad);box-shadow:0 0 14px rgba(41,151,255,.55);
+  transition:width .08s linear;pointer-events:none;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal,.reveal-lines,.reveal-left,.reveal-right,.reveal-scale,.reveal-up{opacity:1 !important;transform:none !important}
+  .scroll-progress{display:none}
+}
 
 /* ===== Section head ===== */
 .section-head{max-width:720px;margin:0 auto 48px;text-align:center;padding:0 24px}
@@ -401,10 +422,11 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
 }
 .partner-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.18);background:var(--card-hover)}
 .partner-logo{
-  height:60px;min-width:150px;padding:0 4px;margin-bottom:22px;
-  display:flex;align-items:center;justify-content:flex-start;
+  width:212px;height:78px;margin-bottom:22px;border-radius:14px;overflow:hidden;
+  border:1px solid var(--border);background:#0a0b0f;
+  display:flex;align-items:center;justify-content:center;
 }
-.partner-logo img{max-height:52px;max-width:220px;width:auto;object-fit:contain;border-radius:10px}
+.partner-logo img{width:100%;height:100%;object-fit:cover}
 .partner-wordmark{
   font-size:26px;font-weight:800;letter-spacing:-.02em;
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
@@ -482,10 +504,11 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
   background:linear-gradient(150deg,rgba(41,151,255,.1),rgba(191,90,242,.06));
 }
 .sp-partner-logo{
-  flex:none;height:64px;min-width:160px;border-radius:16px;background:#fff;
-  display:flex;align-items:center;justify-content:center;padding:12px 18px;
+  flex:none;width:224px;height:84px;border-radius:16px;overflow:hidden;background:#0a0b0f;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
 }
-.sp-partner-logo img{max-height:44px;max-width:200px;width:auto;object-fit:contain}
+.sp-partner-logo img{width:100%;height:100%;object-fit:cover}
 .sp-partner-logo .partner-wordmark{font-size:24px}
 .sp-partner-body{flex:1;min-width:240px}
 .sp-partner-tag{font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--cyan);margin-bottom:8px}
