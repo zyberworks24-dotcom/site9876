@@ -11,7 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-base="">
+<script src="preloader.js"></script>
 
 <div class="noise-overlay" aria-hidden="true"></div>
 <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
@@ -94,7 +95,7 @@
     <div class="section-head reveal">
       <p class="eyebrow">WHAT WE DO</p>
       <h2>Fifteen disciplines.<br>One coherent security posture.</h2>
-      <p class="section-sub">Every card below opens into the detail — scope, method, and what you actually receive. Tap one to dig in.</p>
+      <p class="section-sub">Every card below opens its own page — scope, method, and what you actually receive. Tap one to dig in.</p>
     </div>
 
     <div class="tabs reveal" id="tabs">
@@ -151,6 +152,19 @@
     <div class="stat"><span class="stat-num">15</span><span class="stat-label">Services, one accountable partner</span></div>
   </section>
 
+  <!-- HAPPY CLIENTS -->
+  <section class="clients" id="clients">
+    <div class="section-head reveal">
+      <p class="eyebrow">TRUSTED BY</p>
+      <h2>Happy clients,<br>real outcomes.</h2>
+    </div>
+    <div class="clients-marquee-wrap reveal">
+      <div class="clients-marquee">
+        <div class="clients-track" id="clientsTrack"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta" id="contact">
     <div class="cta-card reveal">
@@ -174,22 +188,8 @@
   </div>
 </footer>
 
-<!-- SERVICE DETAIL MODAL -->
-<div class="modal-backdrop" id="modalBackdrop">
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button class="modal-close" id="modalClose" aria-label="Close">
-      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6 L18 18 M18 6 L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-    </button>
-    <div class="modal-icon" id="modalIcon"></div>
-    <p class="modal-eyebrow" id="modalCategory"></p>
-    <h3 class="modal-title" id="modalTitle"></h3>
-    <p class="modal-tagline" id="modalTagline"></p>
-    <p class="modal-blurb" id="modalBlurb"></p>
-    <div class="modal-points" id="modalPoints"></div>
-    <div class="modal-deliverable" id="modalDeliverable"></div>
-  </div>
-</div>
-
+<script src="common.js"></script>
 <script src="script.js"></script>
+<script src="transitions.js"></script>
 </body>
 </html>
