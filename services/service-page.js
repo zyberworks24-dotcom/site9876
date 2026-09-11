@@ -135,7 +135,7 @@ async function renderServicePage(){
                   ${(t.features || []).map(f => `<li><span class="sc-check">${CHECK_SVG}</span>${f}</li>`).join('')}
                 </ul>
                 ${t.note ? `<p class="sc-price-fine">${t.note}</p>` : ''}
-                <button type="button" class="btn ${t.featured ? 'btn-primary' : 'btn-ghost'} sc-price-btn" data-contact data-service="${svc.title}">Get a quote</button>
+                <button type="button" class="btn ${t.featured ? 'btn-primary' : 'btn-ghost'} sc-price-btn" data-contact data-service="${svc.title}" data-plan="${t.name}"${t.annualNum ? ` data-annual="${t.annualNum}"` : ''}${t.monthlyNum ? ` data-monthly="${t.monthlyNum}"` : ''}>Get a quote</button>
               </div>
             `).join('')}
           </div>

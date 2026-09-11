@@ -173,6 +173,11 @@ async function initContact(){
           <div class="field"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label for="cf-company">Company <span style="opacity:.6">(optional)</span></label><input id="cf-company" name="company" autocomplete="organization"></div>
           <div class="field"><label for="cf-service">Service of interest</label><select id="cf-service" name="service"></select></div>
+          <div class="cf-quote" id="cfQuote" hidden>
+            <p class="cf-quote-plan" id="cfQuotePlan"></p>
+            <div class="field"><label for="cf-endpoints">Number of endpoints</label><input id="cf-endpoints" name="endpoints" type="number" min="1" step="1" inputmode="numeric" value="50"></div>
+            <div class="cf-estimate" id="cfEstimate"></div>
+          </div>
           <div class="field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="4" required></textarea></div>
           <p class="contact-error" id="contactError" hidden></p>
           <p class="contact-send-label">Choose how to send your enquiry:</p>
@@ -191,13 +196,36 @@ async function initContact(){
   const form = document.getElementById('contactForm');
   const serviceSel = document.getElementById('cf-service');
   const errorEl = document.getElementById('contactError');
+  const quoteBlock = document.getElementById('cfQuote');
+  const quotePlanEl = document.getElementById('cfQuotePlan');
+  const endpointsInput = document.getElementById('cf-endpoints');
+  const estimateEl = document.getElementById('cfEstimate');
   const el = n => form.elements[n];
+
+  let currentPlan = null;
+  const money = x => '$' + Number(x).toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+  function updateEstimate(){
+    if (!currentPlan) return;
+    const n = Math.max(0, parseInt(endpointsInput.value, 10) || 0);
+    if (currentPlan.annual > 0){
+      const annualTotal = n * currentPlan.annual;
+      const monthlyTotal = currentPlan.monthly > 0 ? n * currentPlan.monthly : null;
+      estimateEl.innerHTML =
+        `<span class="cf-est-big">${money(annualTotal)}</span>` +
+        `<span class="cf-est-unit">estimated per year</span>` +
+        (monthlyTotal !== null ? `<span class="cf-est-sub">or about ${money(monthlyTotal)} per month</span>` : '') +
+        `<span class="cf-est-fine">${n} endpoint${n === 1 ? '' : 's'} &times; $${currentPlan.annual} per device / year. Indicative only; we confirm the final figure in your quote.</span>`;
+    } else {
+      estimateEl.innerHTML = `<span class="cf-est-sub">This plan is quoted per fleet. Tell us your endpoint count and we will price it for you.</span>`;
+    }
+  }
 
   let services = [];
   try { services = await fetchJSON('data/services.json'); } catch (err){}
   serviceSel.innerHTML = `<option>General enquiry</option>` + services.map(s => `<option>${s.title}</option>`).join('');
 
-  function open(service){
+  function open(service, plan){
     if (service){
       if (![...serviceSel.options].some(o => o.value === service)){
         serviceSel.insertAdjacentHTML('afterbegin', `<option>${service}</option>`);
@@ -205,6 +233,15 @@ async function initContact(){
       serviceSel.value = service;
     } else {
       serviceSel.value = 'General enquiry';
+    }
+    currentPlan = (plan && plan.name) ? plan : null;
+    if (currentPlan){
+      quotePlanEl.textContent = `Selected plan: ${currentPlan.name}`;
+      if (!endpointsInput.value) endpointsInput.value = 50;
+      quoteBlock.hidden = false;
+      updateEstimate();
+    } else {
+      quoteBlock.hidden = true;
     }
     errorEl.hidden = true;
     backdrop.classList.add('open');
@@ -216,9 +253,18 @@ async function initContact(){
     document.body.classList.remove('contact-lock');
   }
 
+  endpointsInput.addEventListener('input', updateEstimate);
+
   document.addEventListener('click', e => {
     const trigger = e.target.closest('[data-contact]');
-    if (trigger){ e.preventDefault(); open(trigger.dataset.service || ''); return; }
+    if (trigger){
+      e.preventDefault();
+      const plan = trigger.dataset.plan
+        ? { name: trigger.dataset.plan, annual: parseFloat(trigger.dataset.annual) || 0, monthly: parseFloat(trigger.dataset.monthly) || 0 }
+        : null;
+      open(trigger.dataset.service || '', plan);
+      return;
+    }
     if (e.target === backdrop || e.target.closest('#contactClose')) close();
   });
   document.addEventListener('keydown', e => {
@@ -240,10 +286,21 @@ async function initContact(){
       errorEl.hidden = true;
       const company = el('company').value.trim();
       const service = serviceSel.value;
-      const subject = (service && service !== 'General enquiry') ? `Enquiry: ${service}` : 'General enquiry';
+      const subject = currentPlan
+        ? `Quote request: ${currentPlan.name}`
+        : ((service && service !== 'General enquiry') ? `Enquiry: ${service}` : 'General enquiry');
       const lines = [`Name: ${name}`, `Email: ${email}`];
       if (company) lines.push(`Company: ${company}`);
-      lines.push(`Service of interest: ${service}`, '', message);
+      lines.push(`Service of interest: ${service}`);
+      if (currentPlan){
+        const n = Math.max(0, parseInt(endpointsInput.value, 10) || 0);
+        lines.push(`Plan: ${currentPlan.name}`, `Endpoints: ${n}`);
+        if (currentPlan.annual > 0){
+          lines.push(`Estimated annual: ${money(n * currentPlan.annual)} (indicative)`);
+          if (currentPlan.monthly > 0) lines.push(`Estimated monthly: ${money(n * currentPlan.monthly)} (indicative)`);
+        }
+      }
+      lines.push('', message);
       const body = lines.join('\r\n');
       const su = encodeURIComponent(subject);
       const bo = encodeURIComponent(body);

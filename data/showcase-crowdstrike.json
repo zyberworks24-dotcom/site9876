@@ -59,6 +59,8 @@
         "price": "$59.99",
         "unit": "per device / year",
         "monthly": "or $7.99 per device / month",
+        "annualNum": 59.99,
+        "monthlyNum": 7.99,
         "features": ["Next-generation antivirus", "USB device control", "Mobile device protection", "Express support"],
         "note": "Up to 100 devices"
       },
@@ -68,6 +70,8 @@
         "price": "$99.99",
         "unit": "per device / year",
         "monthly": "or $14.99 per device / month",
+        "annualNum": 99.99,
+        "monthlyNum": 14.99,
         "features": ["Everything in Falcon Go", "Host firewall management", "Integrated threat intelligence"]
       },
       {
@@ -77,6 +81,8 @@
         "price": "$184.99",
         "unit": "per device / year",
         "monthly": "or $19.99 per device / month",
+        "annualNum": 184.99,
+        "monthlyNum": 19.99,
         "features": ["Everything in Falcon Pro", "Endpoint detection and response (EDR / XDR)", "24/7 managed threat hunting", "IT hygiene"]
       },
       {

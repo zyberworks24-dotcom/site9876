@@ -304,6 +304,21 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .contact-direct a{color:var(--blue)}
 body.contact-lock{overflow:hidden}
 
+/* Contact quote (endpoints + live estimate) */
+.cf-quote{
+  margin:4px 0 14px;padding:16px 16px 6px;border-radius:14px;
+  border:1px solid var(--border);background:rgba(41,151,255,.06);
+}
+.cf-quote-plan{font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--cyan);margin-bottom:12px}
+.cf-estimate{
+  margin-top:12px;padding-top:12px;border-top:1px solid var(--border-soft);
+  display:flex;flex-direction:column;gap:2px;
+}
+.cf-est-big{font-size:26px;font-weight:800;letter-spacing:-.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15}
+.cf-est-unit{font-size:12px;color:var(--text-dim)}
+.cf-est-sub{font-size:13px;color:var(--text-dim);margin-top:4px}
+.cf-est-fine{font-size:11.5px;color:var(--text-faint);margin-top:8px;line-height:1.5}
+
 /* ===== Section head ===== */
 .section-head{max-width:720px;margin:0 auto 48px;text-align:center;padding:0 24px}
 .section-head h2{
