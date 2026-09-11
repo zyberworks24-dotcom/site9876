@@ -512,6 +512,50 @@ body.contact-lock{overflow:hidden}
 .pw-tips li::before{content:'';position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
 .pw-tips strong{color:var(--text)}
 
+/* ===== Incident response plan builder ===== */
+.ir-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.ir-field{display:flex;flex-direction:column;gap:6px}
+.ir-field label{font-size:12.5px;font-weight:600;color:var(--text-dim)}
+.ir-field input,.ir-field textarea{
+  width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--border);
+  background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:14.5px;transition:border-color .25s,background .25s;
+}
+.ir-field input:focus,.ir-field textarea:focus{outline:none;border-color:var(--blue);background:rgba(255,255,255,.06)}
+.ir-field textarea{resize:vertical}
+.ir-legend{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--cyan);text-transform:uppercase;margin:18px 0 12px}
+.ir-toolbar{display:flex;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.ir-doc{
+  background:#fbfbfd;color:#1a1c22;border-radius:var(--radius-lg);padding:clamp(28px,5vw,54px);
+  margin-bottom:22px;line-height:1.6;
+}
+.ir-doc-head{border-bottom:2px solid #e3e5ea;padding-bottom:18px;margin-bottom:24px}
+.ir-doc h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;color:#0b0d12;margin-bottom:6px}
+.ir-doc-org{font-size:18px;font-weight:700;color:#2b2e36}
+.ir-doc-meta{font-size:12.5px;color:#6b6f7a;margin-top:4px}
+.ir-doc h2{font-size:17px;font-weight:800;color:#0b0d12;margin:26px 0 10px}
+.ir-doc p{font-size:14.5px;color:#2b2e36;margin-bottom:10px}
+.ir-doc ul,.ir-doc ol{margin:0 0 12px 20px;font-size:14.5px;color:#2b2e36}
+.ir-doc li{margin-bottom:7px;line-height:1.55}
+.ir-steps li{margin-bottom:10px}
+.ir-doc strong{color:#0b0d12}
+.ir-table{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:13.5px}
+.ir-table th,.ir-table td{border:1px solid #dcdee4;padding:9px 11px;text-align:left;vertical-align:top;color:#2b2e36}
+.ir-table th{background:#eef0f4;font-weight:700;color:#0b0d12}
+.ir-blank{color:#9aa0ab;font-style:italic}
+.ir-doc-foot{border-top:1px solid #e3e5ea;margin-top:26px;padding-top:16px}
+.ir-doc-foot p{font-size:12px;color:#6b6f7a}
+
+@media (max-width:560px){ .ir-grid{grid-template-columns:1fr} }
+
+@media print{
+  .nav,.noise-overlay,.cursor-glow,.site-footer,.footer,.pw-head,.pw-mesh,.ir-toolbar,#irCta,.scroll-progress,.back-to-top,.skip-link,.preloader{display:none !important}
+  body{background:#fff !important}
+  .pw{padding:0 !important;min-height:0 !important}
+  .ir-doc{background:#fff !important;border-radius:0 !important;padding:0 !important;margin:0 !important}
+  .ir-doc h2{break-after:avoid}
+  .ir-steps li,.ir-table{break-inside:avoid}
+}
+
 /* ===== Domain checker ===== */
 .dc-form{display:flex;gap:10px;flex-wrap:wrap}
 .dc-form input{
