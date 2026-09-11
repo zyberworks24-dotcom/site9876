@@ -466,6 +466,15 @@ function renderFooter(){
   }
 }
 
+/* ===================== Service worker (offline + fast repeat loads) ===================== */
+function initServiceWorker(){
+  if (!('serviceWorker' in navigator)) return;
+  if (location.protocol !== 'https:' && location.hostname !== 'localhost') return;
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(BASE + 'sw.js').catch(() => {});
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initCursorGlow();
@@ -478,5 +487,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initScrollSpy();
   renderFooter();
+  initServiceWorker();
   observeReveal();
 });
