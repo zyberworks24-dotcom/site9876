@@ -1,5 +1,6 @@
 [
   { "title": "Anatomy of an Attack", "blurb": "Walk through how a phishing email becomes a ransomware outbreak, and see which control breaks the chain at each step.", "tag": "Interactive story", "url": "attack.html", "icon": "radar" },
   { "title": "Spot the Phish", "blurb": "Can you tell a phishing email from a genuine one? Play the game and learn the red flags that stop real attacks.", "tag": "Play the game", "url": "phishing-game.html", "icon": "audit" },
-  { "title": "Password strength checker", "blurb": "See how strong a password is and how long it would take to crack, all privately in your browser.", "tag": "Live tool", "url": "password-check.html", "icon": "devsec" }
+  { "title": "Password strength checker", "blurb": "See how strong a password is and how long it would take to crack, all privately in your browser.", "tag": "Live tool", "url": "password-check.html", "icon": "devsec" },
+  { "title": "Which service do I need?", "blurb": "Answer four quick questions and get a tailored shortlist of the services that fit your situation.", "tag": "Guided wizard", "url": "service-finder.html", "icon": "product" }
 ]

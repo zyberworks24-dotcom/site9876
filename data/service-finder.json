@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "q": "What is your biggest priority right now?",
+      "opts": [
+        { "label": "Meeting a compliance or audit requirement", "services": ["iso-nist", "e8", "audits"] },
+        { "label": "Stopping threats and getting attacked less", "services": ["edr-mdr", "pentest", "device-security"] },
+        { "label": "Keeping our IT running smoothly", "services": ["managed-support", "infra-mgmt", "network"] },
+        { "label": "Moving to, or securing, the cloud", "services": ["cloud", "infra-consulting"] },
+        { "label": "Delivering a project or new system", "services": ["project-consulting", "software-deploy", "product-consulting"] }
+      ]
+    },
+    {
+      "q": "Which best describes your organisation?",
+      "opts": [
+        { "label": "A school, college, or university", "services": ["filtering", "device-mgmt", "e8"] },
+        { "label": "Retail or hospitality with payments", "services": ["device-security", "network", "audits"] },
+        { "label": "Government or a regulated entity", "services": ["e8", "iso-nist", "audits"] },
+        { "label": "A general business or professional firm", "services": ["managed-support", "edr-mdr", "iso-nist"] }
+      ]
+    },
+    {
+      "q": "Where do you feel least confident?",
+      "opts": [
+        { "label": "We do not really know where we stand", "services": ["audits", "e8"] },
+        { "label": "Our people (phishing, awareness)", "services": ["filtering", "managed-support"] },
+        { "label": "Our devices and endpoints", "services": ["device-security", "edr-mdr", "device-mgmt"] },
+        { "label": "Our infrastructure and network", "services": ["infra-mgmt", "network", "infra-consulting"] },
+        { "label": "Our vendors and contracts", "services": ["vendor", "product-consulting"] }
+      ]
+    },
+    {
+      "q": "How is your IT looked after today?",
+      "opts": [
+        { "label": "We need someone to run it for us", "services": ["managed-support", "infra-mgmt"] },
+        { "label": "We have IT, but need security help", "services": ["edr-mdr", "pentest", "audits"] },
+        { "label": "We have IT, but need a specific project done", "services": ["project-consulting", "software-deploy"] }
+      ]
+    }
+  ]
+}
