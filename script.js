@@ -135,6 +135,44 @@ function initVenn(){
   });
 }
 
+/* ===================== Frameworks library ===================== */
+async function initFrameworksLibrary(){
+  const grid = document.getElementById('fwLibraryGrid');
+  if (!grid) return;
+  let frameworks = [];
+  try {
+    frameworks = await fetchJSON('data/frameworks.json');
+  } catch (err){
+    grid.innerHTML = `<p class="section-sub">Couldn't load the frameworks list right now. Please refresh the page.</p>`;
+    return;
+  }
+
+  grid.innerHTML = frameworks.map(f => `
+    <div class="fw-item" data-group="${f.group}">
+      <div class="fw-item-head">
+        <h3>${f.name}${f.abbr ? ` <span class="fw-abbr">${f.abbr}</span>` : ''}</h3>
+        <span class="fw-badge">${f.region}</span>
+      </div>
+      <p class="fw-sum">${f.summary}</p>
+      ${f.applies ? `<p class="fw-applies"><span>Best for</span> ${f.applies}</p>` : ''}
+    </div>
+  `).join('');
+
+  const tabs = document.querySelectorAll('#fwTabs .tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter;
+      grid.querySelectorAll('.fw-item').forEach(item => {
+        item.classList.toggle('filtered-out', !(filter === 'all' || item.dataset.group === filter));
+      });
+    });
+  });
+
+  observeReveal(grid);
+}
+
 /* ===================== Hero word reveal ===================== */
 function initHero(){
   const title = document.querySelector('.hero-title');
@@ -147,5 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initClients();
   initPartners();
   initVenn();
+  initFrameworksLibrary();
   initHero();
 });
