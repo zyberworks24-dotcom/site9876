@@ -1,0 +1,61 @@
+{
+  "intro": "The biggest breaches rarely came from something exotic. They came from a missed patch, a password without MFA, or trusting a supplier too much. Click through some well-known incidents and the one lesson from each.",
+  "breaches": [
+    {
+      "year": "2013",
+      "name": "Target",
+      "region": "United States",
+      "what": "Attackers stole network credentials from a third-party heating and air-conditioning contractor, used them to reach Target's network, and installed malware on point-of-sale systems, taking around 40 million payment card numbers.",
+      "lesson": "A supplier's access is your risk too. Segment third-party access and monitor it."
+    },
+    {
+      "year": "2017",
+      "name": "WannaCry",
+      "region": "Global",
+      "what": "A ransomware worm spread automatically between unpatched Windows machines using a known vulnerability, hitting hospitals and businesses worldwide within hours. A patch had been available for weeks.",
+      "lesson": "Patch promptly, and segment networks so one machine cannot infect the rest."
+    },
+    {
+      "year": "2017",
+      "name": "Equifax",
+      "region": "United States",
+      "what": "Attackers exploited an unpatched vulnerability in a public web application and quietly accessed the personal data of roughly 147 million people over several months.",
+      "lesson": "Patch internet-facing systems fast, and know exactly what you are running."
+    },
+    {
+      "year": "2020",
+      "name": "SolarWinds",
+      "region": "Global",
+      "what": "Attackers compromised a software vendor and hid malicious code inside a routine product update, which was then installed by thousands of organisations, including government agencies.",
+      "lesson": "Trust in your supply chain needs verification, and monitoring that can spot unusual behaviour from trusted software."
+    },
+    {
+      "year": "2021",
+      "name": "Colonial Pipeline",
+      "region": "United States",
+      "what": "Ransomware operators got in through a virtual private network account that had no multi-factor authentication and a reused password, forcing a major fuel pipeline offline.",
+      "lesson": "MFA on every remote access path, and tested backups so you can recover without paying."
+    },
+    {
+      "year": "2022",
+      "name": "Optus",
+      "region": "Australia",
+      "what": "Personal details of around ten million customers were exposed through an internet-facing interface that did not require authentication.",
+      "lesson": "Secure and test your APIs. An unauthenticated endpoint is an open door."
+    },
+    {
+      "year": "2022",
+      "name": "Medibank",
+      "region": "Australia",
+      "what": "Attackers used stolen credentials to access the health insurer's systems and took data on around 9.7 million current and former customers. The ransom was not paid and the data was leaked.",
+      "lesson": "MFA everywhere, least-privilege access, and a plan for when data is taken, not just if."
+    },
+    {
+      "year": "2023",
+      "name": "Latitude Financial",
+      "region": "Australia",
+      "what": "Attackers used stolen employee credentials, partly via a third party, to take around 14 million records, many belonging to former customers whose data had been kept long after it was needed.",
+      "lesson": "Do not keep data you no longer need. You cannot lose what you do not hold."
+    }
+  ]
+}

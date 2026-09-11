@@ -715,6 +715,9 @@ body.contact-lock{overflow:hidden}
   transition:transform .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease),background .3s var(--ease);
 }
 .atk-node-dot svg{width:24px;height:24px}
+.atk-node-dot{font-size:16px;font-weight:800}
+.br-lesson{font-size:15px;color:var(--text);line-height:1.6;font-weight:500}
+.br-count{font-size:13px;color:var(--text-faint);font-weight:600}
 .atk-node-label{font-size:11px;color:var(--text-faint);text-align:center;line-height:1.2;transition:color .3s}
 .atk-node.done .atk-node-dot{border-color:transparent;background:linear-gradient(var(--bg-elev),var(--bg-elev)) padding-box,var(--grad) border-box;color:var(--text-dim)}
 .atk-node.active .atk-node-dot{transform:scale(1.12);border-color:transparent;background:var(--grad);color:#06070a;box-shadow:0 8px 26px -8px rgba(41,151,255,.6)}
