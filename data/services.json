@@ -23,7 +23,7 @@
     "id": "filtering", "cat": "security", "icon": "filter", "partner": "Blocksi", "showcase": "blocksi",
     "title": "Web & Content Filtering",
     "tagline": "Keep users safe online with DNS filtering, category controls, and classroom management.",
-    "blurb": "The web is where most threats now begin and where productivity quietly leaks away. We design and manage layered filtering that blocks malicious and inappropriate content before it ever loads, gives you clean category based policy, and reports on what is actually happening across your network. For schools and colleges we deliver classroom management and student safety built on Blocksi, our authorised technology partner for Australia and New Zealand.",
+    "blurb": "The web is where most threats now begin and where productivity quietly leaks away. We design and manage layered filtering that blocks malicious and inappropriate content before it ever loads, gives you clean category based policy, and reports on what is actually happening across your network. For schools and colleges we deliver classroom management and student safety built on Blocksi, and Zyberworks is the official Blocksi partner for Australia and New Zealand.",
     "points": [
       {"h":"DNS & content filtering","t":"Malicious, phishing, and inappropriate sites blocked at the network layer before a browser ever renders them."},
       {"h":"Category & policy controls","t":"Granular, group based policy so different teams, year levels, or sites get exactly the access they should."},
