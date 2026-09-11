@@ -1,0 +1,18 @@
+{
+  "id": "nist-csf",
+  "title": "NIST CSF 2.0 maturity",
+  "short": "NIST CSF 2.0",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How mature is your<br><span class=\"grad-text\">NIST CSF 2.0 posture?</span>",
+  "lead": "Six quick questions across the NIST Cybersecurity Framework functions give you an instant read on your overall maturity and where to focus first.",
+  "service": "ISO 27001 & NIST CSF 2.0",
+  "scoring": "average",
+  "items": [
+    { "name": "Govern", "q": "Is cyber risk governed, with clear ownership, policy, and leadership oversight?", "opts": ["No real governance. Cyber is nobody's clear responsibility.", "Informal. Some policy exists but ownership is unclear.", "Documented policy with an accountable owner and regular review.", "Board-level oversight, measured against risk appetite, continually improved."] },
+    { "name": "Identify", "q": "Do you have a current view of your assets, data, and risks?", "opts": ["No inventory or risk register.", "A partial or out-of-date inventory.", "A maintained asset inventory and a living risk register.", "Continuous, largely automated discovery with prioritised risk."] },
+    { "name": "Protect", "q": "Are safeguards in place (access control, MFA, hardening, training)?", "opts": ["Minimal safeguards beyond the defaults.", "Some controls, applied inconsistently.", "Consistent controls across the estate, including MFA and hardening.", "Strong, least-privilege controls that are tested and enforced everywhere."] },
+    { "name": "Detect", "q": "Can you detect suspicious or malicious activity across your environment?", "opts": ["No real monitoring.", "Basic logging, rarely reviewed.", "Centralised monitoring and alerting that reaches a person.", "24/7 detection enriched with threat intelligence and threat hunting."] },
+    { "name": "Respond", "q": "Do you have a tested incident response capability?", "opts": ["No plan.", "An informal, undocumented approach.", "A documented incident response plan with defined roles.", "A plan that is regularly tested, with clear roles and communications."] },
+    { "name": "Recover", "q": "Can you recover systems and data after an incident?", "opts": ["No reliable backups.", "Backups exist but are not tested.", "Automated, tested backups and a recovery process.", "Proven recovery that consistently meets your recovery objectives."] }
+  ]
+}

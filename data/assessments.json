@@ -1,0 +1,6 @@
+[
+  { "id": "essential-eight", "title": "Essential Eight maturity", "blurb": "Score your maturity across the ASD Essential Eight, the baseline for Australian organisations.", "count": 8, "url": "essential-eight-assessment.html" },
+  { "id": "nist-csf", "title": "NIST CSF 2.0 maturity", "blurb": "Rate your posture across the six NIST Cybersecurity Framework functions.", "count": 6, "url": "assessment.html?a=nist-csf" },
+  { "id": "iso-27001", "title": "ISO 27001 readiness", "blurb": "See how close you are to a certifiable Information Security Management System.", "count": 8, "url": "assessment.html?a=iso-27001" },
+  { "id": "cyber-basics", "title": "Cyber Security posture", "blurb": "A quick check across the controls that stop most real-world attacks.", "count": 8, "url": "assessment.html?a=cyber-basics" }
+]

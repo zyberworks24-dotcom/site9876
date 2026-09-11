@@ -482,7 +482,7 @@ function renderFooter(){
         <h4>Get started</h4>
         <ul>
           <li><a href="#" data-contact>Contact us</a></li>
-          <li><a href="${BASE}essential-eight-assessment.html">E8 self-assessment</a></li>
+          <li><a href="${BASE}assessments.html">Free assessments</a></li>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
           <li><a href="${BASE}terms.html">Terms</a></li>
         </ul>

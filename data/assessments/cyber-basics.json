@@ -1,0 +1,20 @@
+{
+  "id": "cyber-basics",
+  "title": "Cyber Security posture",
+  "short": "Cyber posture",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How strong is your<br><span class=\"grad-text\">cyber security posture?</span>",
+  "lead": "Eight quick questions across the controls that stop most real-world attacks give you an instant read on where you stand and what to fix first.",
+  "service": "Cybersecurity Audits",
+  "scoring": "average",
+  "items": [
+    { "name": "Multi-factor authentication", "q": "Is MFA in place across your important accounts?", "opts": ["Not used.", "On a few key accounts only.", "On email, remote access, and admin accounts.", "Phishing-resistant MFA across the board."] },
+    { "name": "Patching & updates", "q": "How consistently are systems and software kept up to date?", "opts": ["Ad hoc, or unknown.", "Occasionally, when someone remembers.", "On a regular schedule across most systems.", "Promptly and automatically, with no end-of-life software in use."] },
+    { "name": "Backups", "q": "Are backups taken, kept safe, and tested?", "opts": ["No reliable backups.", "Backups taken but never tested.", "Automated, retained, and access-controlled.", "Tested restores, with an offline or immutable copy."] },
+    { "name": "Endpoint protection", "q": "What protects your laptops, servers, and devices?", "opts": ["Basic or no antivirus.", "Standard antivirus on most devices.", "Modern endpoint detection and response (EDR).", "Managed EDR with 24/7 monitoring."] },
+    { "name": "Security awareness", "q": "Are your people trained to spot phishing and scams?", "opts": ["No training.", "A one-off induction only.", "Regular training and the occasional phishing test.", "Ongoing training with simulations and measured improvement."] },
+    { "name": "Access & admin control", "q": "How well is access to systems and admin rights controlled?", "opts": ["Broad access, many local admins.", "Some restriction, rarely reviewed.", "Role-based access with limited admin rights.", "Least privilege, reviewed regularly and logged."] },
+    { "name": "Email & web filtering", "q": "Is malicious email and web content filtered before it reaches users?", "opts": ["No filtering beyond the defaults.", "Basic spam filtering only.", "Email and web filtering in place and managed.", "Layered filtering with reporting and tuning."] },
+    { "name": "Incident readiness", "q": "Would you know what to do in a security incident?", "opts": ["No plan, we would improvise.", "A rough idea, nothing written down.", "A documented incident response plan.", "A tested plan with clear roles and contacts."] }
+  ]
+}

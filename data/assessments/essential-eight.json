@@ -1,0 +1,26 @@
+{
+  "id": "essential-eight",
+  "title": "Essential Eight maturity",
+  "short": "Essential Eight",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How mature is your<br><span class=\"grad-text\">Essential Eight?</span>",
+  "lead": "Answer eight quick questions and get an instant read on your maturity across the ASD Essential Eight, plus where to focus first.",
+  "service": "ASD Essential Eight",
+  "scoring": "min",
+  "interpret": {
+    "0": "You have clear gaps that an attacker could use today. The priority is to establish a baseline across every strategy.",
+    "1": "You have the beginnings of a program. The Essential Eight is scored on your weakest strategy, so the focus is lifting the laggards to a consistent Level 1 and beyond.",
+    "2": "A solid, established posture. You are well placed to target Level 3 on the strategies that matter most to your risk profile.",
+    "3": "An advanced posture across the board. The work now is assurance: keeping it there and proving it under audit."
+  },
+  "items": [
+    { "name": "Application control", "q": "Can only approved applications run on your workstations and servers?", "opts": ["No control. Users can install and run whatever they like.", "Some application allow-listing on workstations.", "Allow-listing enforced on workstations and servers, with logging.", "Fully enforced everywhere, validated, using the recommended block rules."] },
+    { "name": "Patch applications", "q": "How quickly are vulnerabilities in internet-facing applications patched?", "opts": ["Ad hoc, or we are not sure.", "Usually within a month.", "Within two weeks, and faster when actively exploited.", "Within 48 hours, with regular vulnerability scanning."] },
+    { "name": "Office macro settings", "q": "How are Microsoft Office macros controlled?", "opts": ["Macros run freely for everyone.", "Blocked for users who do not have a business need.", "Allowed only from trusted locations or when digitally signed.", "Only signed by trusted publishers, with execution logged."] },
+    { "name": "User application hardening", "q": "Are browsers and everyday apps hardened (ads, Flash, Java, unneeded features blocked)?", "opts": ["Everything runs on default settings.", "Some hardening applied to web browsers.", "Browsers, Office and PDF readers hardened, with logging.", "Fully hardened to current guidance, with monitoring."] },
+    { "name": "Restrict admin privileges", "q": "How are administrative privileges managed?", "opts": ["Many people hold standing local admin rights.", "Some restriction, reviewed occasionally.", "Privileged access is requested, limited, and kept off email and the web.", "Just-in-time admin, fully segregated and logged."] },
+    { "name": "Patch operating systems", "q": "How quickly are operating system vulnerabilities patched?", "opts": ["Ad hoc, or some systems are past end of life.", "Usually within a month.", "Within two weeks across the estate.", "Within 48 hours, with no unsupported operating systems in use."] },
+    { "name": "Multi-factor authentication", "q": "Where is multi-factor authentication enforced?", "opts": ["Not used.", "On some internet-facing services.", "On all internet-facing services and for privileged users.", "Phishing-resistant MFA across the board, with logging."] },
+    { "name": "Regular backups", "q": "How are backups performed and tested?", "opts": ["No regular backups.", "Backups are taken but rarely tested.", "Automated, retained, access-controlled, and tested.", "Synchronised to retention, restoration tested, privileged access prevented."] }
+  ]
+}

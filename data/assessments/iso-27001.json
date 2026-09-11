@@ -1,0 +1,20 @@
+{
+  "id": "iso-27001",
+  "title": "ISO 27001 readiness",
+  "short": "ISO 27001",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How ready are you for<br><span class=\"grad-text\">ISO 27001?</span>",
+  "lead": "Eight quick questions across the core parts of an Information Security Management System show how close you are to a certifiable ISMS, and where the gaps are.",
+  "service": "ISO 27001 & NIST CSF 2.0",
+  "scoring": "average",
+  "items": [
+    { "name": "Leadership & scope", "q": "Is there management commitment and a defined ISMS scope?", "opts": ["Neither is in place.", "Informal support, scope not documented.", "Documented scope with clear management commitment.", "Scope, objectives and leadership commitment are set, resourced and reviewed."] },
+    { "name": "Risk assessment & treatment", "q": "Do you have a documented risk assessment method and a risk register?", "opts": ["No formal method.", "Risks noted informally, no consistent method.", "A documented method with a maintained risk register and treatment plan.", "Repeatable risk management, reviewed regularly and tied to decisions."] },
+    { "name": "Controls & Statement of Applicability", "q": "Have you selected and justified your Annex A controls?", "opts": ["Controls not mapped.", "Some controls in place, not documented against Annex A.", "Controls selected with a Statement of Applicability.", "Controls implemented, justified, and evidenced against Annex A."] },
+    { "name": "Policies & procedures", "q": "Are your security policies and procedures documented and actually used?", "opts": ["Little or nothing documented.", "Some documents exist but are not followed.", "Documented policies that people follow.", "A complete, version-controlled set that is understood and enforced."] },
+    { "name": "Asset & access management", "q": "Do you manage an asset inventory and control access to information?", "opts": ["No inventory or access process.", "Partial inventory, informal access control.", "Maintained inventory with role-based access control.", "Full inventory, least-privilege access, reviewed and logged."] },
+    { "name": "Supplier & third-party security", "q": "Is the security of suppliers and third parties assessed and managed?", "opts": ["Not considered.", "Considered occasionally, no consistent process.", "Suppliers assessed with security expectations in contracts.", "Ongoing third-party risk management with regular review."] },
+    { "name": "Incident management & continuity", "q": "Do you have incident response and business continuity in place?", "opts": ["Neither is documented.", "Informal, untested arrangements.", "Documented incident and continuity plans.", "Plans that are tested and improved after exercises or events."] },
+    { "name": "Internal audit & improvement", "q": "Do you run internal audits and act on findings to improve?", "opts": ["No internal audit activity.", "Ad hoc checks, findings not tracked.", "Scheduled internal audits with tracked corrective actions.", "A mature audit and continual improvement cycle with management review."] }
+  ]
+}
