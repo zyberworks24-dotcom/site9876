@@ -471,6 +471,47 @@ body.contact-lock{overflow:hidden}
 .legal a{color:var(--blue)}
 .legal .back-home{display:inline-flex;align-items:center;gap:6px;margin-top:30px;font-size:14px;font-weight:600;color:var(--blue)}
 
+/* ===== Password checker ===== */
+.pw{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
+.pw-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.45}
+.pw-mesh .blob{opacity:.4}
+.pw-wrap{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.pw-head{text-align:center;margin-bottom:26px}
+.pw-head h1{font-size:clamp(30px,6vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.06;margin:12px 0 16px}
+.pw-lead{font-size:16px;color:var(--text-dim);line-height:1.6;max-width:500px;margin:0 auto 12px}
+.pw-warn{font-size:13px;color:#fbbf24;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);border-radius:100px;padding:8px 16px;display:inline-block}
+.pw-card{
+  background:linear-gradient(160deg,rgba(22,26,36,.7),rgba(11,13,19,.82));
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  padding:clamp(24px,4vw,36px);margin-bottom:24px;
+}
+.pw-field{position:relative;margin-bottom:18px}
+.pw-field input{
+  width:100%;padding:15px 74px 15px 18px;border-radius:14px;border:1px solid var(--border);
+  background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:16px;letter-spacing:.02em;
+  transition:border-color .25s,background .25s;
+}
+.pw-field input:focus{outline:none;border-color:var(--blue);background:rgba(255,255,255,.06)}
+.pw-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);padding:8px 14px;border-radius:100px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text-dim);font-size:13px;font-weight:600}
+.pw-toggle:hover{color:var(--text);background:rgba(255,255,255,.12)}
+.pw-meter{height:8px;border-radius:100px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:12px}
+.pw-meter span{display:block;height:100%;width:0;border-radius:100px;background:var(--text-faint);transition:width .35s var(--ease),background .35s}
+.pw-readout{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.pw-label{font-size:17px;font-weight:800}
+.pw-crack{font-size:13px;color:var(--text-faint)}
+.pw-feedback{margin-top:16px}
+.pw-fb-warn{font-size:14px;color:#fbbf24;margin-bottom:8px}
+.pw-fb-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0}
+.pw-fb-list li{position:relative;padding-left:20px;font-size:13.5px;color:var(--text-dim);line-height:1.5}
+.pw-fb-list li::before{content:'';position:absolute;left:2px;top:7px;width:6px;height:6px;border-radius:50%;background:var(--grad)}
+.pw-tips{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(24px,4vw,34px)}
+.pw-tips h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.pw-tips ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.pw-tips li{position:relative;padding-left:22px;font-size:14.5px;color:var(--text-dim);line-height:1.55}
+.pw-tips li::before{content:'';position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.pw-tips strong{color:var(--text)}
+
 /* ===== Spot the Phish ===== */
 .phish{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
 .phish-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.45}
