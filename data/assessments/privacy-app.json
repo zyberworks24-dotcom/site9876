@@ -1,0 +1,20 @@
+{
+  "id": "privacy-app",
+  "title": "Privacy Act (APPs) readiness",
+  "short": "Privacy / APPs",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How ready are you for the<br><span class=\"grad-text\">Australian Privacy Principles?</span>",
+  "lead": "Eight quick questions across the Australian Privacy Principles and the Notifiable Data Breaches scheme show how well you handle personal information, and where the gaps are.",
+  "service": "Cybersecurity Audits",
+  "scoring": "average",
+  "items": [
+    { "name": "Privacy governance", "q": "Do you have a privacy policy and clear ownership of privacy?", "opts": ["Neither in place.", "A basic policy, no clear owner.", "A current policy with an accountable owner.", "Governed privacy program, reviewed and resourced."] },
+    { "name": "Knowing what you hold", "q": "Do you know what personal information you collect and where it lives?", "opts": ["No clear picture.", "A rough idea for key systems.", "A documented record of personal information.", "A maintained data map covering collection, use and storage."] },
+    { "name": "Collection & consent", "q": "Is personal information collected fairly, with notice and consent?", "opts": ["Not considered.", "Sometimes, inconsistently.", "Collection notices and consent are in place.", "Consistent, minimal collection with clear notices and records."] },
+    { "name": "Access & correction", "q": "Can individuals access and correct their personal information?", "opts": ["No process.", "Handled ad hoc.", "A defined process for access and correction requests.", "A tracked, timely process with records."] },
+    { "name": "Security of personal info", "q": "Is personal information protected with appropriate security?", "opts": ["Minimal protection.", "Some controls.", "Access control, encryption and monitoring in place.", "Strong, tested controls proportionate to sensitivity."] },
+    { "name": "Disclosure & overseas", "q": "Are disclosures and any overseas transfers controlled?", "opts": ["Not tracked.", "Considered occasionally.", "Disclosures governed, overseas transfers assessed.", "Full controls with contracts and due diligence for third parties."] },
+    { "name": "Breach response (NDB)", "q": "Could you assess and notify an eligible data breach in time?", "opts": ["No process.", "A rough idea.", "A documented breach response process aligned to the NDB scheme.", "A tested process with defined roles, timelines and templates."] },
+    { "name": "Retention & destruction", "q": "Is personal information kept only as long as needed and then destroyed?", "opts": ["Kept indefinitely.", "Some ad hoc clean-up.", "Retention rules exist and are mostly followed.", "Enforced retention and secure destruction schedules."] }
+  ]
+}

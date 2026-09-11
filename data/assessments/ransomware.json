@@ -1,0 +1,20 @@
+{
+  "id": "ransomware",
+  "title": "Ransomware readiness",
+  "short": "Ransomware",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How ready are you for<br><span class=\"grad-text\">ransomware?</span>",
+  "lead": "Eight quick questions across the controls that actually stop and contain ransomware show where you are exposed and what to fix first.",
+  "service": "EDR & MDR Solutions",
+  "scoring": "min",
+  "items": [
+    { "name": "Backups", "q": "Do you have backups that ransomware cannot reach or encrypt?", "opts": ["No reliable backups.", "Backups exist but are online and untested.", "Automated, tested backups.", "Tested backups with an offline or immutable copy kept separate."] },
+    { "name": "MFA on entry points", "q": "Is MFA enforced on email and remote access?", "opts": ["Not used.", "On a few accounts.", "On email and remote access.", "Phishing-resistant MFA on every internet-facing service."] },
+    { "name": "Patching", "q": "How quickly are internet-facing systems patched?", "opts": ["Ad hoc, or unknown.", "Within a month.", "Within two weeks.", "Within 48 hours, with scanning to confirm."] },
+    { "name": "Endpoint detection", "q": "What would detect ransomware behaviour on a device?", "opts": ["Basic or no antivirus.", "Standard antivirus.", "Endpoint detection and response (EDR).", "Managed EDR with 24/7 monitoring and response."] },
+    { "name": "Email & macro controls", "q": "Is the email and macro delivery path locked down?", "opts": ["No filtering, macros run freely.", "Basic spam filtering.", "Email filtering plus macro restrictions.", "Layered filtering, macros blocked or signed, and link protection."] },
+    { "name": "Network segmentation", "q": "Would an infected device be contained, or could it spread?", "opts": ["Flat network, it would spread freely.", "Minimal separation.", "Key systems are segmented.", "Zone-based segmentation that contains lateral movement."] },
+    { "name": "Privileged access", "q": "How well are administrative rights controlled?", "opts": ["Many standing local admins.", "Some restriction.", "Admin rights limited and kept off email and the web.", "Just-in-time, segregated admin with logging."] },
+    { "name": "Incident response", "q": "Do you have a tested plan for a ransomware event?", "opts": ["No plan.", "A rough idea, nothing written.", "A documented incident response plan.", "A tested plan with roles, contacts, and recovery runbooks."] }
+  ]
+}

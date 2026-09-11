@@ -1,0 +1,20 @@
+{
+  "id": "cis-controls",
+  "title": "CIS Controls (IG1) maturity",
+  "short": "CIS Controls",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How well do you cover the<br><span class=\"grad-text\">CIS Controls?</span>",
+  "lead": "Eight quick questions across the core CIS Controls safeguards (Implementation Group 1) show how well you cover the basics that stop the most common attacks.",
+  "service": "Cybersecurity Audits",
+  "scoring": "average",
+  "items": [
+    { "name": "Asset inventory", "q": "Do you have an accurate inventory of your devices and hardware?", "opts": ["No inventory.", "A partial or out-of-date list.", "A maintained inventory covering most assets.", "A complete, actively maintained inventory, including unauthorised device detection."] },
+    { "name": "Software inventory", "q": "Do you know what software is installed and allowed to run?", "opts": ["No visibility.", "A rough idea for key systems.", "A maintained software inventory.", "Full inventory with unsupported and unauthorised software removed."] },
+    { "name": "Secure configuration", "q": "Are systems configured securely rather than left on defaults?", "opts": ["Mostly default configurations.", "Some hardening on key systems.", "Consistent secure baselines across the estate.", "Enforced baselines to a recognised benchmark, with drift detection."] },
+    { "name": "Account management", "q": "Are user and service accounts properly managed?", "opts": ["Accounts rarely reviewed, dormant ones remain.", "Occasional clean-up.", "Accounts inventoried and reviewed regularly.", "Full lifecycle management with prompt disablement of leavers."] },
+    { "name": "Access control", "q": "Is access granted on a least-privilege basis with MFA?", "opts": ["Broad access, little MFA.", "MFA on a few systems.", "Role-based access with MFA on important systems.", "Least privilege everywhere with strong MFA and reviews."] },
+    { "name": "Vulnerability management", "q": "Do you find and fix vulnerabilities continuously?", "opts": ["No scanning.", "Occasional ad hoc scans.", "Regular scanning with remediation.", "Continuous scanning with prioritised, tracked remediation."] },
+    { "name": "Malware defences", "q": "How are devices protected against malware?", "opts": ["Basic or no antivirus.", "Standard antivirus on most devices.", "Centrally managed protection across the fleet.", "Modern EDR with monitoring and automated response."] },
+    { "name": "Data recovery", "q": "Can you recover data reliably after an incident?", "opts": ["No reliable backups.", "Backups exist but untested.", "Automated, tested backups.", "Tested recovery with an offline or immutable copy."] }
+  ]
+}

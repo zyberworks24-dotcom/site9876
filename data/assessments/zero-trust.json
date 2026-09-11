@@ -1,0 +1,18 @@
+{
+  "id": "zero-trust",
+  "title": "Zero Trust maturity",
+  "short": "Zero Trust",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How far along is your<br><span class=\"grad-text\">Zero Trust journey?</span>",
+  "lead": "Six quick questions across the Zero Trust pillars show how mature your never-trust-always-verify approach is, and where to focus next.",
+  "service": "Network Design & Monitoring",
+  "scoring": "average",
+  "items": [
+    { "name": "Identity", "q": "Is every access decision tied to a verified identity?", "opts": ["Access is mostly network-based.", "MFA on some services.", "Strong identity with MFA on important access.", "Continuous, risk-based verification for every request."] },
+    { "name": "Devices", "q": "Is device health checked before granting access?", "opts": ["Not checked.", "Managed devices only, loosely.", "Device compliance is checked for key access.", "Access always conditional on verified device posture."] },
+    { "name": "Network", "q": "Is the network segmented to limit lateral movement?", "opts": ["Flat network.", "Some separation.", "Zone-based segmentation.", "Micro-segmentation with default-deny between zones."] },
+    { "name": "Applications & workloads", "q": "Are applications protected by explicit, per-request authorisation?", "opts": ["Implicit trust once inside.", "Some access controls.", "Per-application access policies.", "Continuous authorisation enforced for every workload."] },
+    { "name": "Data", "q": "Is data classified and access to it controlled?", "opts": ["Not classified.", "Some controls on key data.", "Data classified with access controls.", "Classification driving encryption and least-privilege access."] },
+    { "name": "Visibility & automation", "q": "Do you have the visibility and automation to enforce all of this?", "opts": ["Little visibility.", "Basic logging.", "Central monitoring with some automation.", "Full telemetry with automated policy enforcement and response."] }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "cloud-security",
+  "title": "Cloud security posture",
+  "short": "Cloud security",
+  "eyebrow": "FREE SELF-ASSESSMENT",
+  "heading": "How secure is your<br><span class=\"grad-text\">cloud environment?</span>",
+  "lead": "Eight quick questions across identity, configuration, data and monitoring show how strong your cloud security posture is, and where to focus first.",
+  "service": "Cloud Strategy & Migration",
+  "scoring": "average",
+  "items": [
+    { "name": "Identity & access", "q": "Is cloud access least-privilege with MFA on admin accounts?", "opts": ["Broad access, little MFA.", "MFA on some accounts.", "Role-based access with MFA on privileged accounts.", "Least privilege everywhere, strong MFA, and just-in-time admin."] },
+    { "name": "Configuration", "q": "Are cloud misconfigurations detected and fixed?", "opts": ["Not checked.", "Occasional manual review.", "Regular configuration reviews against a baseline.", "Continuous posture management with automated detection."] },
+    { "name": "Data protection", "q": "Is data encrypted and are storage buckets kept private?", "opts": ["Unclear, some data may be exposed.", "Encryption on by default only.", "Encryption plus checks that storage is not public.", "Enforced encryption, key management, and no public exposure."] },
+    { "name": "Logging & monitoring", "q": "Do you have logging and alerting across your cloud?", "opts": ["Little or no logging.", "Logs exist but are not reviewed.", "Central logging with alerting.", "24/7 monitoring with detection and response."] },
+    { "name": "Network exposure", "q": "Is your cloud network segmented and its exposure controlled?", "opts": ["Flat, with services exposed to the internet.", "Some controls.", "Segmented networks with controlled ingress.", "Zero-trust style segmentation and minimal exposure."] },
+    { "name": "Workload security", "q": "Are servers, containers and functions kept patched and hardened?", "opts": ["Not managed.", "Patched occasionally.", "Regular patching and hardening.", "Automated patching, hardening and image scanning."] },
+    { "name": "Backup & recovery", "q": "Can you recover cloud workloads and data after failure?", "opts": ["No reliable backups.", "Backups exist but untested.", "Automated, tested backups.", "Tested recovery meeting defined objectives."] },
+    { "name": "Shared responsibility", "q": "Is it clear who secures what between you and the provider?", "opts": ["Not understood.", "A rough understanding.", "Documented responsibilities.", "Clear, governed model with owners for each area."] }
+  ]
+}
