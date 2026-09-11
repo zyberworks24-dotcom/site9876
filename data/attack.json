@@ -1,0 +1,66 @@
+{
+  "intro": "Most breaches are not one clever hack. They are a chain of small steps, and breaking any link stops the whole thing. Walk through a typical attack and see where the right control ends it.",
+  "steps": [
+    {
+      "phase": "The lure",
+      "icon": "mail",
+      "attacker": "A convincing phishing email lands in an inbox, posing as a supplier, a courier, or the CEO. It only has to fool one person, once.",
+      "impact": "One click away from a foothold.",
+      "stops": [
+        { "label": "Web & content filtering", "href": "services/filtering.html" },
+        { "label": "Security awareness", "href": "services/managed-support.html" }
+      ]
+    },
+    {
+      "phase": "The click",
+      "icon": "cursor",
+      "attacker": "A staff member opens the attachment or types their password into a fake login page that looks exactly right.",
+      "impact": "Credentials or malware are now in play.",
+      "stops": [
+        { "label": "Multi-factor authentication", "href": "services/edr-mdr.html" },
+        { "label": "Application hardening", "href": "services/e8.html" }
+      ]
+    },
+    {
+      "phase": "The foothold",
+      "icon": "bug",
+      "attacker": "Malicious code quietly runs on the device and calls home, giving the attacker a foot in the door.",
+      "impact": "The attacker is now inside, unnoticed.",
+      "stops": [
+        { "label": "EDR & MDR", "href": "services/edr-mdr.html" },
+        { "label": "Application control", "href": "services/e8.html" }
+      ]
+    },
+    {
+      "phase": "Escalation",
+      "icon": "key",
+      "attacker": "They exploit an unpatched weakness or a weak password to gain administrator rights.",
+      "impact": "Now they can change settings and switch off defences.",
+      "stops": [
+        { "label": "Restrict admin privileges", "href": "services/e8.html" },
+        { "label": "Patch & harden systems", "href": "services/infra-mgmt.html" }
+      ]
+    },
+    {
+      "phase": "Lateral movement",
+      "icon": "network",
+      "attacker": "They move sideways across the network, hunting for valuable systems, data, and backups.",
+      "impact": "One device becomes a whole-network problem.",
+      "stops": [
+        { "label": "Network segmentation", "href": "services/network.html" },
+        { "label": "24/7 monitoring", "href": "services/edr-mdr.html" }
+      ]
+    },
+    {
+      "phase": "Impact",
+      "icon": "lock",
+      "attacker": "Data is stolen and ransomware detonates across the estate. The demand arrives.",
+      "impact": "Operations stop. The clock starts.",
+      "stops": [
+        { "label": "Tested, offline backups", "href": "services/infra-mgmt.html" },
+        { "label": "Incident response", "href": "services/audits.html" }
+      ]
+    }
+  ],
+  "outcome": "Defence in depth breaks the chain early. And if something does get through, tested backups and a practised response plan get you back on your feet fast, instead of paying a ransom and hoping."
+}
