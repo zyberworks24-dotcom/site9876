@@ -512,6 +512,37 @@ body.contact-lock{overflow:hidden}
 .pw-tips li::before{content:'';position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
 .pw-tips strong{color:var(--text)}
 
+/* ===== Domain checker ===== */
+.dc-form{display:flex;gap:10px;flex-wrap:wrap}
+.dc-form input{
+  flex:1;min-width:180px;padding:14px 16px;border-radius:14px;border:1px solid var(--border);
+  background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:16px;
+  transition:border-color .25s,background .25s;
+}
+.dc-form input:focus{outline:none;border-color:var(--blue);background:rgba(255,255,255,.06)}
+.dc-form .btn{padding:14px 26px}
+.dc-hint{font-size:12.5px;color:var(--text-faint);margin-top:12px}
+.dc-result{margin-top:22px}
+.dc-grade{display:flex;align-items:center;gap:20px;margin-bottom:22px;flex-wrap:wrap}
+.dc-grade-ring{
+  flex:none;width:84px;height:84px;border-radius:50%;border:3px solid;display:flex;align-items:center;justify-content:center;
+  font-size:40px;font-weight:900;letter-spacing:-.02em;
+}
+.dc-grade-body{flex:1;min-width:200px}
+.dc-grade-domain{font-size:18px;font-weight:800;letter-spacing:-.01em;word-break:break-all}
+.dc-grade-verdict{font-size:14.5px;color:var(--text-dim);line-height:1.5;margin-top:4px}
+.dc-checks{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+.dc-check{display:flex;gap:14px;padding:16px 18px;border-radius:var(--radius);border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.dc-check-icon{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.dc-check-icon svg{width:15px;height:15px}
+.dc-good .dc-check-icon{background:rgba(74,222,128,.16);color:#4ade80}
+.dc-warn .dc-check-icon{background:rgba(251,191,36,.16);color:#fbbf24}
+.dc-bad .dc-check-icon{background:rgba(248,113,113,.16);color:#f87171}
+.dc-check-title{font-size:15px;font-weight:700;margin-bottom:3px}
+.dc-check-text{font-size:13.5px;color:var(--text-dim);line-height:1.55}
+.dc-record{display:block;margin-top:8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--text-faint);word-break:break-all;background:rgba(0,0,0,.3);padding:8px 10px;border-radius:8px}
+.dc-note{font-size:11.5px;color:var(--text-faint);line-height:1.5;margin-top:16px}
+
 /* ===== Password generator ===== */
 .pg-output{
   display:flex;align-items:center;gap:12px;

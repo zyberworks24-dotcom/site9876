@@ -3,5 +3,6 @@
   { "title": "Spot the Phish", "blurb": "Can you tell a phishing email from a genuine one? Play the game and learn the red flags that stop real attacks.", "tag": "Play the game", "url": "phishing-game.html", "icon": "audit" },
   { "title": "Password strength checker", "blurb": "See how strong a password is and how long it would take to crack, all privately in your browser.", "tag": "Live tool", "url": "password-check.html", "icon": "devsec" },
   { "title": "Password generator", "blurb": "Create strong random passwords, memorable passphrases, or PINs, generated securely in your browser.", "tag": "Live tool", "url": "password-generator.html", "icon": "devsec" },
+  { "title": "Email domain security check", "blurb": "Grade any domain's SPF, DMARC, DKIM and MX records against spoofing, live in your browser.", "tag": "Live tool", "url": "domain-check.html", "icon": "network" },
   { "title": "Which service do I need?", "blurb": "Answer four quick questions and get a tailored shortlist of the services that fit your situation.", "tag": "Guided wizard", "url": "service-finder.html", "icon": "product" }
 ]

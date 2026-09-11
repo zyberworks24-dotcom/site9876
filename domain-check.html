@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Domain Security Checker — Zyberworks</title>
+<meta name="description" content="Check any domain's email security in seconds: SPF, DMARC, DKIM and MX records, graded, in your browser.">
+<link rel="canonical" href="https://zyberworks24-dotcom.github.io/site9876/domain-check.html">
+<meta name="theme-color" content="#06070a">
+<link rel="icon" href="assets/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/brand/favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zyberworks">
+<meta property="og:title" content="Email Domain Security Checker — Zyberworks">
+<meta property="og:description" content="Check any domain's SPF, DMARC, DKIM and MX records and get a grade, in your browser.">
+<meta property="og:url" content="https://zyberworks24-dotcom.github.io/site9876/domain-check.html">
+<meta property="og:image" content="https://zyberworks24-dotcom.github.io/site9876/assets/brand/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Email Domain Security Checker — Zyberworks">
+<meta name="twitter:description" content="Check any domain's SPF, DMARC, DKIM and MX records and get a grade.">
+<meta name="twitter:image" content="https://zyberworks24-dotcom.github.io/site9876/assets/brand/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-base="">
+<script src="preloader.js"></script>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<nav class="nav" id="nav"></nav>
+
+<main id="main" class="pw">
+  <div class="pw-mesh" aria-hidden="true"><div class="blob blob-a"></div><div class="blob blob-b"></div></div>
+  <div class="pw-wrap" style="max-width:680px">
+    <div class="pw-head reveal">
+      <p class="eyebrow">FREE TOOL</p>
+      <h1>Is your domain<br><span class="grad-text">safe from spoofing?</span></h1>
+      <p class="pw-lead">Check any domain's email security in seconds. We look up its SPF, DMARC, DKIM and MX records live and grade how well it is protected against impersonation. The lookup runs in your browser using public DNS.</p>
+    </div>
+    <div class="pw-card reveal">
+      <form class="dc-form" id="dcForm">
+        <input type="text" id="dcInput" placeholder="yourcompany.com.au" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button type="submit" class="btn btn-primary" id="dcGo">Check</button>
+      </form>
+      <p class="dc-hint">Enter a domain name, not an email address. Try your own, or a domain you know.</p>
+    </div>
+    <div id="dcResult"></div>
+  </div>
+</main>
+
+<footer class="footer"></footer>
+
+<script src="common.js"></script>
+<script src="domain-check.js"></script>
+<script src="transitions.js"></script>
+</body>
+</html>
