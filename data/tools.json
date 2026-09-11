@@ -5,5 +5,6 @@
   { "title": "Password generator", "blurb": "Create strong random passwords, memorable passphrases, or PINs, generated securely in your browser.", "tag": "Live tool", "url": "password-generator.html", "icon": "devsec" },
   { "title": "Email domain security check", "blurb": "Grade any domain's SPF, DMARC, DKIM and MX records against spoofing, live in your browser.", "tag": "Live tool", "url": "domain-check.html", "icon": "network" },
   { "title": "Incident response plan builder", "blurb": "Answer a few questions and generate a printable starter cyber incident response plan for your organisation.", "tag": "Plan builder", "url": "ir-plan.html", "icon": "audit" },
+  { "title": "Essential Eight roadmap", "blurb": "Explore the Essential Eight Maturity Model level by level, and see what each strategy requires from Level 0 to Level 3.", "tag": "Interactive", "url": "e8-roadmap.html", "icon": "e8" },
   { "title": "Which service do I need?", "blurb": "Answer four quick questions and get a tailored shortlist of the services that fit your situation.", "tag": "Guided wizard", "url": "service-finder.html", "icon": "product" }
 ]

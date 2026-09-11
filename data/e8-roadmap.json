@@ -1,0 +1,50 @@
+{
+  "levels": [
+    { "n": 0, "name": "Level 0", "sub": "Weaknesses present", "desc": "There are gaps in the organisation's overall security posture. One or more strategies are not implemented, leaving weaknesses an adversary could exploit." },
+    { "n": 1, "name": "Level 1", "sub": "Partly aligned", "desc": "A baseline aimed at adversaries using common, widely available tools and techniques. A good first target for most organisations." },
+    { "n": 2, "name": "Level 2", "sub": "Mostly aligned", "desc": "Aimed at adversaries willing to invest more time and effort, and to bypass or evade some controls. Appropriate where the impact of compromise is higher." },
+    { "n": 3, "name": "Level 3", "sub": "Fully aligned", "desc": "Aimed at highly capable, adaptive adversaries. Suited to organisations that are a high-value target or hold especially sensitive data." }
+  ],
+  "strategies": [
+    { "name": "Application control", "levels": [
+      "Not implemented, or only on some workstations.",
+      "Execution of executables, scripts, installers and similar is restricted to an approved set on workstations.",
+      "Applied to workstations and internet-facing servers, with allowed and blocked execution events centrally logged.",
+      "Applied across workstations and servers, using the recommended block rules, with rulesets validated annually and logs protected." ] },
+    { "name": "Patch applications", "levels": [
+      "Patching is slow, inconsistent, or untracked.",
+      "Internet-facing applications patched within two weeks, or 48 hours when an exploit exists; unsupported apps removed.",
+      "Other applications patched within a month, with regular vulnerability scanning of internet-facing services.",
+      "Internet-facing exploited vulnerabilities patched within 48 hours; frequent scanning; no unsupported software in use." ] },
+    { "name": "Configure Office macros", "levels": [
+      "Macros run freely for everyone.",
+      "Macros are blocked for users who do not have a demonstrated business need.",
+      "Allowed macros run only from trusted locations or are digitally signed, with macro security settings enforced.",
+      "Only macros signed by trusted publishers run, with antivirus scanning and macro events centrally logged." ] },
+    { "name": "User application hardening", "levels": [
+      "Applications run on their default configurations.",
+      "Web browsers block ads, Java and Flash content; internet-facing features are reduced.",
+      "Browsers, Office and PDF readers are hardened to guidance, with settings enforced and events logged.",
+      "Broad, enforced hardening across the environment, with unneeded features blocked and events centrally logged." ] },
+    { "name": "Restrict admin privileges", "levels": [
+      "Privileged access is broad and rarely reviewed.",
+      "Privileged access requests are validated, and privileged accounts cannot access the internet, email or web services.",
+      "Privileged access is limited to what duties require, used in a separate environment, and revalidated regularly.",
+      "Just-in-time administration, secure admin workstations, and strong separation with full logging." ] },
+    { "name": "Patch operating systems", "levels": [
+      "Operating systems are patched slowly, and end-of-life systems remain in use.",
+      "Internet-facing OS vulnerabilities patched within two weeks, or 48 hours when exploited; unsupported OSes removed.",
+      "All operating systems patched within a month, with regular scanning to find missing patches.",
+      "Exploited internet-facing OS vulnerabilities patched within 48 hours; frequent scanning; no unsupported operating systems." ] },
+    { "name": "Multi-factor authentication", "levels": [
+      "MFA is not used, or only in a few places.",
+      "MFA is used by users on internet-facing services that handle sensitive data.",
+      "MFA is phishing-resistant for privileged users and applied to all users of internet-facing services, with events logged.",
+      "Phishing-resistant MFA is used broadly, including for important data repositories, with successful and failed events logged." ] },
+    { "name": "Regular backups", "levels": [
+      "No regular or reliable backups.",
+      "Backups of important data, software and settings are performed and retained in line with business needs.",
+      "Backups are synchronised, access is restricted, and restoration is tested as part of disaster recovery exercises.",
+      "Unprivileged accounts cannot access, modify or delete backups, and restoration is tested regularly." ] }
+  ]
+}

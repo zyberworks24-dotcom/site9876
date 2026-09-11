@@ -512,6 +512,42 @@ body.contact-lock{overflow:hidden}
 .pw-tips li::before{content:'';position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
 .pw-tips strong{color:var(--text)}
 
+/* ===== Essential Eight roadmap ===== */
+.e8r{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
+.e8r-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.45}
+.e8r-mesh .blob{opacity:.4}
+.e8r-wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.e8r-levels{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+.e8r-level{
+  display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 10px;
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--card);text-align:center;
+  transition:transform .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+}
+.e8r-level:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.2)}
+.e8r-level-n{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text-dim);margin-bottom:4px;transition:all .3s}
+.e8r-level-name{font-size:14px;font-weight:700}
+.e8r-level-sub{font-size:11.5px;color:var(--text-faint);line-height:1.3}
+.e8r-level.done .e8r-level-n{background:linear-gradient(var(--bg-elev),var(--bg-elev)) padding-box,var(--grad) border-box;border-color:transparent;color:var(--text-dim)}
+.e8r-level.active{border-color:transparent;background:linear-gradient(var(--bg-elev),var(--bg-elev)) padding-box,var(--grad) border-box}
+.e8r-level.active .e8r-level-n{background:var(--grad);color:#06070a;border-color:transparent}
+.e8r-leveldesc{background:linear-gradient(120deg,rgba(41,151,255,.1),rgba(191,90,242,.08));border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:22px}
+.e8r-leveldesc h2{font-size:18px;font-weight:800;margin-bottom:6px}
+.e8r-leveldesc p{font-size:14.5px;color:var(--text-dim);line-height:1.6}
+.e8r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:30px}
+.e8r-card{
+  position:relative;overflow:hidden;padding:20px 20px;
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:border-color .3s var(--ease),transform .3s var(--ease)}
+.e8r-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.18)}
+.e8r-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.e8r-card h3{font-size:15.5px;font-weight:700}
+.e8r-pips{display:flex;gap:4px}
+.e8r-pips span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.12)}
+.e8r-pips span.on{background:var(--grad)}
+.e8r-card p{font-size:13.5px;color:var(--text-dim);line-height:1.55}
+.cta-inline{padding:0}
+@media (max-width:520px){ .e8r-levels{grid-template-columns:repeat(2,1fr)} }
+
 /* ===== Incident response plan builder ===== */
 .ir-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .ir-field{display:flex;flex-direction:column;gap:6px}
