@@ -119,6 +119,28 @@ async function renderServicePage(){
             `).join('')}
           </div>
         </div>` : ''}
+
+        ${(showcase.pricing && showcase.pricing.tiers && showcase.pricing.tiers.length) ? `
+        <div class="sp-section" style="padding-left:0;padding-right:0" id="pricing">
+          <h3 class="sp-h2 reveal" style="font-size:clamp(20px,2.6vw,24px)">Bundle pricing</h3>
+          <div class="sc-pricing">
+            ${showcase.pricing.tiers.map((t, i) => `
+              <div class="sc-price ${t.featured ? 'featured' : ''} reveal-up" style="transition-delay:${i * 70}ms">
+                ${t.featured ? `<span class="sc-price-badge">Most popular</span>` : ''}
+                <span class="sc-price-name">${t.name}</span>
+                <span class="sc-price-tag">${t.tagline || ''}</span>
+                <div class="sc-price-amount">${t.price}${t.unit ? `<span>${t.unit}</span>` : ''}</div>
+                ${t.monthly ? `<div class="sc-price-monthly">${t.monthly}</div>` : ''}
+                <ul class="sc-price-list">
+                  ${(t.features || []).map(f => `<li><span class="sc-check">${CHECK_SVG}</span>${f}</li>`).join('')}
+                </ul>
+                ${t.note ? `<p class="sc-price-fine">${t.note}</p>` : ''}
+                <button type="button" class="btn ${t.featured ? 'btn-primary' : 'btn-ghost'} sc-price-btn" data-contact data-service="${svc.title}">Get a quote</button>
+              </div>
+            `).join('')}
+          </div>
+          ${showcase.pricing.note ? `<p class="sc-pricing-note reveal">${showcase.pricing.note}</p>` : ''}
+        </div>` : ''}
       </div>
     </section>` : '';
 

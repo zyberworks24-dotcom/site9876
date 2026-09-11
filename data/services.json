@@ -1,6 +1,6 @@
 [
   {
-    "id": "edr-mdr", "cat": "security", "icon": "radar", "partner": "CrowdStrike",
+    "id": "edr-mdr", "cat": "security", "icon": "radar", "partner": "CrowdStrike", "showcase": "crowdstrike",
     "title": "EDR & MDR Solutions",
     "tagline": "Endpoint detection and response, backed by round the clock managed threat hunting.",
     "blurb": "Modern attacks move in minutes, so your defence cannot wait for a human to notice. We deploy and manage best in class endpoint detection and response across your fleet, then wrap it in a managed detection and response service that watches every endpoint 24 hours a day. Suspicious behaviour is contained automatically and investigated by real analysts, so an intrusion never gets the time it needs to become an incident.",
@@ -14,7 +14,9 @@
     "deliverable": "A fully deployed EDR platform, a 24/7 managed detection and response service, and a tested incident response plan.",
     "faqs": [
       {"q":"How is this different from antivirus?","a":"Traditional antivirus looks for known bad files. EDR watches behaviour across the whole endpoint and flags the subtle activity of a real attacker, while MDR adds human analysts who investigate and respond on your behalf."},
-      {"q":"Do you use CrowdStrike?","a":"Yes. Zyberworks is a CrowdStrike partner and deploys the Falcon platform, alongside other leading tools where they fit your environment better."}
+      {"q":"Do you use CrowdStrike?","a":"Yes. Zyberworks is a CrowdStrike partner and deploys the Falcon platform, alongside other leading tools where they fit your environment better."},
+      {"q":"Can we try it before committing?","a":"Yes. A 15 day free Falcon trial gives you next-gen antivirus, device control, and express support so you can see it working in your own environment first."},
+      {"q":"How is it priced?","a":"Falcon comes in per-device bundles from Falcon Go through to fully managed Falcon Complete. See the pricing below, and we will build a tailored quote for your fleet."}
     ]
   },
   {

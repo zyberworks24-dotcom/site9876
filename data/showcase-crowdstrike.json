@@ -1,0 +1,93 @@
+{
+  "eyebrow": "DELIVERED WITH CROWDSTRIKE",
+  "title": "The Falcon platform, deployed and managed",
+  "intro": "As a CrowdStrike partner, we deploy and run the Falcon platform for you. One lightweight agent and one console cover endpoint, identity, and cloud, with AI native detection and a 24/7 team stopping breaches before they start. You get enterprise grade protection without building a security operations centre of your own.",
+  "stats": [
+    { "num": "1", "label": "unified agent and console" },
+    { "num": "24/7", "label": "managed detection and response" },
+    { "num": "15 day", "label": "free Falcon trial available" },
+    { "num": "15+", "label": "Falcon platform modules" }
+  ],
+  "pillars": [
+    {
+      "icon": "radar",
+      "title": "Endpoint protection & EDR",
+      "desc": "The market leader in endpoint protection and detection, backed by adversary intelligence and native AI.",
+      "points": [
+        "Next generation antivirus that deploys in minutes",
+        "Endpoint and extended detection and response (EDR and XDR) in one",
+        "Device, firewall, and USB control from a single policy",
+        "Mobile protection for Android and iOS"
+      ]
+    },
+    {
+      "icon": "support",
+      "title": "Managed detection & response",
+      "desc": "Falcon Complete Next-Gen MDR: an expert team watching your environment around the clock so you never have to.",
+      "points": [
+        "24/7 expert led, AI accelerated detection and response",
+        "Threats contained in your environment, not just alerted on",
+        "A documented response and escalation path",
+        "Backed by CrowdStrike's Breach Prevention Warranty"
+      ]
+    },
+    {
+      "icon": "pentest",
+      "title": "Threat intelligence & hunting",
+      "desc": "Elite human threat hunters searching continuously for the faint signs of a sophisticated intrusion.",
+      "points": [
+        "24/7 AI powered managed threat hunting",
+        "Coverage across endpoint, identity, and cloud",
+        "World class cyber threat intelligence built in",
+        "Proactive hunting, not just automated alerting"
+      ]
+    }
+  ],
+  "extras": [
+    { "title": "Next-Gen Identity Security", "desc": "Unified protection for every identity, human, non-human, and AI agent, across the attack chain." },
+    { "title": "Cloud Security (CNAPP)", "desc": "Unified agent and agentless protection from code to cloud." },
+    { "title": "Next-Gen SIEM", "desc": "An AI native SOC platform that consolidates siloed tools and data." },
+    { "title": "Exposure Management", "desc": "Complete attack surface visibility with AI powered vulnerability management." },
+    { "title": "Data Protection", "desc": "Stops theft of sensitive information, deployed instantly on the existing agent." },
+    { "title": "Charlotte AI", "desc": "Autonomous AI that accelerates outcomes across the platform." }
+  ],
+  "pricing": {
+    "tiers": [
+      {
+        "name": "Falcon Go",
+        "tagline": "Security essentials",
+        "price": "$59.99",
+        "unit": "per device / year",
+        "monthly": "or $7.99 per device / month",
+        "features": ["Next-generation antivirus", "USB device control", "Mobile device protection", "Express support"],
+        "note": "Up to 100 devices"
+      },
+      {
+        "name": "Falcon Pro",
+        "tagline": "Enhanced protection",
+        "price": "$99.99",
+        "unit": "per device / year",
+        "monthly": "or $14.99 per device / month",
+        "features": ["Everything in Falcon Go", "Host firewall management", "Integrated threat intelligence"]
+      },
+      {
+        "name": "Falcon Enterprise",
+        "tagline": "Advanced protection",
+        "featured": true,
+        "price": "$184.99",
+        "unit": "per device / year",
+        "monthly": "or $19.99 per device / month",
+        "features": ["Everything in Falcon Pro", "Endpoint detection and response (EDR / XDR)", "24/7 managed threat hunting", "IT hygiene"]
+      },
+      {
+        "name": "Falcon Complete",
+        "tagline": "Next-Gen MDR",
+        "price": "Talk to us",
+        "unit": "",
+        "monthly": "",
+        "features": ["24/7 expert led managed detection and response", "Add-on modules incl. Identity and Next-Gen SIEM", "Breach Prevention Warranty"]
+      }
+    ],
+    "note": "Prices shown are CrowdStrike's published per-device list pricing and may change. As your partner, Zyberworks handles licensing, deployment, and ongoing management, and will put together a tailored quote for your fleet."
+  }
+}
