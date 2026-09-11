@@ -248,6 +248,7 @@ async function renderServicePage(){
         <p>Tell us where you are starting from and we will bring a tailored approach, never a template.</p>
         <div class="cta-actions">
           <button type="button" class="btn btn-primary btn-lg" data-contact data-service="${svc.title}">Let's chat</button>
+          <button type="button" class="btn btn-ghost btn-lg" data-book data-book-cta hidden>Book a consultation</button>
           <a href="https://zyberworks.com.au/#services" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Visit zyberworks.com.au</a>
         </div>
       </div>

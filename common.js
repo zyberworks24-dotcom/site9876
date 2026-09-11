@@ -154,6 +154,13 @@ function initGlass(){
   }, { passive:true });
 }
 
+/* ===================== Booking =====================
+   Paste your scheduling link below (e.g. a Calendly URL) to switch on
+   the "Book a consultation" option site-wide. Leave it empty and those
+   buttons quietly fall back to the contact form. A calendly.com link
+   opens as an in-page popup; any other link opens in a new tab. */
+const BOOKING_URL = '';
+
 /* ===================== Contact modal (composes an email to Zyberworks) ===================== */
 const CONTACT_EMAIL = 'enquiry@zyberworks.com.au';
 const MAIL_ICON = `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7.5l8 5.5 8-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -186,6 +193,7 @@ async function initContact(){
             <button type="button" class="btn btn-ghost" data-send="gmail">${MAIL_ICON} Gmail</button>
             <button type="button" class="btn btn-ghost" data-send="outlook">${MAIL_ICON} Outlook</button>
           </div>
+          <p class="contact-book" id="contactBook" hidden>Prefer to pick a time? <a href="#" data-book>Book a 30-minute consultation &rarr;</a></p>
           <p class="contact-direct">Prefer to write directly? <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></p>
         </form>
       </div>
@@ -467,6 +475,43 @@ function renderFooter(){
   }
 }
 
+/* ===================== Booking (config-driven; falls back to contact form) ===================== */
+function initBooking(){
+  const configured = !!BOOKING_URL;
+  const isCalendly = configured && /calendly\.com/i.test(BOOKING_URL);
+
+  // Reveal any booking-specific CTAs only when a link is configured.
+  document.querySelectorAll('[data-book-cta]').forEach(el => { el.hidden = !configured; });
+  const bookLine = document.getElementById('contactBook');
+  if (bookLine) bookLine.hidden = !configured;
+
+  if (isCalendly){
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://assets.calendly.com/assets/external/widget.css';
+    document.head.appendChild(css);
+    const js = document.createElement('script');
+    js.src = 'https://assets.calendly.com/assets/external/widget.js';
+    js.async = true;
+    document.head.appendChild(js);
+  }
+
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('[data-book]');
+    if (!trigger) return;
+    e.preventDefault();
+    if (!configured){
+      if (window.ZW && window.ZW.openContact) window.ZW.openContact({});
+      return;
+    }
+    if (isCalendly && window.Calendly && typeof window.Calendly.initPopupWidget === 'function'){
+      window.Calendly.initPopupWidget({ url: BOOKING_URL });
+    } else {
+      window.open(BOOKING_URL, '_blank', 'noopener');
+    }
+  });
+}
+
 /* ===================== Service worker (offline + fast repeat loads) ===================== */
 function initServiceWorker(){
   if (!('serviceWorker' in navigator)) return;
@@ -488,6 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initScrollSpy();
   renderFooter();
+  initBooking();
   initServiceWorker();
   observeReveal();
 });

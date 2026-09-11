@@ -307,7 +307,9 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .contact-actions{display:flex;gap:10px;flex-wrap:wrap}
 .contact-actions .btn{padding:11px 18px;font-size:14px;gap:7px}
 .contact-actions .btn svg{width:15px;height:15px}
-.contact-direct{margin-top:20px;font-size:13px;color:var(--text-faint)}
+.contact-book{margin-top:16px;font-size:13px;color:var(--text-faint)}
+.contact-book a{color:var(--blue);font-weight:600}
+.contact-direct{margin-top:10px;font-size:13px;color:var(--text-faint)}
 .contact-direct a{color:var(--blue)}
 body.contact-lock{overflow:hidden}
 
