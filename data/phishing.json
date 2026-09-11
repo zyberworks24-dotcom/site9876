@@ -1,0 +1,93 @@
+[
+  {
+    "from": "IT Helpdesk",
+    "email": "support@rnicrosoft-security.com",
+    "subject": "Action required: your password expires in 2 hours",
+    "body": "Dear user,\n\nOur records show your password will expire in the next 2 hours. To avoid losing access to email and files, verify your account immediately using the secure link below.\n\n[ Verify my account now ]\n\nIT Helpdesk",
+    "phish": true,
+    "flags": [
+      "The domain is a lookalike: rnicrosoft, not microsoft.",
+      "Urgency and a countdown are used to rush you.",
+      "A generic \"Dear user\" greeting, not your name.",
+      "It asks you to \"verify\" by following a link."
+    ]
+  },
+  {
+    "from": "Jane Doe (HR)",
+    "email": "jane.doe@yourcompany.com.au",
+    "subject": "Reminder: timesheets due this Friday",
+    "body": "Hi team,\n\nJust a reminder that timesheets are due by 5pm Friday. If you have any leave to record, please add it before then.\n\nThanks,\nJane",
+    "phish": false,
+    "flags": [
+      "The sender is a known colleague on your real company domain.",
+      "It is a routine, expected message with no links or attachments.",
+      "There is no urgency, threat, or request for credentials or money.",
+      "Still worth a quick sanity check, but this one looks genuine."
+    ]
+  },
+  {
+    "from": "Mark Chen (CEO)",
+    "email": "markchen.ceo@gmail.com",
+    "subject": "Quick favour - are you at your desk?",
+    "body": "Hi,\n\nI'm about to go into a meeting and need you to sort something for me urgently. Can you purchase four $100 gift cards for a client and send me the codes? I'll reimburse you today. Keep this between us for now.\n\nMark",
+    "phish": true,
+    "flags": [
+      "The \"CEO\" is emailing from a personal Gmail, not the company domain.",
+      "A gift card request is a classic scam pattern.",
+      "Urgency plus secrecy (\"keep this between us\").",
+      "An unusual request that bypasses normal process."
+    ]
+  },
+  {
+    "from": "Australia Post",
+    "email": "delivery@auspost-parcel.net",
+    "subject": "Your parcel is on hold - $3.50 fee required",
+    "body": "Your parcel could not be delivered because a small customs fee of $3.50 is outstanding. Pay now to release your parcel, or it will be returned to sender within 24 hours.\n\n[ Pay $3.50 and release parcel ]",
+    "phish": true,
+    "flags": [
+      "The domain auspost-parcel.net is not the real Australia Post domain.",
+      "A tiny fee is used to harvest your card details.",
+      "Pressure with a 24-hour deadline.",
+      "You were not expecting a fee for a delivery."
+    ]
+  },
+  {
+    "from": "Microsoft 365",
+    "email": "security@microsoftonline-support.com",
+    "subject": "Unusual sign-in detected - verify it was you",
+    "body": "We detected a sign-in to your account from a new device in another country. If this was not you, secure your account now.\n\n[ Review activity ]\n\nMicrosoft account team",
+    "phish": true,
+    "flags": [
+      "The domain microsoftonline-support.com is not a genuine Microsoft domain.",
+      "Fear (a foreign sign-in) is used to make you click fast.",
+      "The button leads to a fake login page to steal your password.",
+      "Real alerts are best checked by going to the service directly, not via the email link."
+    ]
+  },
+  {
+    "from": "Xero",
+    "email": "no-reply@post.xero.com",
+    "subject": "Invoice INV-2043 from your supplier is ready",
+    "body": "An invoice has been shared with you in Xero. You can log in to your Xero account to review and pay it.\n\nLog in at xero.com as you normally would.",
+    "phish": false,
+    "flags": [
+      "The domain post.xero.com is a genuine Xero sending address.",
+      "It does not ask for your password inside the email.",
+      "It suggests logging in the normal way, not via a suspicious link.",
+      "If you use Xero and expected an invoice, this is likely genuine. Still, log in directly rather than clicking through."
+    ]
+  },
+  {
+    "from": "Payroll",
+    "email": "payroll@yourcompany.co",
+    "subject": "Update your bank details for this pay run",
+    "body": "Hi,\n\nWe are updating our payroll system. Please reply with your bank account and BSB so we can make sure your pay lands correctly this cycle.\n\nPayroll Team",
+    "phish": true,
+    "flags": [
+      "The domain is yourcompany.co, a lookalike of the real yourcompany.com.au.",
+      "It asks for bank details by email, which payroll would never do.",
+      "Changing where pay is deposited is a common fraud goal.",
+      "Verify any bank-detail change in person or by a known phone number."
+    ]
+  }
+]

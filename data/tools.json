@@ -1,3 +1,4 @@
 [
-  { "title": "Anatomy of an Attack", "blurb": "Walk through how a phishing email becomes a ransomware outbreak, and see which control breaks the chain at each step.", "tag": "Interactive story", "url": "attack.html", "icon": "radar" }
+  { "title": "Anatomy of an Attack", "blurb": "Walk through how a phishing email becomes a ransomware outbreak, and see which control breaks the chain at each step.", "tag": "Interactive story", "url": "attack.html", "icon": "radar" },
+  { "title": "Spot the Phish", "blurb": "Can you tell a phishing email from a genuine one? Play the game and learn the red flags that stop real attacks.", "tag": "Play the game", "url": "phishing-game.html", "icon": "audit" }
 ]

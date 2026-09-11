@@ -471,6 +471,51 @@ body.contact-lock{overflow:hidden}
 .legal a{color:var(--blue)}
 .legal .back-home{display:inline-flex;align-items:center;gap:6px;margin-top:30px;font-size:14px;font-weight:600;color:var(--blue)}
 
+/* ===== Spot the Phish ===== */
+.phish{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
+.phish-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.45}
+.phish-mesh .blob{opacity:.4}
+.phish-wrap{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.phish-card{
+  background:linear-gradient(160deg,rgba(22,26,36,.7),rgba(11,13,19,.82));
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  padding:clamp(28px,5vw,46px);text-align:center;
+}
+.phish-intro h1,.phish-result .eyebrow{margin-top:0}
+.phish-intro h1{font-size:clamp(30px,6vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.06;margin:12px 0 16px}
+.phish-lead{font-size:16px;color:var(--text-dim);line-height:1.6;max-width:520px;margin:0 auto 24px}
+.phish-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:12.5px;color:var(--text-faint)}
+.phish-score{font-weight:700;color:var(--cyan)}
+.phish-email{
+  background:#0d0f15;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-align:left;margin-bottom:18px;
+}
+.phish-email-head{display:flex;gap:12px;align-items:center;padding:16px 18px;border-bottom:1px solid var(--border-soft);background:rgba(255,255,255,.02)}
+.phish-avatar{flex:none;width:40px;height:40px;border-radius:50%;background:var(--grad);color:#06070a;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:17px}
+.phish-meta{min-width:0}
+.phish-from{font-size:14.5px;font-weight:600;color:var(--text)}
+.phish-addr{font-weight:400;color:var(--text-faint);font-size:12.5px}
+.phish-subject{font-size:13.5px;color:var(--text-dim);margin-top:2px}
+.phish-body{padding:18px;font-size:14.5px;color:var(--text-dim);line-height:1.65;white-space:normal}
+.phish-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.phish-btn{min-width:150px}
+.phish-reveal{margin-top:20px;text-align:left}
+.phish-verdict{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:var(--radius);margin-bottom:14px}
+.phish-verdict.ok{background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.3)}
+.phish-verdict.bad{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.3)}
+.phish-verdict-icon{flex:none;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.phish-verdict.ok .phish-verdict-icon{background:rgba(74,222,128,.16);color:#4ade80}
+.phish-verdict.bad .phish-verdict-icon{background:rgba(248,113,113,.16);color:#f87171}
+.phish-verdict-icon svg{width:16px;height:16px}
+.phish-verdict-title{font-size:15px;font-weight:700}
+.phish-verdict-sub{font-size:13px;color:var(--text-faint);margin-top:2px}
+.phish-flags{list-style:none;display:flex;flex-direction:column;gap:9px;margin:0 0 18px}
+.phish-flags li{position:relative;padding-left:22px;font-size:14px;color:var(--text-dim);line-height:1.5}
+.phish-flags li::before{content:'';position:absolute;left:2px;top:8px;width:7px;height:7px;border-radius:50%;background:var(--grad)}
+.phish-next{text-align:center}
+.phish-score-big{font-size:clamp(48px,10vw,72px);font-weight:900;letter-spacing:-.03em;line-height:1;margin:8px 0}
+.phish-result-verdict{font-size:18px;font-weight:700;margin-bottom:14px}
+
 /* ===== Anatomy of an Attack ===== */
 .atk{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
 .atk-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.45}
