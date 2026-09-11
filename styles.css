@@ -472,18 +472,18 @@ body.contact-lock{overflow:hidden}
 .legal .back-home{display:inline-flex;align-items:center;gap:6px;margin-top:30px;font-size:14px;font-weight:600;color:var(--blue)}
 
 /* ===== Sub-page header ===== */
-.page-hero{position:relative;padding:130px 24px 10px;max-width:1000px;margin:0 auto;overflow:hidden;text-align:center}
+.page-hero{position:relative;padding:130px 24px 10px;overflow:hidden;text-align:center}
 .page-hero .hero-mesh{opacity:.6}
-.page-hero-content{position:relative;z-index:1}
+.page-hero-content{position:relative;z-index:1;max-width:1000px;margin:0 auto}
 .page-hero-content h1{font-size:clamp(32px,5.5vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.06;margin:12px 0 16px}
 .page-hero-sub{font-size:clamp(16px,2vw,18px);color:var(--text-dim);max-width:660px;margin:0 auto;line-height:1.6}
 .why-link{margin-top:16px;display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-weight:600;font-size:14px}
 a.why-card{display:flex;flex-direction:column}
 
 /* ===== About page ===== */
-.about-hero{position:relative;padding:130px 24px 40px;max-width:900px;margin:0 auto;overflow:hidden;text-align:center}
+.about-hero{position:relative;padding:130px 24px 40px;overflow:hidden;text-align:center}
 .about-hero .hero-mesh{opacity:.7}
-.about-hero-content{position:relative;z-index:1}
+.about-hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto}
 .about-hero-content h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:14px 0 20px}
 .about-lead{font-size:clamp(16px,2.1vw,19px);color:var(--text-dim);line-height:1.6;max-width:660px;margin:0 auto}
 .about-section{max-width:1200px;margin:0 auto;padding:clamp(40px,7vw,70px) 24px}
