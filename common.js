@@ -448,7 +448,7 @@ function renderFooter(){
         <ul>
           <li><a href="#" data-contact>Contact us</a></li>
           <li><a href="${BASE}essential-eight-assessment.html">E8 self-assessment</a></li>
-          <li><a href="${BASE}portal.html">Client login</a></li>
+          <li><a href="${BASE}portal.html">Licenses</a></li>
           <li><a href="${BASE}index.html#faq">FAQ</a></li>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
           <li><a href="${BASE}terms.html">Terms</a></li>

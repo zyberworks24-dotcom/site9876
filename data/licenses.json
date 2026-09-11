@@ -1,0 +1,14 @@
+{
+  "updated": "11 Sep 2026",
+  "note": "This page is public. Do not put anything here you would not want visible to anyone with the link.",
+  "groups": [
+    {
+      "label": "Example Organisation",
+      "licenses": [
+        { "product": "Example EDR Platform", "tier": "Enterprise", "status": "Active", "seats": 120, "expiry": "30 Jun 2027", "reference": "ZW-0001", "notes": "Replace this with real data in data/licenses.json." },
+        { "product": "Example Web Filtering", "tier": "Education", "status": "Active", "seats": 450, "expiry": "31 Jan 2027", "reference": "ZW-0002" },
+        { "product": "Example Managed Support", "tier": "Business SLA", "status": "Expiring", "expiry": "05 Oct 2026", "reference": "ZW-0003", "notes": "Renewal due." }
+      ]
+    }
+  ]
+}
