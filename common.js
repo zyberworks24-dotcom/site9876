@@ -33,11 +33,46 @@ async function fetchJSON(path){
   return res.json();
 }
 
-/* ===================== Nav (scroll shrink + mobile burger) ===================== */
+/* ===================== Shared nav (rendered on every page) ===================== */
+function renderNav(){
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+  const path = location.pathname;
+  const active =
+    (/\/services\//.test(path) || /services\.html$/.test(path)) ? 'services' :
+    /frameworks\.html$/.test(path) ? 'frameworks' :
+    /partners\.html$/.test(path) ? 'partners' :
+    /about\.html$/.test(path) ? 'about' : '';
+  const links = [
+    ['services', 'Services', BASE + 'services.html'],
+    ['frameworks', 'Frameworks', BASE + 'frameworks.html'],
+    ['partners', 'Partners', BASE + 'partners.html'],
+    ['about', 'About', BASE + 'about.html']
+  ];
+  nav.innerHTML = `
+    <div class="nav-inner">
+      <a href="${BASE}index.html" class="nav-logo">
+        <span class="logo-mark" aria-hidden="true"><img src="${BASE}assets/brand/logo.png" alt="" class="logo-img"></span>
+        Zyberworks
+      </a>
+      <ul class="nav-links">
+        ${links.map(([k, l, h]) => `<li><a href="${h}" class="${active === k ? 'active' : ''}">${l}</a></li>`).join('')}
+        <li><a href="#" class="nav-cta" data-contact>Let's Talk</a></li>
+      </ul>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      ${links.map(([k, l, h]) => `<a href="${h}">${l}</a>`).join('')}
+      <a href="#" data-contact>Let's Talk</a>
+    </div>
+  `;
+}
+
 function initNav(){
   const nav = document.getElementById('nav');
-  const burger = document.getElementById('navBurger');
   if (!nav) return;
+  renderNav();
+  const burger = document.getElementById('navBurger');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 12);
   }, { passive:true });
@@ -47,7 +82,7 @@ function initNav(){
       const open = nav.classList.toggle('open');
       burger.setAttribute('aria-expanded', open);
     });
-    document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+    nav.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
   }
 }
 
@@ -430,17 +465,16 @@ function renderFooter(){
           <li><a href="${BASE}services/edr-mdr.html">EDR &amp; MDR</a></li>
           <li><a href="${BASE}services/filtering.html">Web Filtering</a></li>
           <li><a href="${BASE}services/cloud.html">Cloud &amp; Migration</a></li>
-          <li><a href="${BASE}index.html#services">All services</a></li>
+          <li><a href="${BASE}services.html">All services</a></li>
         </ul>
       </div>
       <div class="sf-col">
         <h4>Company</h4>
         <ul>
           <li><a href="${BASE}about.html">About us</a></li>
-          <li><a href="${BASE}index.html#why">Why Zyberworks</a></li>
-          <li><a href="${BASE}index.html#approach">Frameworks</a></li>
-          <li><a href="${BASE}index.html#industries">Industries</a></li>
-          <li><a href="${BASE}index.html#partners">Partners</a></li>
+          <li><a href="${BASE}frameworks.html">Frameworks</a></li>
+          <li><a href="${BASE}partners.html">Partners</a></li>
+          <li><a href="${BASE}about.html#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="sf-col">
@@ -448,8 +482,6 @@ function renderFooter(){
         <ul>
           <li><a href="#" data-contact>Contact us</a></li>
           <li><a href="${BASE}essential-eight-assessment.html">E8 self-assessment</a></li>
-          <li><a href="${BASE}portal.html">Licenses</a></li>
-          <li><a href="${BASE}index.html#faq">FAQ</a></li>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
           <li><a href="${BASE}terms.html">Terms</a></li>
         </ul>

@@ -1,14 +1,19 @@
 /* Zyberworks service worker: offline shell + fast repeat loads. */
-const CACHE = 'zw-cache-v1';
+const CACHE = 'zw-cache-v2';
 const CORE = [
   './',
   './index.html',
+  './services.html',
+  './frameworks.html',
+  './partners.html',
+  './about.html',
   './styles.css',
   './common.js',
   './script.js',
   './preloader.js',
   './transitions.js',
   './e8-assessment.js',
+  './about.js',
   './data/services.json',
   './data/partners.json',
   './data/clients.json',
