@@ -227,7 +227,7 @@ async function initContact(){
   try { services = await fetchJSON('data/services.json'); } catch (err){}
   serviceSel.innerHTML = `<option>General enquiry</option>` + services.map(s => `<option>${s.title}</option>`).join('');
 
-  function open(service, plan){
+  function open(service, plan, message){
     if (service){
       if (![...serviceSel.options].some(o => o.value === service)){
         serviceSel.insertAdjacentHTML('afterbegin', `<option>${service}</option>`);
@@ -245,12 +245,17 @@ async function initContact(){
     } else {
       quoteBlock.hidden = true;
     }
+    if (message) el('message').value = message;
     errorEl.hidden = true;
     lastFocused = document.activeElement;
     backdrop.classList.add('open');
     document.body.classList.add('contact-lock');
     setTimeout(() => el('name').focus(), 80);
   }
+
+  // programmatic API for other scripts (e.g. the Essential Eight assessment)
+  window.ZW = window.ZW || {};
+  window.ZW.openContact = (opts = {}) => open(opts.service || '', opts.plan || null, opts.message || '');
   function close(){
     backdrop.classList.remove('open');
     document.body.classList.remove('contact-lock');
@@ -277,7 +282,7 @@ async function initContact(){
       const plan = trigger.dataset.plan
         ? { name: trigger.dataset.plan, annual: parseFloat(trigger.dataset.annual) || 0, monthly: parseFloat(trigger.dataset.monthly) || 0 }
         : null;
-      open(trigger.dataset.service || '', plan);
+      open(trigger.dataset.service || '', plan, trigger.dataset.message || '');
       return;
     }
     if (e.target === backdrop || e.target.closest('#contactClose')) close();
@@ -433,6 +438,7 @@ function renderFooter(){
         <h4>Get started</h4>
         <ul>
           <li><a href="#" data-contact>Contact us</a></li>
+          <li><a href="${BASE}essential-eight-assessment.html">E8 self-assessment</a></li>
           <li><a href="${BASE}index.html#faq">FAQ</a></li>
           <li><a href="${BASE}privacy.html">Privacy</a></li>
           <li><a href="${BASE}terms.html">Terms</a></li>

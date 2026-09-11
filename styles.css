@@ -469,6 +469,88 @@ body.contact-lock{overflow:hidden}
 .legal a{color:var(--blue)}
 .legal .back-home{display:inline-flex;align-items:center;gap:6px;margin-top:30px;font-size:14px;font-weight:600;color:var(--blue)}
 
+/* ===== Essential Eight assessment ===== */
+.e8{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
+.e8-hero-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.5}
+.e8-hero-mesh .blob{opacity:.4}
+.e8-wrap{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.e8-card{
+  background:linear-gradient(160deg,rgba(22,26,36,.7),rgba(11,13,19,.8));
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  padding:clamp(28px,5vw,48px);
+}
+.e8-intro h1{font-size:clamp(32px,6vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:12px 0 18px}
+.e8-lead{font-size:17px;color:var(--text-dim);line-height:1.6;margin-bottom:24px}
+.e8-meta{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:22px}
+.e8-meta li{font-size:13px;color:var(--text-faint);display:flex;flex-direction:column}
+.e8-meta li span{font-size:26px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:2px}
+.e8-privacy{font-size:12.5px;color:var(--text-faint);line-height:1.6;margin:18px 0 22px}
+.e8-intro .btn{margin-top:2px}
+
+.e8-progress{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.e8-progress-bar{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:100px;overflow:hidden}
+.e8-progress-bar span{display:block;height:100%;background:var(--grad);border-radius:100px;transition:width .4s var(--ease)}
+.e8-progress-label{font-size:12.5px;color:var(--text-faint);white-space:nowrap}
+.e8-strategy{font-size:12.5px;font-weight:700;letter-spacing:.1em;color:var(--cyan);text-transform:uppercase;margin-bottom:10px}
+.e8-q{font-size:clamp(20px,3.2vw,27px);font-weight:800;letter-spacing:-.015em;line-height:1.25;margin-bottom:24px}
+.e8-options{display:flex;flex-direction:column;gap:11px;margin-bottom:26px}
+.e8-option{
+  text-align:left;display:flex;flex-direction:column;gap:5px;
+  padding:16px 18px;border:1px solid var(--border);border-radius:var(--radius);
+  background:rgba(255,255,255,.03);transition:border-color .25s,background .25s,transform .25s;
+}
+.e8-option:hover{border-color:rgba(255,255,255,.24);background:rgba(255,255,255,.06);transform:translateX(3px)}
+.e8-option.selected{border-color:transparent;background:linear-gradient(var(--bg-elev),var(--bg-elev)) padding-box,var(--grad) border-box}
+.e8-option-level{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--cyan)}
+.e8-option-text{font-size:14.5px;color:var(--text-dim);line-height:1.45}
+.e8-nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.e8-dots{display:flex;gap:6px}
+.e8-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.14);transition:background .3s}
+.e8-dots i.done{background:var(--blue)}
+.e8-dots i.on{background:var(--cyan);box-shadow:0 0 0 3px rgba(100,210,255,.18)}
+
+.e8-score{display:flex;gap:24px;align-items:center;margin:18px 0 30px;flex-wrap:wrap}
+.e8-score-ring{
+  --lvl:0;flex:none;width:104px;height:104px;border-radius:50%;position:relative;
+  display:flex;align-items:baseline;justify-content:center;gap:2px;
+  background:conic-gradient(from -90deg,#2997ff 0turn,#64d2ff calc(var(--lvl)/3 * 0.75turn),#bf5af2 calc(var(--lvl)/3 * 1turn),rgba(255,255,255,.08) calc(var(--lvl)/3 * 1turn));
+  padding:9px;
+}
+.e8-score-ring::before{content:'';position:absolute;inset:9px;border-radius:50%;background:var(--bg-elev)}
+.e8-score-num{position:relative;font-size:44px;font-weight:800;line-height:1}
+.e8-score-of{position:relative;font-size:15px;color:var(--text-faint);font-weight:600}
+.e8-score-body{flex:1;min-width:220px}
+.e8-score-body h1{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.e8-score-body p{font-size:14.5px;color:var(--text-dim);line-height:1.6}
+.e8-bars{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.e8-bar-row{display:grid;grid-template-columns:1.3fr 1.4fr auto;gap:14px;align-items:center}
+.e8-bar-name{font-size:13.5px;color:var(--text-dim)}
+.e8-bar-row.weak .e8-bar-name{color:var(--text);font-weight:600}
+.e8-bar-track{display:flex;gap:4px}
+.e8-seg{flex:1;height:8px;border-radius:3px;background:rgba(255,255,255,.08)}
+.e8-seg.fill{background:var(--grad)}
+.e8-bar-lvl{font-size:12px;color:var(--text-faint);white-space:nowrap;min-width:52px;text-align:right}
+.e8-bar-row.weak .e8-bar-lvl{color:var(--cyan)}
+.e8-interp{border-top:1px solid var(--border-soft);padding-top:22px;margin-bottom:26px}
+.e8-interp h2{font-size:18px;font-weight:700;margin-bottom:10px}
+.e8-interp p{font-size:15px;color:var(--text-dim);line-height:1.65;margin-bottom:8px}
+.e8-focus{color:var(--text-dim)}
+.e8-focus strong{color:var(--cyan)}
+.e8-result-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+@media (max-width:520px){ .e8-bar-row{grid-template-columns:1fr auto;gap:6px 12px} .e8-bar-track{grid-column:1 / -1;order:3} }
+
+/* ===== Essential Eight homepage CTA banner ===== */
+.e8-banner{max-width:1100px;margin:0 auto;padding:0 24px}
+.e8-banner-inner{
+  position:relative;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius-lg);
+  background:linear-gradient(150deg,rgba(41,151,255,.14),rgba(191,90,242,.1));
+  padding:clamp(28px,5vw,44px);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.e8-banner-inner h2{font-size:clamp(22px,3.4vw,30px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.e8-banner-inner p{color:var(--text-dim);font-size:15px;line-height:1.55;max-width:520px}
+.e8-banner-inner .btn{white-space:nowrap}
+
 /* ===== 404 ===== */
 .notfound{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px}
 .notfound h1{font-size:clamp(60px,14vw,120px);font-weight:900;letter-spacing:-.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
