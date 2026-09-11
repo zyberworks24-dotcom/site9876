@@ -428,6 +428,7 @@ function renderFooter(){
       <div class="sf-col">
         <h4>Company</h4>
         <ul>
+          <li><a href="${BASE}about.html">About us</a></li>
           <li><a href="${BASE}index.html#why">Why Zyberworks</a></li>
           <li><a href="${BASE}index.html#approach">Frameworks</a></li>
           <li><a href="${BASE}index.html#industries">Industries</a></li>
