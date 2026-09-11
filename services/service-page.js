@@ -32,6 +32,7 @@ async function renderServicePage(){
   try { partners = await fetchJSON('data/partners.json'); } catch (err){ partners = []; }
 
   const svc = services.find(s => s.id === id);
+  let showcase = null;
   if (!svc){
     root.innerHTML = `<div class="sp-error"><p>Service not found. <a href="../index.html">Return home</a>.</p></div>`;
     return;
@@ -40,6 +41,10 @@ async function renderServicePage(){
   document.title = `${svc.title} — Zyberworks`;
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute('content', svc.tagline);
+
+  if (svc.showcase){
+    try { showcase = await fetchJSON(`data/showcase-${svc.showcase}.json`); } catch (err){ showcase = null; }
+  }
 
   const process = PROCESS_BY_CATEGORY[svc.cat] || PROCESS_BY_CATEGORY.strategy;
   const related = services.filter(s => s.cat === svc.cat && s.id !== svc.id).slice(0, 3);
@@ -58,6 +63,62 @@ async function renderServicePage(){
           <p>${partner.blurb || ''}</p>
           ${partner.url ? `<a class="partner-visit" href="${partner.url}" target="_blank" rel="noopener">Visit ${partner.name} ${ARROW_SVG}</a>` : ''}
         </div>
+      </div>
+    </section>` : '';
+
+  const showcaseBlock = showcase ? `
+    <section class="sp-showcase">
+      <div class="sp-showcase-inner">
+        <div class="sp-section reveal">
+          <p class="sp-category">${(showcase.eyebrow || '').toUpperCase()}</p>
+          <h2 class="sp-h2" style="margin-bottom:14px">${showcase.title || ''}</h2>
+          <p class="sp-intro" style="max-width:760px">${showcase.intro || ''}</p>
+        </div>
+
+        ${(showcase.stats && showcase.stats.length) ? `
+        <div class="sc-stats reveal">
+          ${showcase.stats.map(s => `<div class="sc-stat"><span class="sc-stat-num">${s.num}</span><span class="sc-stat-label">${s.label}</span></div>`).join('')}
+        </div>` : ''}
+
+        ${(showcase.pillars && showcase.pillars.length) ? `
+        <div class="sc-pillars">
+          ${showcase.pillars.map((p, i) => `
+            <div class="sc-pillar ${i % 2 === 0 ? 'reveal-left' : 'reveal-right'}">
+              <div class="sc-pillar-icon">${ICONS[p.icon] || ''}</div>
+              <h3>${p.title}</h3>
+              <p class="sc-pillar-desc">${p.desc || ''}</p>
+              <ul class="sc-pillar-list">
+                ${(p.points || []).map(pt => `<li><span class="sc-check">${CHECK_SVG}</span>${pt}</li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
+        </div>` : ''}
+
+        ${(showcase.roles && showcase.roles.length) ? `
+        <div class="sp-section" style="padding-left:0;padding-right:0">
+          <h3 class="sp-h2 reveal" style="font-size:clamp(20px,2.6vw,24px)">Built for everyone in the school</h3>
+          <div class="sc-roles">
+            ${showcase.roles.map((r, i) => `
+              <div class="sc-role reveal-up" style="transition-delay:${i * 70}ms">
+                <span class="sc-role-name">${r.role}</span>
+                <p>${r.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>` : ''}
+
+        ${(showcase.extras && showcase.extras.length) ? `
+        <div class="sp-section" style="padding-left:0;padding-right:0">
+          <h3 class="sp-h2 reveal" style="font-size:clamp(20px,2.6vw,24px)">And a lot more in the box</h3>
+          <div class="sc-extras">
+            ${showcase.extras.map((e, i) => `
+              <div class="sc-extra reveal-up" style="transition-delay:${i * 60}ms">
+                <h4>${e.title}</h4>
+                <p>${e.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>` : ''}
       </div>
     </section>` : '';
 
@@ -101,6 +162,8 @@ async function renderServicePage(){
     </section>
 
     ${partnerBlock}
+
+    ${showcaseBlock}
 
     <section class="sp-section">
       <h2 class="sp-h2 reveal">How it works</h2>

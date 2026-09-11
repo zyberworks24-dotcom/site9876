@@ -1,0 +1,59 @@
+{
+  "eyebrow": "DELIVERED WITH BLOCKSI",
+  "title": "One platform for a safe, focused classroom",
+  "intro": "As Blocksi's authorised technology partner for Australia and New Zealand, we deploy and manage the complete Blocksi platform for schools. It brings web filtering, classroom management, and student safety together in a single cloud console that runs across every device your students use.",
+  "stats": [
+    { "num": "500+", "label": "school districts run the platform" },
+    { "num": "3M+", "label": "students and staff protected" },
+    { "num": "5", "label": "operating systems, one console" },
+    { "num": "24/7", "label": "AI early warning for student safety" }
+  ],
+  "pillars": [
+    {
+      "icon": "filter",
+      "title": "AI content filtering",
+      "desc": "Smart, adaptive filtering built specifically for K-12, so students reach what helps them learn and nothing that does not.",
+      "points": [
+        "AI adaptive YouTube and web filtering tuned for the classroom",
+        "Full traffic decryption with unlimited bandwidth",
+        "Cloud based, with agents for ChromeOS, macOS, iOS, Windows, and Android",
+        "Fast to deploy and low maintenance across the whole fleet"
+      ]
+    },
+    {
+      "icon": "monitor",
+      "title": "Classroom management",
+      "desc": "A teaching tool that goes well beyond simple screen monitoring, giving teachers real control of the room.",
+      "points": [
+        "Real time screen monitoring for every student in the class",
+        "Secure URL based test and kiosk mode",
+        "Freeze or lock student screens remotely",
+        "Plagiarism checks and academic integrity tools",
+        "Live per session analytics, plus video conferencing and screen sharing"
+      ]
+    },
+    {
+      "icon": "radar",
+      "title": "Student & school safety",
+      "desc": "A round the clock early warning system that helps schools spot risk before it becomes harm.",
+      "points": [
+        "24/7/365 AI scanning across Google Workspace and Outlook",
+        "Emails, images, and documents analysed for concerning content",
+        "Behaviour patterns tracked with smart, targeted alerts",
+        "Every AI detection reviewed by a human safety expert before the school is notified"
+      ]
+    }
+  ],
+  "roles": [
+    { "role": "Admin", "desc": "Set robust browsing policy across the district and cut out the distractions that pull students off task." },
+    { "role": "Teacher", "desc": "Lead the class with confidence, keep every student engaged, and run lessons without fighting the screen." },
+    { "role": "Delegate", "desc": "Support your system admins and schools, curating online content that lifts learning and blocks the harmful." },
+    { "role": "Parent", "desc": "Stay connected to your child's learning and safety, at school and at home." }
+  ],
+  "extras": [
+    { "title": "AI formative quizzes", "desc": "Generate interactive quizzes by subject, topic, and language, then track performance and progress over time." },
+    { "title": "25+ LMS integrations", "desc": "Locked study kiosks and imports for Canvas, EdPuzzle, Google Classroom, and more." },
+    { "title": "Device anti-theft", "desc": "Geolocation tracking, remote lock, and data wipe to protect missing or stolen devices." },
+    { "title": "Multi-OS 1:1 management", "desc": "One unified platform managing a mixed fleet of student devices across every operating system." }
+  ]
+}

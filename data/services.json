@@ -18,7 +18,7 @@
     ]
   },
   {
-    "id": "filtering", "cat": "security", "icon": "filter", "partner": "Blocksi",
+    "id": "filtering", "cat": "security", "icon": "filter", "partner": "Blocksi", "showcase": "blocksi",
     "title": "Web & Content Filtering",
     "tagline": "Keep users safe online with DNS filtering, category controls, and classroom management.",
     "blurb": "The web is where most threats now begin and where productivity quietly leaks away. We design and manage layered filtering that blocks malicious and inappropriate content before it ever loads, gives you clean category based policy, and reports on what is actually happening across your network. For schools and colleges we deliver classroom management and student safety built on Blocksi, our authorised technology partner for Australia and New Zealand.",
@@ -31,8 +31,10 @@
     "idealFor": ["Schools, colleges, and universities", "Organisations with duty of care obligations", "Anyone tightening web based risk"],
     "deliverable": "A deployed filtering platform, group based policy, and safeguarding reporting your leadership team can rely on.",
     "faqs": [
-      {"q":"Does this work for schools?","a":"Yes. Education is a core focus. Through our Blocksi partnership we deliver web filtering, classroom management, and student safety tools designed specifically for schools across Australia and New Zealand."},
-      {"q":"Will it slow the network down?","a":"No. Filtering happens at the DNS and content layer and is engineered so protection never becomes the bottleneck."}
+      {"q":"Which devices does it cover?","a":"ChromeOS, macOS, iOS, Windows, and Android. Each runs a lightweight extension or agent, all managed from one cloud console with no extra hardware to install."},
+      {"q":"Is any hardware required?","a":"No. The solution is cloud based. Devices only need a quick extension or agent install to come under policy."},
+      {"q":"Can teachers keep their existing tools?","a":"Yes. Classes import from Google Classroom, Canvas, and others, and secure study kiosks support more than 25 LMS platforms."},
+      {"q":"What happens when the safety system flags something?","a":"The AI detects concerning content, then a human safety expert reviews it and the school is notified only when it is a genuine threat."}
     ]
   },
   {
