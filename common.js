@@ -57,12 +57,14 @@ function renderNav(){
       </a>
       <ul class="nav-links">
         ${links.map(([k, l, h]) => `<li><a href="${h}" class="${active === k ? 'active' : ''}">${l}</a></li>`).join('')}
+        <li><button class="nav-search" id="navSearch" aria-label="Search the site"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></li>
         <li><a href="#" class="nav-cta" data-contact>Let's Talk</a></li>
       </ul>
       <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
     <div class="nav-mobile" id="navMobile">
       ${links.map(([k, l, h]) => `<a href="${h}">${l}</a>`).join('')}
+      <a href="#" id="navSearchM">Search</a>
       <a href="#" data-contact>Let's Talk</a>
     </div>
   `;
@@ -509,6 +511,81 @@ function renderFooter(){
   }
 }
 
+/* ===================== Site-wide search ===================== */
+function initSearch(){
+  if (document.getElementById('searchBackdrop')) return;
+  document.body.insertAdjacentHTML('beforeend', `
+    <div class="search-backdrop" id="searchBackdrop">
+      <div class="search-modal" role="dialog" aria-modal="true" aria-label="Search">
+        <div class="search-field">
+          <svg viewBox="0 0 24 24" fill="none" class="search-ico"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M20 20l-3.2-3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <input type="text" id="searchInput" placeholder="Search services, frameworks, tools, assessments…" autocomplete="off" spellcheck="false">
+          <button class="search-close" id="searchClose" aria-label="Close">Esc</button>
+        </div>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+    </div>
+  `);
+  const backdrop = document.getElementById('searchBackdrop');
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+  const esc = t => (t || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const HINT = `<p class="search-hint">Try “pentest”, “Essential Eight”, “ransomware”, “DMARC”…</p>`;
+  let index = null, built = false;
+
+  async function build(){
+    if (built) return;
+    built = true;
+    index = [
+      { t: 'Services', d: 'Browse all 17 services', u: BASE + 'services.html', k: 'Page' },
+      { t: 'Frameworks', d: 'ISO, NIST, Essential Eight and more', u: BASE + 'frameworks.html', k: 'Page' },
+      { t: 'Partners', d: 'CrowdStrike and Blocksi', u: BASE + 'partners.html', k: 'Page' },
+      { t: 'About Zyberworks', d: 'Who we are and what we believe', u: BASE + 'about.html', k: 'Page' },
+      { t: 'Free tools & assessments', d: 'Interactive tools and maturity checks', u: BASE + 'assessments.html', k: 'Page' }
+    ];
+    const add = (arr, fn) => { try { arr.forEach(fn); } catch (e){} };
+    try { add(await fetchJSON('data/services.json'), x => index.push({ t: x.title, d: x.tagline, u: `${BASE}services/${x.id}.html`, k: 'Service' })); } catch (e){}
+    try { add(await fetchJSON('data/tools.json'), x => index.push({ t: x.title, d: x.blurb, u: BASE + x.url, k: 'Tool' })); } catch (e){}
+    try { add(await fetchJSON('data/assessments.json'), x => index.push({ t: x.title, d: x.blurb, u: BASE + x.url, k: 'Assessment' })); } catch (e){}
+    try { add(await fetchJSON('data/frameworks.json'), x => index.push({ t: x.name + (x.abbr ? ` (${x.abbr})` : ''), d: x.summary, u: BASE + 'frameworks.html', k: 'Framework' })); } catch (e){}
+  }
+
+  function run(q){
+    q = q.trim().toLowerCase();
+    if (!q){ results.innerHTML = HINT; return; }
+    const matches = (index || []).map(it => {
+      const t = it.t.toLowerCase(), d = (it.d || '').toLowerCase();
+      let score = t.startsWith(q) ? 3 : t.includes(q) ? 2 : d.includes(q) ? 1 : 0;
+      return { it, score };
+    }).filter(m => m.score).sort((a, b) => b.score - a.score).slice(0, 24);
+    results.innerHTML = matches.length
+      ? matches.map(m => `<a class="search-item" href="${m.it.u}"><span class="search-kind">${m.it.k}</span><span class="search-body"><span class="search-t">${esc(m.it.t)}</span><span class="search-d">${esc(m.it.d || '')}</span></span></a>`).join('')
+      : `<p class="search-empty">No matches for “${esc(q)}”. Try a broader term.</p>`;
+  }
+
+  async function open(){
+    await build();
+    results.innerHTML = HINT;
+    input.value = '';
+    backdrop.classList.add('open');
+    document.body.classList.add('contact-lock');
+    setTimeout(() => input.focus(), 60);
+  }
+  function close(){ backdrop.classList.remove('open'); document.body.classList.remove('contact-lock'); }
+
+  input.addEventListener('input', () => run(input.value));
+  document.addEventListener('click', e => {
+    if (e.target.closest('#navSearch') || e.target.closest('#navSearchM')){ e.preventDefault(); open(); return; }
+    if (e.target === backdrop || e.target.closest('#searchClose')) close();
+  });
+  document.addEventListener('keydown', e => {
+    const tag = (document.activeElement && document.activeElement.tagName || '').toLowerCase();
+    if (e.key === '/' && !backdrop.classList.contains('open') && tag !== 'input' && tag !== 'textarea' && tag !== 'select'){ e.preventDefault(); open(); }
+    else if (e.key === 'Escape' && backdrop.classList.contains('open')) close();
+    else if (e.key === 'Enter' && backdrop.classList.contains('open')){ const first = results.querySelector('.search-item'); if (first) window.location.href = first.href; }
+  });
+}
+
 /* ===================== Booking (config-driven; falls back to contact form) ===================== */
 function initBooking(){
   const configured = !!BOOKING_URL;
@@ -568,6 +645,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   renderFooter();
   initBooking();
+  initSearch();
   initServiceWorker();
   observeReveal();
 });

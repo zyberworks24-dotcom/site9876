@@ -173,6 +173,27 @@ async function initFrameworksLibrary(){
   observeReveal(grid);
 }
 
+/* ===================== Homepage tools showcase ===================== */
+async function initHomeTools(){
+  const grid = document.getElementById('homeToolsGrid');
+  if (!grid) return;
+  let tools = [];
+  try { tools = await fetchJSON('data/tools.json'); } catch (err){ grid.closest('#tools').hidden = true; return; }
+  tools.slice(0, 4).forEach((t, i) => {
+    const card = document.createElement('a');
+    card.className = 'card shown';
+    card.href = t.url;
+    card.style.transitionDelay = (i * 40) + 'ms';
+    card.innerHTML = `
+      <div class="card-icon">${ICONS[t.icon] || ARROW_SVG}</div>
+      <h3>${t.title}</h3>
+      <p>${t.blurb}</p>
+      <div class="card-arrow">${t.tag || 'Open'} ${ARROW_SVG}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
 /* ===================== Hero word reveal ===================== */
 function initHero(){
   const title = document.querySelector('.hero-title');
@@ -186,5 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initPartners();
   initVenn();
   initFrameworksLibrary();
+  initHomeTools();
   initHero();
 });
