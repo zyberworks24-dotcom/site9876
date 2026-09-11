@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Portal — Zyberworks</title>
+<meta name="description" content="Sign in to view your Zyberworks licenses and services.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#06070a">
+<link rel="icon" href="assets/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/brand/favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-base="">
+<script src="preloader.js"></script>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html#home" class="nav-logo">
+      <span class="logo-mark" aria-hidden="true"><img src="assets/brand/logo.png" alt="" class="logo-img"></span>
+      Zyberworks
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#partners">Partners</a></li>
+      <li><a href="index.html#contact" class="nav-cta" data-contact>Let's Talk</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#partners">Partners</a>
+    <a href="index.html#contact" data-contact>Let's Talk</a>
+  </div>
+</nav>
+
+<main id="main" class="portal">
+  <div class="portal-mesh" aria-hidden="true"><div class="blob blob-a"></div><div class="blob blob-b"></div></div>
+  <div class="portal-wrap" id="portalRoot"></div>
+</main>
+
+<footer class="footer"></footer>
+
+<script src="common.js"></script>
+<script src="portal.js"></script>
+<script src="transitions.js"></script>
+</body>
+</html>

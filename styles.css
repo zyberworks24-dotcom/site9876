@@ -590,6 +590,62 @@ body.contact-lock{overflow:hidden}
 .e8-banner-inner p{color:var(--text-dim);font-size:15px;line-height:1.55;max-width:520px}
 .e8-banner-inner .btn{white-space:nowrap}
 
+/* ===== Client portal ===== */
+.portal{position:relative;min-height:100vh;padding:120px 24px 80px;overflow:hidden}
+.portal-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.5}
+.portal-mesh .blob{opacity:.4}
+.portal-wrap{position:relative;z-index:1;max-width:900px;margin:0 auto}
+.portal-card{
+  max-width:520px;margin:0 auto;text-align:center;
+  background:linear-gradient(160deg,rgba(22,26,36,.7),rgba(11,13,19,.82));
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  padding:clamp(30px,5vw,48px);
+}
+.portal-card h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:12px 0 14px}
+.portal-lead{font-size:16px;color:var(--text-dim);line-height:1.6;margin-bottom:26px}
+.portal-google{
+  width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 20px;border-radius:100px;font-size:15px;font-weight:600;
+  background:#fff;color:#1a1a1a;border:none;cursor:pointer;transition:transform .2s var(--ease),box-shadow .2s;
+}
+.portal-google:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.pg-icon{width:22px;height:22px;border-radius:50%;background:conic-gradient(#ea4335 0 25%,#fbbc05 0 50%,#34a853 0 75%,#4285f4 0);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px}
+.portal-preview-note{font-size:12.5px;color:var(--text-faint);line-height:1.6;margin:18px 0 20px}
+.portal-preview-note a{color:var(--blue)}
+
+.portal-banner{
+  background:linear-gradient(120deg,rgba(41,151,255,.14),rgba(191,90,242,.1));
+  border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:26px;
+  font-size:13px;color:var(--text-dim);line-height:1.55;
+}
+.portal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+.portal-head h1{font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-.02em;margin:8px 0 4px}
+.portal-sub{font-size:14px;color:var(--text-faint)}
+.portal-h2{font-size:18px;font-weight:700;margin:28px 0 16px}
+.lic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.lic-card{
+  position:relative;overflow:hidden;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 22px;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:transform .35s var(--ease),border-color .35s var(--ease)}
+.lic-card:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.18)}
+.lic-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.lic-product{font-size:16px;font-weight:700}
+.lic-tier{font-size:13px;color:var(--text-dim);margin-top:2px}
+.lic-status{font-size:11px;font-weight:700;letter-spacing:.05em;padding:4px 10px;border-radius:100px;border:1px solid var(--border);color:var(--text-dim);white-space:nowrap}
+.lic-status.ok{color:#4ade80;border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.08)}
+.lic-status.warn{color:#fbbf24;border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.08)}
+.lic-status.bad{color:#f87171;border-color:rgba(248,113,113,.4);background:rgba(248,113,113,.08)}
+.lic-meta{display:flex;flex-wrap:wrap;gap:16px}
+.lic-meta div{font-size:14px;font-weight:600;color:var(--text)}
+.lic-meta div span{display:block;font-size:11px;font-weight:600;color:var(--text-faint);letter-spacing:.04em;margin-bottom:2px}
+.lic-notes{font-size:13px;color:var(--text-dim);line-height:1.5;margin-top:14px;padding-top:14px;border-top:1px solid var(--border-soft)}
+.portal-empty{text-align:center;padding:36px 20px;border:1px dashed var(--border);border-radius:var(--radius);color:var(--text-dim)}
+.portal-empty-sub{font-size:13px;color:var(--text-faint);margin-top:6px}
+.portal-empty-sub a,.portal-help a{color:var(--blue)}
+.portal-help{margin-top:26px;font-size:14px;color:var(--text-dim)}
+.portal-loading{text-align:center;padding:60px 20px;color:var(--text-dim)}
+
 /* ===== 404 ===== */
 .notfound{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 60px}
 .notfound h1{font-size:clamp(60px,14vw,120px);font-weight:900;letter-spacing:-.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
