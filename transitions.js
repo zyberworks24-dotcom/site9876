@@ -14,6 +14,7 @@
   document.addEventListener('click', function(e){
     var a = e.target.closest('a');
     if (!a || !a.href) return;
+    if (a.hasAttribute('data-contact')) return; // opens the contact modal, never navigates
     if (a.target === '_blank' || a.hasAttribute('download') || e.metaKey || e.ctrlKey || e.shiftKey) return;
 
     var url;

@@ -89,6 +89,10 @@ async function renderServicePage(){
         <p class="sp-category">${CATEGORY_LABEL[svc.cat].toUpperCase()}</p>
         <h1>${svc.title}</h1>
         <p class="sp-tagline">${svc.tagline}</p>
+        <div class="sp-hero-actions">
+          <button type="button" class="btn btn-primary" data-contact data-service="${svc.title}">Let's chat</button>
+          <a href="../index.html#services" class="btn btn-ghost">All services</a>
+        </div>
       </div>
     </section>
 
@@ -157,7 +161,10 @@ async function renderServicePage(){
       <div class="cta-card">
         <h2>Let's talk ${svc.title.toLowerCase()}.</h2>
         <p>Tell us where you are starting from and we will bring a tailored approach, never a template.</p>
-        <a href="https://zyberworks.com.au/#services" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Visit zyberworks.com.au</a>
+        <div class="cta-actions">
+          <button type="button" class="btn btn-primary btn-lg" data-contact data-service="${svc.title}">Let's chat</button>
+          <a href="https://zyberworks.com.au/#services" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">Visit zyberworks.com.au</a>
+        </div>
       </div>
     </section>
   `;

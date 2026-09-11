@@ -227,6 +227,83 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   .scroll-progress{display:none}
 }
 
+/* ===== Glass tiles (cursor-tracked sheen) ===== */
+.card,.partner-card,.sp-process-step,.sp-faq,.sp-deliverable-box,.stat,.cta-card,.sp-partner{
+  position:relative;overflow:hidden;
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.card::after,.partner-card::after,.sp-process-step::after,.sp-faq::after,.sp-deliverable-box::after,.stat::after,.cta-card::after,.sp-partner::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(100,180,255,.16),rgba(191,90,242,.07) 42%,transparent 68%);
+  opacity:0;transition:opacity .5s var(--ease);mix-blend-mode:screen;
+}
+.card:hover::after,.partner-card:hover::after,.sp-process-step:hover::after,.sp-faq:hover::after,.sp-deliverable-box:hover::after,.stat:hover::after,.cta-card:hover::after,.sp-partner:hover::after{opacity:1}
+/* glass edge highlight on hover */
+.card::before,.partner-card::before,.sp-process-step::before,.sp-faq::before,.sp-deliverable-box::before,.sp-partner::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:2;
+  background:linear-gradient(160deg,rgba(255,255,255,.10),transparent 40%);
+  opacity:0;transition:opacity .5s var(--ease);
+}
+.card:hover::before,.partner-card:hover::before,.sp-process-step:hover::before,.sp-faq:hover::before,.sp-deliverable-box:hover::before,.sp-partner:hover::before{opacity:1}
+
+/* ===== CTA button group ===== */
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:4}
+.sp-hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+
+/* ===== Contact modal (glass) ===== */
+.contact-backdrop{
+  position:fixed;inset:0;z-index:3000;display:flex;align-items:flex-start;justify-content:center;
+  padding:64px 20px;overflow-y:auto;background:rgba(4,5,7,.55);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;transition:opacity .35s var(--ease);
+}
+.contact-backdrop.open{opacity:1;pointer-events:auto}
+.contact-modal{
+  width:100%;max-width:520px;border-radius:var(--radius-lg);position:relative;
+  background:linear-gradient(160deg,rgba(22,26,36,.86),rgba(11,13,19,.92));
+  border:1px solid rgba(255,255,255,.12);
+  -webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%);
+  box-shadow:0 30px 90px -20px rgba(0,0,0,.65);
+  padding:38px clamp(24px,4vw,44px) 34px;
+  transform:translateY(26px) scale(.97);opacity:0;
+  transition:transform .45s var(--ease),opacity .4s var(--ease);
+}
+.contact-backdrop.open .contact-modal{transform:none;opacity:1}
+.contact-close{
+  position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--text-dim);
+  font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;transition:all .25s;
+}
+.contact-close:hover{background:rgba(255,255,255,.14);color:var(--text);transform:rotate(90deg)}
+.contact-eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--cyan);margin-bottom:10px}
+.contact-title{font-size:clamp(24px,4vw,30px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.contact-sub{color:var(--text-dim);font-size:14.5px;line-height:1.55;margin-bottom:24px}
+#contactForm .field{margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+#contactForm label{font-size:12.5px;font-weight:600;color:var(--text-dim)}
+#contactForm input,#contactForm select,#contactForm textarea{
+  width:100%;padding:11px 14px;border-radius:12px;border:1px solid var(--border);
+  background:rgba(255,255,255,.04);color:var(--text);font-family:inherit;font-size:14.5px;
+  transition:border-color .25s,background .25s;
+}
+#contactForm input:focus,#contactForm select:focus,#contactForm textarea:focus{
+  outline:none;border-color:var(--blue);background:rgba(255,255,255,.06);
+}
+#contactForm textarea{resize:vertical;min-height:96px}
+#contactForm select{
+  appearance:none;-webkit-appearance:none;padding-right:36px;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a1a1a6' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+}
+#contactForm option{background:#12141b;color:var(--text)}
+.contact-error{color:#ff8a8a;font-size:13px;margin:2px 0 10px}
+.contact-send-label{font-size:12.5px;color:var(--text-faint);margin:20px 0 10px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.contact-actions .btn{padding:11px 18px;font-size:14px;gap:7px}
+.contact-actions .btn svg{width:15px;height:15px}
+.contact-direct{margin-top:20px;font-size:13px;color:var(--text-faint)}
+.contact-direct a{color:var(--blue)}
+body.contact-lock{overflow:hidden}
+
 /* ===== Section head ===== */
 .section-head{max-width:720px;margin:0 auto 48px;text-align:center;padding:0 24px}
 .section-head h2{

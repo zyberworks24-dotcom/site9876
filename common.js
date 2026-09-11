@@ -140,11 +140,134 @@ function initParallax(){
   }, { passive:true });
 }
 
+/* ===================== Glass tiles: cursor-tracked sheen ===================== */
+function initGlass(){
+  if (window.matchMedia && window.matchMedia('(hover: none)').matches) return;
+  const sel = '.card, .partner-card, .sp-process-step, .sp-faq, .sp-deliverable-box, .stat, .cta-card, .sp-partner';
+  document.addEventListener('mousemove', e => {
+    const el = e.target.closest(sel);
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+  }, { passive:true });
+}
+
+/* ===================== Contact modal (composes an email to Zyberworks) ===================== */
+const CONTACT_EMAIL = 'enquiry@zyberworks.com.au';
+const MAIL_ICON = `<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7.5l8 5.5 8-5.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+async function initContact(){
+  if (document.getElementById('contactBackdrop')) return;
+
+  document.body.insertAdjacentHTML('beforeend', `
+    <div class="contact-backdrop" id="contactBackdrop">
+      <div class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+        <button class="contact-close" id="contactClose" aria-label="Close">&times;</button>
+        <p class="contact-eyebrow">GET IN TOUCH</p>
+        <h3 class="contact-title" id="contactTitle">Let's talk security.</h3>
+        <p class="contact-sub">Tell us what you need and we will get back to you. Your enquiry goes to ${CONTACT_EMAIL}.</p>
+        <form id="contactForm" novalidate>
+          <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="cf-company">Company <span style="opacity:.6">(optional)</span></label><input id="cf-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="cf-service">Service of interest</label><select id="cf-service" name="service"></select></div>
+          <div class="field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" rows="4" required></textarea></div>
+          <p class="contact-error" id="contactError" hidden></p>
+          <p class="contact-send-label">Choose how to send your enquiry:</p>
+          <div class="contact-actions">
+            <button type="button" class="btn btn-primary" data-send="mail">${MAIL_ICON} Email app</button>
+            <button type="button" class="btn btn-ghost" data-send="gmail">${MAIL_ICON} Gmail</button>
+            <button type="button" class="btn btn-ghost" data-send="outlook">${MAIL_ICON} Outlook</button>
+          </div>
+          <p class="contact-direct">Prefer to write directly? <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a></p>
+        </form>
+      </div>
+    </div>
+  `);
+
+  const backdrop = document.getElementById('contactBackdrop');
+  const form = document.getElementById('contactForm');
+  const serviceSel = document.getElementById('cf-service');
+  const errorEl = document.getElementById('contactError');
+  const el = n => form.elements[n];
+
+  let services = [];
+  try { services = await fetchJSON('data/services.json'); } catch (err){}
+  serviceSel.innerHTML = `<option>General enquiry</option>` + services.map(s => `<option>${s.title}</option>`).join('');
+
+  function open(service){
+    if (service){
+      if (![...serviceSel.options].some(o => o.value === service)){
+        serviceSel.insertAdjacentHTML('afterbegin', `<option>${service}</option>`);
+      }
+      serviceSel.value = service;
+    } else {
+      serviceSel.value = 'General enquiry';
+    }
+    errorEl.hidden = true;
+    backdrop.classList.add('open');
+    document.body.classList.add('contact-lock');
+    setTimeout(() => el('name').focus(), 80);
+  }
+  function close(){
+    backdrop.classList.remove('open');
+    document.body.classList.remove('contact-lock');
+  }
+
+  document.addEventListener('click', e => {
+    const trigger = e.target.closest('[data-contact]');
+    if (trigger){ e.preventDefault(); open(trigger.dataset.service || ''); return; }
+    if (e.target === backdrop || e.target.closest('#contactClose')) close();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && backdrop.classList.contains('open')) close();
+  });
+
+  const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  form.querySelectorAll('[data-send]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = el('name').value.trim();
+      const email = el('email').value.trim();
+      const message = el('message').value.trim();
+      if (!name || !validEmail(email) || !message){
+        errorEl.textContent = 'Please add your name, a valid email, and a short message.';
+        errorEl.hidden = false;
+        return;
+      }
+      errorEl.hidden = true;
+      const company = el('company').value.trim();
+      const service = serviceSel.value;
+      const subject = (service && service !== 'General enquiry') ? `Enquiry: ${service}` : 'General enquiry';
+      const lines = [`Name: ${name}`, `Email: ${email}`];
+      if (company) lines.push(`Company: ${company}`);
+      lines.push(`Service of interest: ${service}`, '', message);
+      const body = lines.join('\r\n');
+      const su = encodeURIComponent(subject);
+      const bo = encodeURIComponent(body);
+      const kind = btn.dataset.send;
+      let url;
+      if (kind === 'gmail'){
+        url = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}&su=${su}&body=${bo}`;
+      } else if (kind === 'outlook'){
+        url = `https://outlook.office.com/mail/deeplink/compose?to=${CONTACT_EMAIL}&subject=${su}&body=${bo}`;
+      } else {
+        url = `mailto:${CONTACT_EMAIL}?subject=${su}&body=${bo}`;
+      }
+      if (kind === 'mail'){ window.location.href = url; }
+      else { window.open(url, '_blank', 'noopener'); }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initCursorGlow();
   initParallax();
   initScrollProgress();
   initCountUp();
+  initGlass();
+  initContact();
   observeReveal();
 });
