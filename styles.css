@@ -512,6 +512,33 @@ body.contact-lock{overflow:hidden}
 .pw-tips li::before{content:'';position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
 .pw-tips strong{color:var(--text)}
 
+/* ===== Password generator ===== */
+.pg-output{
+  display:flex;align-items:center;gap:12px;
+  background:#0d0f15;border:1px solid var(--border);border-radius:14px;padding:14px 14px 14px 18px;margin-bottom:14px;
+}
+.pg-output code{
+  flex:1;min-width:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(16px,3vw,21px);
+  color:var(--text);word-break:break-all;line-height:1.4;
+}
+.pg-out-actions{display:flex;gap:6px;flex:none}
+.pg-icon-btn{
+  padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--border);
+  color:var(--text-dim);font-size:13px;font-weight:600;min-width:40px;transition:background .2s,color .2s;
+}
+.pg-icon-btn:hover{background:rgba(255,255,255,.14);color:var(--text)}
+.pg-options{display:flex;flex-direction:column;gap:12px;margin:20px 0 4px}
+.pg-row{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--text-dim)}
+.pg-row > span{width:82px;flex:none}
+.pg-row input[type=range]{flex:1;accent-color:#2997ff}
+.pg-row b{width:26px;text-align:right;color:var(--text);font-weight:700}
+.pg-row select{
+  flex:1;padding:9px 12px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.04);
+  color:var(--text);font-family:inherit;font-size:14px;
+}
+.pg-check{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-dim);cursor:pointer}
+.pg-check input{width:17px;height:17px;accent-color:#2997ff}
+
 /* ===== Spot the Phish ===== */
 .phish{position:relative;min-height:100vh;padding:110px 24px 80px;overflow:hidden}
 .phish-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:.45}
