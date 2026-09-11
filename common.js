@@ -455,7 +455,8 @@ function renderFooter(){
         <div class="sf-contact">
           <a href="mailto:enquiry@zyberworks.com.au">enquiry@zyberworks.com.au</a><br>
           <a href="https://zyberworks.com.au" target="_blank" rel="noopener">zyberworks.com.au</a><br>
-          Australia &amp; New Zealand
+          Sydney, NSW &middot; Australia &amp; New Zealand<br>
+          ABN 32 692 196 857
         </div>
       </div>
       <div class="sf-col">
