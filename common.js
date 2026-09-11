@@ -144,7 +144,7 @@ function initParallax(){
 /* ===================== Glass tiles: cursor-tracked sheen ===================== */
 function initGlass(){
   if (window.matchMedia && window.matchMedia('(hover: none)').matches) return;
-  const sel = '.card, .partner-card, .sp-process-step, .sp-faq, .sp-deliverable-box, .stat, .cta-card, .sp-partner';
+  const sel = '.card, .partner-card, .sp-process-step, .sp-faq, .sp-deliverable-box, .stat, .cta-card, .sp-partner, .why-card, .ind-card, .engage-step, .sc-pillar';
   document.addEventListener('mousemove', e => {
     const el = e.target.closest(sel);
     if (!el) return;
@@ -203,6 +203,8 @@ async function initContact(){
   const el = n => form.elements[n];
 
   let currentPlan = null;
+  let lastFocused = null;
+  const modalEl = backdrop.querySelector('.contact-modal');
   const money = x => '$' + Number(x).toLocaleString('en-AU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   function updateEstimate(){
@@ -244,6 +246,7 @@ async function initContact(){
       quoteBlock.hidden = true;
     }
     errorEl.hidden = true;
+    lastFocused = document.activeElement;
     backdrop.classList.add('open');
     document.body.classList.add('contact-lock');
     setTimeout(() => el('name').focus(), 80);
@@ -251,9 +254,21 @@ async function initContact(){
   function close(){
     backdrop.classList.remove('open');
     document.body.classList.remove('contact-lock');
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
   }
 
   endpointsInput.addEventListener('input', updateEstimate);
+
+  // focus trap while the modal is open
+  modalEl.addEventListener('keydown', e => {
+    if (e.key !== 'Tab') return;
+    const focusable = modalEl.querySelectorAll('button, [href], input, select, textarea');
+    const list = [...focusable].filter(el => !el.disabled && el.offsetParent !== null);
+    if (!list.length) return;
+    const first = list[0], last = list[list.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
 
   document.addEventListener('click', e => {
     const trigger = e.target.closest('[data-contact]');
@@ -319,6 +334,132 @@ async function initContact(){
   });
 }
 
+/* ===================== FAQ accordion ===================== */
+function initFAQ(){
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      items.forEach(other => {
+        other.classList.remove('open');
+        const oq = other.querySelector('.faq-q');
+        const oa = other.querySelector('.faq-a');
+        if (oq) oq.setAttribute('aria-expanded', 'false');
+        if (oa) oa.style.maxHeight = null;
+      });
+      if (!isOpen){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+}
+
+/* ===================== Back to top ===================== */
+function initBackToTop(){
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  document.body.appendChild(btn);
+  btn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+  let raf = null;
+  const update = () => { raf = null; btn.classList.toggle('show', window.scrollY > 600); };
+  window.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(update); }, { passive:true });
+}
+
+/* ===================== Scroll spy (active nav link) ===================== */
+function initScrollSpy(){
+  const map = [];
+  document.querySelectorAll('.nav-links a[href*="#"]').forEach(a => {
+    const hash = a.getAttribute('href').split('#')[1];
+    if (!hash) return;
+    const sec = document.getElementById(hash);
+    if (sec) map.push({ a, sec });
+  });
+  if (!map.length) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        map.forEach(m => m.a.classList.toggle('active', m.sec === e.target));
+      }
+    });
+  }, { rootMargin:'-45% 0px -50% 0px', threshold:0 });
+  map.forEach(m => io.observe(m.sec));
+}
+
+/* ===================== Enterprise footer (shared) ===================== */
+function renderFooter(){
+  const existing = document.querySelector('footer.footer, footer.site-footer');
+  const year = new Date().getFullYear();
+  const html = `
+    <div class="sf-inner">
+      <div class="sf-brand">
+        <a href="${BASE}index.html#home" class="nav-logo">
+          <span class="logo-mark" aria-hidden="true"><img src="${BASE}assets/brand/logo.png" alt="" class="logo-img"></span>
+          Zyberworks
+        </a>
+        <p>Secure by design. IT services and security consulting for organisations that cannot afford to get security wrong.</p>
+        <div class="sf-contact">
+          <a href="mailto:enquiry@zyberworks.com.au">enquiry@zyberworks.com.au</a><br>
+          <a href="https://zyberworks.com.au" target="_blank" rel="noopener">zyberworks.com.au</a><br>
+          Australia &amp; New Zealand
+        </div>
+      </div>
+      <div class="sf-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="${BASE}services/pentest.html">Penetration Testing</a></li>
+          <li><a href="${BASE}services/edr-mdr.html">EDR &amp; MDR</a></li>
+          <li><a href="${BASE}services/filtering.html">Web Filtering</a></li>
+          <li><a href="${BASE}services/cloud.html">Cloud &amp; Migration</a></li>
+          <li><a href="${BASE}index.html#services">All services</a></li>
+        </ul>
+      </div>
+      <div class="sf-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="${BASE}index.html#why">Why Zyberworks</a></li>
+          <li><a href="${BASE}index.html#approach">Frameworks</a></li>
+          <li><a href="${BASE}index.html#industries">Industries</a></li>
+          <li><a href="${BASE}index.html#partners">Partners</a></li>
+        </ul>
+      </div>
+      <div class="sf-col">
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="#" data-contact>Contact us</a></li>
+          <li><a href="${BASE}index.html#faq">FAQ</a></li>
+          <li><a href="${BASE}privacy.html">Privacy</a></li>
+          <li><a href="${BASE}terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sf-bottom">
+      <div class="sf-bottom-inner">
+        <p>© ${year} Zyberworks. All rights reserved.</p>
+        <div class="sf-legal">
+          <a href="${BASE}privacy.html">Privacy Policy</a>
+          <a href="${BASE}terms.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  `;
+  if (existing){
+    existing.className = 'site-footer';
+    existing.innerHTML = html;
+  } else {
+    const f = document.createElement('footer');
+    f.className = 'site-footer';
+    f.innerHTML = html;
+    document.body.appendChild(f);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initCursorGlow();
@@ -327,5 +468,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountUp();
   initGlass();
   initContact();
+  initFAQ();
+  initBackToTop();
+  initScrollSpy();
+  renderFooter();
   observeReveal();
 });
