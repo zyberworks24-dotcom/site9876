@@ -670,10 +670,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const kickReveals = () => { observeReveal(); revealVisible(); };
   if (document.getElementById('preloader')){
     document.addEventListener('zw:loaded', kickReveals, { once:true });
-    setTimeout(kickReveals, 2000);
+    setTimeout(kickReveals, 1600);
   } else {
     kickReveals();
   }
-  window.addEventListener('load', revealVisible);
+  // Ongoing safety net if the observer is unreliable on a mobile browser.
   window.addEventListener('scroll', revealVisible, { passive:true });
+  window.addEventListener('resize', revealVisible);
 });

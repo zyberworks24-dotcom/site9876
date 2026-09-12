@@ -1,5 +1,5 @@
 /* Zyberworks service worker: offline shell + fast repeat loads. */
-const CACHE = 'zw-cache-v5';
+const CACHE = 'zw-cache-v6';
 const CORE = [
   './',
   './services',

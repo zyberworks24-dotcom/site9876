@@ -219,11 +219,11 @@ async function initHomeTools(){
 function initHero(){
   const title = document.querySelector('.hero-title');
   if (!title) return;
-  const go = () => requestAnimationFrame(() => title.classList.add('animate'));
+  const go = () => title.classList.add('animate');
   // Play the headline animation once the preloader lifts, so it is seen.
   if (document.getElementById('preloader')){
     document.addEventListener('zw:loaded', go, { once:true });
-    setTimeout(go, 2000);
+    setTimeout(go, 1600);
   } else {
     go();
   }
