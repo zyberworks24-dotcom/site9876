@@ -52,10 +52,21 @@
       <h2>Three frameworks anchor it.<br>Read as one language.</h2>
       <p class="section-sub">ISO 27001, NIST CSF 2.0, and the ASD Essential Eight do not compete. They cover different altitudes and are where most work starts. From there we map your controls across all 37 frameworks in the library below. Tap each to see where it fits.</p>
     </div>
-    <div class="venn reveal" id="venn">
-      <div class="venn-circle venn-iso" data-fw="iso"><span>ISO 27001</span></div>
-      <div class="venn-circle venn-nist" data-fw="nist"><span>NIST CSF 2.0</span></div>
-      <div class="venn-circle venn-e8" data-fw="e8"><span>ESSENTIAL EIGHT</span></div>
+    <div class="fw-orbit reveal" id="fwOrbit">
+      <div class="fw-core">
+        <button type="button" class="fw-core-node c-iso active" data-fw="iso">
+          <strong>ISO 27001</strong><span>Management system</span>
+        </button>
+        <button type="button" class="fw-core-node c-nist" data-fw="nist">
+          <strong>NIST CSF 2.0</strong><span>Functional layer</span>
+        </button>
+        <button type="button" class="fw-core-node c-e8" data-fw="e8">
+          <strong>Essential Eight</strong><span>Technical baseline</span>
+        </button>
+      </div>
+      <p class="fw-cloud-label" id="fwCloudLabel">and 34 more we map across</p>
+      <div class="fw-cloud" id="fwCloud"></div>
+      <a class="fw-cloud-link" href="#library">Browse the full library ↓</a>
     </div>
     <div class="fw-panel reveal" id="fwPanel">
       <div class="fw-detail active" data-fw="iso">

@@ -130,18 +130,30 @@ async function initPartners(){
 }
 
 /* ===================== Venn / frameworks ===================== */
-function initVenn(){
-  const vennCircles = document.querySelectorAll('.venn-circle');
+async function initVenn(){
+  const nodes = document.querySelectorAll('.fw-core-node');
   const fwDetails = document.querySelectorAll('.fw-detail');
-  vennCircles.forEach(c => {
+  nodes.forEach(c => {
     c.addEventListener('click', () => {
-      vennCircles.forEach(v => v.classList.remove('active'));
+      nodes.forEach(v => v.classList.remove('active'));
       fwDetails.forEach(d => d.classList.remove('active'));
       c.classList.add('active');
       const match = document.querySelector(`.fw-detail[data-fw="${c.dataset.fw}"]`);
       if (match) match.classList.add('active');
     });
   });
+
+  // Fill the surrounding cloud with every other framework we map across
+  const cloud = document.getElementById('fwCloud');
+  if (!cloud) return;
+  try {
+    const fw = await fetchJSON('data/frameworks.json');
+    const core = new Set(['ISO/IEC 27001', 'NIST CSF 2.0', 'ASD Essential Eight']);
+    const rest = fw.filter(f => !core.has(f.name));
+    cloud.innerHTML = rest.map(f => `<span class="fw-chip">${f.name}</span>`).join('');
+    const label = document.getElementById('fwCloudLabel');
+    if (label) label.textContent = `and ${rest.length} more we map across`;
+  } catch (e){ /* leave cloud empty on failure */ }
 }
 
 /* ===================== Frameworks library ===================== */
