@@ -429,7 +429,7 @@ body.contact-lock{overflow:hidden}
 .engage-step p{font-size:14px;color:var(--text-dim);line-height:1.6}
 
 /* ===== Standards strip ===== */
-.standards{max-width:1100px;margin:0 auto;padding:clamp(40px,7vw,70px) 24px;text-align:center}
+.standards{max-width:1200px;margin:0 auto;padding:clamp(40px,7vw,70px) 24px;text-align:center}
 .standards-label{font-size:13px;color:var(--text-faint);margin-bottom:22px;letter-spacing:.02em}
 .standards-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .standard-badge{
@@ -826,7 +826,7 @@ body.contact-lock{overflow:hidden}
 /* ===== Sub-page header ===== */
 .page-hero{position:relative;padding:130px 24px 10px;overflow:hidden;text-align:center}
 .page-hero .hero-mesh{opacity:.6}
-.page-hero-content{position:relative;z-index:1;max-width:1000px;margin:0 auto}
+.page-hero-content{position:relative;z-index:1;max-width:1200px;margin:0 auto}
 .page-hero-content h1{font-size:clamp(32px,5.5vw,52px);font-weight:800;letter-spacing:-.025em;line-height:1.06;margin:12px 0 16px}
 .page-hero-sub{font-size:clamp(16px,2vw,18px);color:var(--text-dim);max-width:660px;margin:0 auto;line-height:1.6}
 .why-link{margin-top:16px;display:inline-flex;align-items:center;gap:6px;color:var(--blue);font-weight:600;font-size:14px}
@@ -941,7 +941,7 @@ a.why-card{display:flex;flex-direction:column}
 @media (max-width:520px){ .e8-bar-row{grid-template-columns:1fr auto;gap:6px 12px} .e8-bar-track{grid-column:1 / -1;order:3} }
 
 /* ===== Essential Eight homepage CTA banner ===== */
-.e8-banner{max-width:1100px;margin:0 auto;padding:0 24px}
+.e8-banner{max-width:1200px;margin:0 auto;padding:0 24px}
 .e8-banner-inner{
   position:relative;overflow:hidden;border:1px solid var(--border);border-radius:var(--radius-lg);
   background:linear-gradient(150deg,rgba(41,151,255,.14),rgba(191,90,242,.1));
@@ -1114,7 +1114,7 @@ a.why-card{display:flex;flex-direction:column}
 .stats{
   display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
   background:var(--border-soft);
-  max-width:1100px;margin:clamp(40px,8vw,90px) auto;
+  max-width:1200px;margin:clamp(40px,8vw,90px) auto;
   border:1px solid var(--border-soft);border-radius:var(--radius-lg);overflow:hidden;
 }
 .stat{background:var(--bg-elev);padding:36px 20px;text-align:center}
@@ -1126,7 +1126,7 @@ a.why-card{display:flex;flex-direction:column}
 .stat-label{font-size:13px;color:var(--text-dim);line-height:1.4}
 
 /* ===== CTA ===== */
-.cta{padding:20px 24px 120px;max-width:1100px;margin:0 auto}
+.cta{padding:20px 24px 120px;max-width:1200px;margin:0 auto}
 .cta-card{
   position:relative;overflow:hidden;
   background:linear-gradient(160deg,rgba(41,151,255,.16),rgba(191,90,242,.12) 60%,rgba(6,7,10,0));
@@ -1210,7 +1210,7 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
 .clients-placeholder code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px;font-size:12px}
 
 /* ===== Technology partners ===== */
-.partners{padding:clamp(50px,9vw,100px) 24px;max-width:1100px;margin:0 auto}
+.partners{padding:clamp(50px,9vw,100px) 24px;max-width:1200px;margin:0 auto}
 .partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .partner-card{
   display:flex;flex-direction:column;align-items:flex-start;
