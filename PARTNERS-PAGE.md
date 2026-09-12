@@ -2,7 +2,7 @@
 
 The Partners page (`partners.html`) still exists and works if you open its URL directly, but it is **hidden**: it is not linked in the navigation or footer, is marked `noindex` so search engines skip it, and is left out of the sitemap. In its place, the top navigation now shows **Free tools** (linking to the tools & assessments hub).
 
-The "Happy clients" schools carousel that used to live on the Partners page was moved to the **home page**, so your clients stay visible while the Partners page is hidden.
+The "Happy clients" schools carousel is currently **hidden everywhere** (removed from both the Partners page and the home page) at your request. The client list itself is untouched in [`data/clients.json`](data/clients.json), and the carousel markup/code still exists, so it can be brought back on either page at any time — just ask.
 
 ## To make the Partners page visible again
 
