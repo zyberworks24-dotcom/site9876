@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zyberworks24-dotcom.github.io/site9876/sitemap.xml
+Sitemap: https://zyberworks.com.au/sitemap.xml
