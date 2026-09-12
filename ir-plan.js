@@ -125,7 +125,7 @@
 
       <div class="cta-actions" style="justify-content:center;margin-top:8px" id="irCta">
         <button type="button" class="btn btn-primary btn-lg" data-contact data-service="IT Project Consulting">Make this a real, tested plan</button>
-        <a href="assessment.html?a=ransomware" class="btn btn-ghost btn-lg">Check your ransomware readiness</a>
+        <a href="assessment?a=ransomware" class="btn btn-ghost btn-lg">Check your ransomware readiness</a>
       </div>`;
     document.getElementById('irPrint').addEventListener('click', () => window.print());
     document.getElementById('irEdit').addEventListener('click', () => { if (head) head.hidden = false; renderForm(); window.scrollTo({top:0}); });

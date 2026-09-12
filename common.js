@@ -38,21 +38,21 @@ function renderNav(){
   const nav = document.getElementById('nav');
   if (!nav) return;
   const path = location.pathname;
-  const TOOLS_RE = /(assessments|assessment|attack|phishing-game|password-check|password-generator|domain-check|ir-plan|e8-roadmap|breaches|service-finder|essential-eight-assessment)\.html$/;
+  const TOOLS_RE = /(assessments|assessment|attack|phishing-game|password-check|password-generator|domain-check|ir-plan|e8-roadmap|breaches|service-finder|essential-eight-assessment)(\.html)?$/;
   const active =
-    (/\/services\//.test(path) || /services\.html$/.test(path)) ? 'services' :
-    /frameworks\.html$/.test(path) ? 'frameworks' :
+    (/\/services\//.test(path) || /\/services(\.html)?$/.test(path)) ? 'services' :
+    /\/frameworks(\.html)?$/.test(path) ? 'frameworks' :
     TOOLS_RE.test(path) ? 'tools' :
-    /about\.html$/.test(path) ? 'about' : '';
+    /\/about(\.html)?$/.test(path) ? 'about' : '';
   const links = [
-    ['services', 'Services', BASE + 'services.html'],
-    ['frameworks', 'Frameworks', BASE + 'frameworks.html'],
-    ['tools', 'Free tools', BASE + 'assessments.html'],
-    ['about', 'About', BASE + 'about.html']
+    ['services', 'Services', BASE + 'services'],
+    ['frameworks', 'Frameworks', BASE + 'frameworks'],
+    ['tools', 'Free tools', BASE + 'assessments'],
+    ['about', 'About', BASE + 'about']
   ];
   nav.innerHTML = `
     <div class="nav-inner">
-      <a href="${BASE}index.html" class="nav-logo">
+      <a href="${BASE || './'}" class="nav-logo">
         <span class="logo-mark" aria-hidden="true"><img src="${BASE}assets/brand/logo.png" alt="" class="logo-img"></span>
         Zyberworks
       </a>
@@ -450,7 +450,7 @@ function renderFooter(){
   const html = `
     <div class="sf-inner">
       <div class="sf-brand">
-        <a href="${BASE}index.html#home" class="nav-logo">
+        <a href="${BASE || "./"}#home" class="nav-logo">
           <span class="logo-mark" aria-hidden="true"><img src="${BASE}assets/brand/logo.png" alt="" class="logo-img"></span>
           Zyberworks
         </a>
@@ -465,29 +465,29 @@ function renderFooter(){
       <div class="sf-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="${BASE}services/pentest.html">Penetration Testing</a></li>
-          <li><a href="${BASE}services/edr-mdr.html">EDR &amp; MDR</a></li>
-          <li><a href="${BASE}services/filtering.html">Web Filtering</a></li>
-          <li><a href="${BASE}services/cloud.html">Cloud &amp; Migration</a></li>
-          <li><a href="${BASE}services.html">All services</a></li>
+          <li><a href="${BASE}services/pentest">Penetration Testing</a></li>
+          <li><a href="${BASE}services/edr-mdr">EDR &amp; MDR</a></li>
+          <li><a href="${BASE}services/filtering">Web Filtering</a></li>
+          <li><a href="${BASE}services/cloud">Cloud &amp; Migration</a></li>
+          <li><a href="${BASE}services">All services</a></li>
         </ul>
       </div>
       <div class="sf-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="${BASE}about.html">About us</a></li>
-          <li><a href="${BASE}frameworks.html">Frameworks</a></li>
-          <li><a href="${BASE}assessments.html">Free tools</a></li>
-          <li><a href="${BASE}about.html#faq">FAQ</a></li>
+          <li><a href="${BASE}about">About us</a></li>
+          <li><a href="${BASE}frameworks">Frameworks</a></li>
+          <li><a href="${BASE}assessments">Free tools</a></li>
+          <li><a href="${BASE}about#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="sf-col">
         <h4>Get started</h4>
         <ul>
           <li><a href="#" data-contact>Contact us</a></li>
-          <li><a href="${BASE}assessments.html">Free assessments</a></li>
-          <li><a href="${BASE}privacy.html">Privacy</a></li>
-          <li><a href="${BASE}terms.html">Terms</a></li>
+          <li><a href="${BASE}assessments">Free assessments</a></li>
+          <li><a href="${BASE}privacy">Privacy</a></li>
+          <li><a href="${BASE}terms">Terms</a></li>
         </ul>
       </div>
     </div>
@@ -495,8 +495,8 @@ function renderFooter(){
       <div class="sf-bottom-inner">
         <p>© ${year} Zyberworks. All rights reserved.</p>
         <div class="sf-legal">
-          <a href="${BASE}privacy.html">Privacy Policy</a>
-          <a href="${BASE}terms.html">Terms of Use</a>
+          <a href="${BASE}privacy">Privacy Policy</a>
+          <a href="${BASE}terms">Terms of Use</a>
         </div>
       </div>
     </div>
@@ -538,17 +538,17 @@ function initSearch(){
     if (built) return;
     built = true;
     index = [
-      { t: 'Services', d: 'Browse all 17 services', u: BASE + 'services.html', k: 'Page' },
-      { t: 'Frameworks', d: 'ISO, NIST, Essential Eight and more', u: BASE + 'frameworks.html', k: 'Page' },
-      { t: 'Partners', d: 'CrowdStrike and Blocksi', u: BASE + 'partners.html', k: 'Page' },
-      { t: 'About Zyberworks', d: 'Who we are and what we believe', u: BASE + 'about.html', k: 'Page' },
-      { t: 'Free tools & assessments', d: 'Interactive tools and maturity checks', u: BASE + 'assessments.html', k: 'Page' }
+      { t: 'Services', d: 'Browse all 17 services', u: BASE + 'services', k: 'Page' },
+      { t: 'Frameworks', d: 'ISO, NIST, Essential Eight and more', u: BASE + 'frameworks', k: 'Page' },
+      { t: 'Partners', d: 'CrowdStrike and Blocksi', u: BASE + 'partners', k: 'Page' },
+      { t: 'About Zyberworks', d: 'Who we are and what we believe', u: BASE + 'about', k: 'Page' },
+      { t: 'Free tools & assessments', d: 'Interactive tools and maturity checks', u: BASE + 'assessments', k: 'Page' }
     ];
     const add = (arr, fn) => { try { arr.forEach(fn); } catch (e){} };
-    try { add(await fetchJSON('data/services.json'), x => index.push({ t: x.title, d: x.tagline, u: `${BASE}services/${x.id}.html`, k: 'Service' })); } catch (e){}
+    try { add(await fetchJSON('data/services.json'), x => index.push({ t: x.title, d: x.tagline, u: `${BASE}services/${x.id}`, k: 'Service' })); } catch (e){}
     try { add(await fetchJSON('data/tools.json'), x => index.push({ t: x.title, d: x.blurb, u: BASE + x.url, k: 'Tool' })); } catch (e){}
     try { add(await fetchJSON('data/assessments.json'), x => index.push({ t: x.title, d: x.blurb, u: BASE + x.url, k: 'Assessment' })); } catch (e){}
-    try { add(await fetchJSON('data/frameworks.json'), x => index.push({ t: x.name + (x.abbr ? ` (${x.abbr})` : ''), d: x.summary, u: BASE + 'frameworks.html', k: 'Framework' })); } catch (e){}
+    try { add(await fetchJSON('data/frameworks.json'), x => index.push({ t: x.name + (x.abbr ? ` (${x.abbr})` : ''), d: x.summary, u: BASE + 'frameworks', k: 'Framework' })); } catch (e){}
   }
 
   function run(q){

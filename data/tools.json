@@ -1,11 +1,11 @@
 [
-  { "title": "Anatomy of an Attack", "blurb": "Walk through how a phishing email becomes a ransomware outbreak, and see which control breaks the chain at each step.", "tag": "Interactive story", "url": "attack.html", "icon": "radar" },
-  { "title": "Spot the Phish", "blurb": "Can you tell a phishing email from a genuine one? Play the game and learn the red flags that stop real attacks.", "tag": "Play the game", "url": "phishing-game.html", "icon": "audit" },
-  { "title": "Password strength checker", "blurb": "See how strong a password is and how long it would take to crack, all privately in your browser.", "tag": "Live tool", "url": "password-check.html", "icon": "devsec" },
-  { "title": "Password generator", "blurb": "Create strong random passwords, memorable passphrases, or PINs, generated securely in your browser.", "tag": "Live tool", "url": "password-generator.html", "icon": "devsec" },
-  { "title": "Email domain security check", "blurb": "Grade any domain's SPF, DMARC, DKIM and MX records against spoofing, live in your browser.", "tag": "Live tool", "url": "domain-check.html", "icon": "network" },
-  { "title": "Incident response plan builder", "blurb": "Answer a few questions and generate a printable starter cyber incident response plan for your organisation.", "tag": "Plan builder", "url": "ir-plan.html", "icon": "audit" },
-  { "title": "Essential Eight roadmap", "blurb": "Explore the Essential Eight Maturity Model level by level, and see what each strategy requires from Level 0 to Level 3.", "tag": "Interactive", "url": "e8-roadmap.html", "icon": "e8" },
-  { "title": "Notable breaches timeline", "blurb": "Click through well-known cyber breaches and the one lesson from each, so you can learn from them instead of repeating them.", "tag": "Interactive story", "url": "breaches.html", "icon": "audit" },
-  { "title": "Which service do I need?", "blurb": "Answer four quick questions and get a tailored shortlist of the services that fit your situation.", "tag": "Guided wizard", "url": "service-finder.html", "icon": "product" }
+  { "title": "Anatomy of an Attack", "blurb": "Walk through how a phishing email becomes a ransomware outbreak, and see which control breaks the chain at each step.", "tag": "Interactive story", "url": "attack", "icon": "radar" },
+  { "title": "Spot the Phish", "blurb": "Can you tell a phishing email from a genuine one? Play the game and learn the red flags that stop real attacks.", "tag": "Play the game", "url": "phishing-game", "icon": "audit" },
+  { "title": "Password strength checker", "blurb": "See how strong a password is and how long it would take to crack, all privately in your browser.", "tag": "Live tool", "url": "password-check", "icon": "devsec" },
+  { "title": "Password generator", "blurb": "Create strong random passwords, memorable passphrases, or PINs, generated securely in your browser.", "tag": "Live tool", "url": "password-generator", "icon": "devsec" },
+  { "title": "Email domain security check", "blurb": "Grade any domain's SPF, DMARC, DKIM and MX records against spoofing, live in your browser.", "tag": "Live tool", "url": "domain-check", "icon": "network" },
+  { "title": "Incident response plan builder", "blurb": "Answer a few questions and generate a printable starter cyber incident response plan for your organisation.", "tag": "Plan builder", "url": "ir-plan", "icon": "audit" },
+  { "title": "Essential Eight roadmap", "blurb": "Explore the Essential Eight Maturity Model level by level, and see what each strategy requires from Level 0 to Level 3.", "tag": "Interactive", "url": "e8-roadmap", "icon": "e8" },
+  { "title": "Notable breaches timeline", "blurb": "Click through well-known cyber breaches and the one lesson from each, so you can learn from them instead of repeating them.", "tag": "Interactive story", "url": "breaches", "icon": "audit" },
+  { "title": "Which service do I need?", "blurb": "Answer four quick questions and get a tailored shortlist of the services that fit your situation.", "tag": "Guided wizard", "url": "service-finder", "icon": "product" }
 ]

@@ -41,7 +41,7 @@
           <h2>Not sure what level you are at?</h2>
           <p>Take the two-minute Essential Eight self-assessment, or let us map your current maturity and a funded path to your target.</p>
           <div class="cta-actions">
-            <a href="essential-eight-assessment.html" class="btn btn-primary btn-lg">Take the assessment</a>
+            <a href="essential-eight-assessment" class="btn btn-primary btn-lg">Take the assessment</a>
             <button type="button" class="btn btn-ghost btn-lg" data-contact data-service="ASD Essential Eight">Plan our uplift</button>
           </div>
         </div>
@@ -53,7 +53,7 @@
 
   async function init(){
     try { DATA = await fetchJSON('data/e8-roadmap.json'); }
-    catch (err){ app.innerHTML = `<p class="page-hero-sub" style="text-align:center">Couldn't load the roadmap. <a href="frameworks.html" style="color:var(--blue)">See our frameworks</a>.</p>`; return; }
+    catch (err){ app.innerHTML = `<p class="page-hero-sub" style="text-align:center">Couldn't load the roadmap. <a href="frameworks" style="color:var(--blue)">See our frameworks</a>.</p>`; return; }
     render();
   }
   init();

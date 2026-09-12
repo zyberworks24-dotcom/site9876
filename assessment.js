@@ -34,7 +34,7 @@ function renderIntro(){
       <p class="e8-privacy">Nothing you enter leaves your browser. We only see your answers if you choose to send them with a request for a tailored plan. This is an indicative self-assessment, not a formal audit.</p>
       <div class="hero-actions">
         <button class="btn btn-primary btn-lg" id="asStart">Start the assessment</button>
-        <a class="btn btn-ghost" href="assessments.html">All assessments</a>
+        <a class="btn btn-ghost" href="assessments">All assessments</a>
       </div>
     </div>
   `;
@@ -136,7 +136,7 @@ function renderResult(){
       <div class="e8-result-cta">
         <button class="btn btn-primary btn-lg" id="asPlan">Get a tailored plan</button>
         <button class="btn btn-ghost" id="asRetake">Retake</button>
-        <a class="btn btn-ghost" href="assessments.html">Other assessments</a>
+        <a class="btn btn-ghost" href="assessments">Other assessments</a>
       </div>
       <p class="e8-privacy">This result stays in your browser. Sending it for a plan is your choice, and it goes to enquiry@zyberworks.com.au.</p>
     </div>
@@ -147,7 +147,7 @@ function renderResult(){
     if (window.ZW && window.ZW.openContact){
       window.ZW.openContact({ service: DEF.service || '', message: summaryForEmail });
     } else {
-      window.location.href = 'index.html#contact';
+      window.location.href = './#contact';
     }
   });
 }
@@ -158,7 +158,7 @@ async function initAssessment(){
   try {
     DEF = await fetchJSON('data/assessments/' + id + '.json');
   } catch (err){
-    wrap.innerHTML = `<div class="e8-card"><p class="e8-lead">Couldn't load this assessment. <a href="assessments.html" style="color:var(--blue)">See all assessments</a>.</p></div>`;
+    wrap.innerHTML = `<div class="e8-card"><p class="e8-lead">Couldn't load this assessment. <a href="assessments" style="color:var(--blue)">See all assessments</a>.</p></div>`;
     return;
   }
   document.title = DEF.title + ' — Zyberworks';

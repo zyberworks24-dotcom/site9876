@@ -1,11 +1,11 @@
 [
-  { "id": "essential-eight", "title": "Essential Eight maturity", "blurb": "Score your maturity across the ASD Essential Eight, the baseline for Australian organisations.", "count": 8, "url": "essential-eight-assessment.html" },
-  { "id": "nist-csf", "title": "NIST CSF 2.0 maturity", "blurb": "Rate your posture across the six NIST Cybersecurity Framework functions.", "count": 6, "url": "assessment.html?a=nist-csf" },
-  { "id": "iso-27001", "title": "ISO 27001 readiness", "blurb": "See how close you are to a certifiable Information Security Management System.", "count": 8, "url": "assessment.html?a=iso-27001" },
-  { "id": "cyber-basics", "title": "Cyber Security posture", "blurb": "A quick check across the controls that stop most real-world attacks.", "count": 8, "url": "assessment.html?a=cyber-basics" },
-  { "id": "ransomware", "title": "Ransomware readiness", "blurb": "See how well you can stop and contain a ransomware attack.", "count": 8, "url": "assessment.html?a=ransomware" },
-  { "id": "cis-controls", "title": "CIS Controls (IG1)", "blurb": "Check how well you cover the core CIS Controls safeguards.", "count": 8, "url": "assessment.html?a=cis-controls" },
-  { "id": "cloud-security", "title": "Cloud security posture", "blurb": "Rate your cloud identity, configuration, data and monitoring.", "count": 8, "url": "assessment.html?a=cloud-security" },
-  { "id": "zero-trust", "title": "Zero Trust maturity", "blurb": "See how far along your never-trust-always-verify journey is.", "count": 6, "url": "assessment.html?a=zero-trust" },
-  { "id": "privacy-app", "title": "Privacy Act (APPs) readiness", "blurb": "How well you handle personal information under the Privacy Act.", "count": 8, "url": "assessment.html?a=privacy-app" }
+  { "id": "essential-eight", "title": "Essential Eight maturity", "blurb": "Score your maturity across the ASD Essential Eight, the baseline for Australian organisations.", "count": 8, "url": "essential-eight-assessment" },
+  { "id": "nist-csf", "title": "NIST CSF 2.0 maturity", "blurb": "Rate your posture across the six NIST Cybersecurity Framework functions.", "count": 6, "url": "assessment?a=nist-csf" },
+  { "id": "iso-27001", "title": "ISO 27001 readiness", "blurb": "See how close you are to a certifiable Information Security Management System.", "count": 8, "url": "assessment?a=iso-27001" },
+  { "id": "cyber-basics", "title": "Cyber Security posture", "blurb": "A quick check across the controls that stop most real-world attacks.", "count": 8, "url": "assessment?a=cyber-basics" },
+  { "id": "ransomware", "title": "Ransomware readiness", "blurb": "See how well you can stop and contain a ransomware attack.", "count": 8, "url": "assessment?a=ransomware" },
+  { "id": "cis-controls", "title": "CIS Controls (IG1)", "blurb": "Check how well you cover the core CIS Controls safeguards.", "count": 8, "url": "assessment?a=cis-controls" },
+  { "id": "cloud-security", "title": "Cloud security posture", "blurb": "Rate your cloud identity, configuration, data and monitoring.", "count": 8, "url": "assessment?a=cloud-security" },
+  { "id": "zero-trust", "title": "Zero Trust maturity", "blurb": "See how far along your never-trust-always-verify journey is.", "count": 6, "url": "assessment?a=zero-trust" },
+  { "id": "privacy-app", "title": "Privacy Act (APPs) readiness", "blurb": "How well you handle personal information under the Privacy Act.", "count": 8, "url": "assessment?a=privacy-app" }
 ]

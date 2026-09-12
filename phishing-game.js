@@ -105,7 +105,7 @@ function renderResult(){
 async function initPhish(){
   if (!phishWrap) return;
   try { EMAILS = await fetchJSON('data/phishing.json'); }
-  catch (err){ phishWrap.innerHTML = `<p class="phish-lead">Couldn't load the game. <a href="index.html" style="color:var(--blue)">Return home</a>.</p>`; return; }
+  catch (err){ phishWrap.innerHTML = `<p class="phish-lead">Couldn't load the game. <a href="./" style="color:var(--blue)">Return home</a>.</p>`; return; }
   renderIntro();
 }
 

@@ -2,7 +2,7 @@
   "name": "Zyberworks — IT Services & Security Consulting",
   "short_name": "Zyberworks",
   "description": "Secure by design. IT services and security consulting across ISO 27001, NIST CSF 2.0, and the ASD Essential Eight.",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",

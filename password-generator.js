@@ -127,7 +127,7 @@
           <li><strong>Turn on MFA</strong> wherever you can, so a stolen password is not enough on its own.</li>
         </ul>
         <div class="cta-actions" style="margin-top:22px">
-          <a href="password-check.html" class="btn btn-ghost">Check a password's strength</a>
+          <a href="password-check" class="btn btn-ghost">Check a password's strength</a>
           <button type="button" class="btn btn-primary" data-contact data-service="Managed Security on Devices">Roll this out across your team</button>
         </div>
       </div>`;

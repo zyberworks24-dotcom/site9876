@@ -52,7 +52,7 @@ function render(){
         <h2>The same lessons keep repeating.</h2>
         <p>MFA, patching, backups, least privilege, and knowing your data. We help you get the fundamentals right before you become the next headline.</p>
         <div class="cta-actions">
-          <a href="assessments.html" class="btn btn-primary btn-lg">Check your posture</a>
+          <a href="assessments" class="btn btn-primary btn-lg">Check your posture</a>
           <button type="button" class="btn btn-ghost btn-lg" data-contact>Let's chat</button>
         </div>
       </div>
@@ -67,7 +67,7 @@ function render(){
 async function initBreaches(){
   if (!brWrap) return;
   try { BR = await fetchJSON('data/breaches.json'); }
-  catch (err){ brWrap.innerHTML = `<p class="atk-intro">Couldn't load the timeline. <a href="index.html" style="color:var(--blue)">Return home</a>.</p>`; return; }
+  catch (err){ brWrap.innerHTML = `<p class="atk-intro">Couldn't load the timeline. <a href="./" style="color:var(--blue)">Return home</a>.</p>`; return; }
   render();
 }
 

@@ -78,7 +78,7 @@ function renderResult(){
       <p class="e8-lead" style="margin-bottom:22px">Based on your answers, these are the services that fit best. They often work together, and we will tailor the mix to you.</p>
       <div class="grid" style="margin-bottom:24px">
         ${top.map(s => `
-          <a class="card shown" href="services/${s.id}.html">
+          <a class="card shown" href="services/${s.id}">
             <div class="card-icon">${ICONS[s.icon] || ''}</div>
             <h3>${s.title}</h3>
             <p>${s.tagline}</p>
@@ -89,7 +89,7 @@ function renderResult(){
       <div class="e8-result-cta">
         <button class="btn btn-primary btn-lg" data-contact data-service="${top[0] ? top[0].title : ''}">Discuss these with us</button>
         <button class="btn btn-ghost" id="fnRetake">Start over</button>
-        <a class="btn btn-ghost" href="assessment.html?a=cyber-basics">Or check your posture</a>
+        <a class="btn btn-ghost" href="assessment?a=cyber-basics">Or check your posture</a>
       </div>
       <p class="e8-privacy">Not sure? A two-minute posture assessment is a good next step. Everything here stays in your browser.</p>
     </div>`;
@@ -104,7 +104,7 @@ async function initFinder(){
     FQ = def.questions || [];
     SVC = await fetchJSON('data/services.json');
   } catch (err){
-    finderWrap.innerHTML = `<p class="e8-lead">Couldn't load this tool. <a href="services.html" style="color:var(--blue)">Browse all services</a>.</p>`;
+    finderWrap.innerHTML = `<p class="e8-lead">Couldn't load this tool. <a href="services" style="color:var(--blue)">Browse all services</a>.</p>`;
     return;
   }
   answers = new Array(FQ.length).fill(null);

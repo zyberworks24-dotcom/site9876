@@ -26,7 +26,7 @@ async function renderServicePage(){
   try {
     services = await fetchJSON('data/services.json');
   } catch (err){
-    root.innerHTML = `<div class="sp-error"><p>Couldn't load this page's content. <a href="../index.html">Return home</a>.</p></div>`;
+    root.innerHTML = `<div class="sp-error"><p>Couldn't load this page's content. <a href="../">Return home</a>.</p></div>`;
     return;
   }
   try { partners = await fetchJSON('data/partners.json'); } catch (err){ partners = []; }
@@ -34,7 +34,7 @@ async function renderServicePage(){
   const svc = services.find(s => s.id === id);
   let showcase = null;
   if (!svc){
-    root.innerHTML = `<div class="sp-error"><p>Service not found. <a href="../index.html">Return home</a>.</p></div>`;
+    root.innerHTML = `<div class="sp-error"><p>Service not found. <a href="../">Return home</a>.</p></div>`;
     return;
   }
 
@@ -161,9 +161,9 @@ async function renderServicePage(){
     <section class="sp-hero">
       <div class="sp-hero-mesh" aria-hidden="true"><div class="blob blob-a"></div><div class="blob blob-b"></div></div>
       <nav class="sp-breadcrumb reveal" aria-label="Breadcrumb">
-        <a href="../index.html">Home</a>
+        <a href="../">Home</a>
         <span>/</span>
-        <a href="../index.html#services">Services</a>
+        <a href="../services">Services</a>
         <span>/</span>
         <span aria-current="page">${svc.title}</span>
       </nav>
@@ -174,7 +174,7 @@ async function renderServicePage(){
         <p class="sp-tagline">${svc.tagline}</p>
         <div class="sp-hero-actions">
           <button type="button" class="btn btn-primary" data-contact data-service="${svc.title}">Let's chat</button>
-          <a href="../index.html#services" class="btn btn-ghost">All services</a>
+          <a href="../services" class="btn btn-ghost">All services</a>
         </div>
       </div>
     </section>
@@ -232,7 +232,7 @@ async function renderServicePage(){
       <h2 class="sp-h2 reveal">Related services</h2>
       <div class="grid">
         ${related.map(r => `
-          <a class="card reveal" href="${r.id}.html">
+          <a class="card reveal" href="${r.id}">
             <div class="card-icon">${ICONS[r.icon] || ''}</div>
             <h3>${r.title}</h3>
             <p>${r.tagline}</p>

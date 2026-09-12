@@ -13,7 +13,7 @@ async function initServices(){
   services.forEach((s, i) => {
     const card = document.createElement('a');
     card.className = 'card';
-    card.href = `services/${s.id}.html`;
+    card.href = `services/${s.id}`;
     card.dataset.cat = s.cat;
     card.dataset.id = s.id;
     card.style.transitionDelay = (i % 8) * 35 + 'ms';
@@ -110,7 +110,7 @@ async function initPartners(){
       ? `<img src="${BASE}assets/partners/${p.logo}" alt="${p.name} logo" loading="lazy">`
       : `<span class="partner-wordmark">${p.name}</span>`;
     const link = p.service
-      ? `<a class="partner-link" href="services/${p.service}.html">See the solution ${ARROW_SVG}</a>`
+      ? `<a class="partner-link" href="services/${p.service}">See the solution ${ARROW_SVG}</a>`
       : '';
     const visit = p.url
       ? `<a class="partner-visit" href="${p.url}" target="_blank" rel="noopener">Visit ${p.name} ${ARROW_SVG}</a>`

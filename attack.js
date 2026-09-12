@@ -76,7 +76,7 @@ function render(){
         <h2>Where would an attacker stop, in your environment?</h2>
         <p>Find your weakest link with a two-minute assessment, or talk to us about closing the gaps.</p>
         <div class="cta-actions">
-          <a href="assessment.html?a=ransomware" class="btn btn-primary btn-lg">Ransomware readiness check</a>
+          <a href="assessment?a=ransomware" class="btn btn-primary btn-lg">Ransomware readiness check</a>
           <button type="button" class="btn btn-ghost btn-lg" data-contact>Let's chat</button>
         </div>
       </div>
@@ -110,7 +110,7 @@ function stop(){
 async function initAttack(){
   if (!atkWrap) return;
   try { ATK = await fetchJSON('data/attack.json'); }
-  catch (err){ atkWrap.innerHTML = `<p class="atk-intro">Couldn't load this walkthrough. <a href="index.html" style="color:var(--blue)">Return home</a>.</p>`; return; }
+  catch (err){ atkWrap.innerHTML = `<p class="atk-intro">Couldn't load this walkthrough. <a href="./" style="color:var(--blue)">Return home</a>.</p>`; return; }
   render();
 }
 

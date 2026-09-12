@@ -1,13 +1,12 @@
 /* Zyberworks service worker: offline shell + fast repeat loads. */
-const CACHE = 'zw-cache-v3';
+const CACHE = 'zw-cache-v4';
 const CORE = [
   './',
-  './index.html',
-  './services.html',
-  './frameworks.html',
-  './partners.html',
-  './about.html',
-  './assessments.html',
+  './services',
+  './frameworks',
+  './partners',
+  './about',
+  './assessments',
   './styles.css',
   './common.js',
   './script.js',
@@ -49,7 +48,7 @@ self.addEventListener('fetch', event => {
         const copy = res.clone();
         caches.open(CACHE).then(c => c.put(req, copy));
         return res;
-      }).catch(() => caches.match(req).then(r => r || caches.match('./index.html')))
+      }).catch(() => caches.match(req).then(r => r || caches.match('./')))
     );
     return;
   }
