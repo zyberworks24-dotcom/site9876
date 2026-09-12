@@ -26,6 +26,7 @@
     setTimeout(function(){
       if (el) el.classList.add('hide');
       document.body.classList.remove('preload-lock');
+      document.dispatchEvent(new Event('zw:loaded'));
       setTimeout(function(){ if (el && el.parentNode) el.parentNode.removeChild(el); }, 700);
     }, wait);
   }

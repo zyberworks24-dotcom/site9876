@@ -90,17 +90,33 @@ function initNav(){
 }
 
 /* ===================== Scroll reveal (re-usable for dynamically injected content) ===================== */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting){
-      entry.target.classList.add('in-view');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold:0.15, rootMargin:'0px 0px -60px 0px' });
+const REVEAL_SEL = '.reveal, .reveal-lines, .reveal-left, .reveal-right, .reveal-scale, .reveal-up';
+const revealObserver = ('IntersectionObserver' in window)
+  ? new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' })
+  : null;
 
 function observeReveal(root = document){
-  root.querySelectorAll('.reveal, .reveal-lines, .reveal-left, .reveal-right, .reveal-scale, .reveal-up').forEach(el => revealObserver.observe(el));
+  const els = root.querySelectorAll(REVEAL_SEL);
+  if (!revealObserver){ els.forEach(el => el.classList.add('in-view')); return; }
+  els.forEach(el => revealObserver.observe(el));
+}
+
+// Safety net: reveal anything already in (or near) the viewport, so content is
+// never left invisible if the observer is slow or unreliable on a mobile browser.
+function revealVisible(){
+  const vh = window.innerHeight || document.documentElement.clientHeight || 0;
+  document.querySelectorAll(REVEAL_SEL).forEach(el => {
+    if (el.classList.contains('in-view')) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < vh + 100 && r.bottom > -100) el.classList.add('in-view');
+  });
 }
 
 /* ===================== Scroll progress bar (site-wide) ===================== */
@@ -648,5 +664,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initBooking();
   initSearch();
   initServiceWorker();
-  observeReveal();
+  // Start reveals after the preloader lifts so first-screen entrance animations
+  // are actually seen (not played behind the loader). Fall back to immediate +
+  // load/scroll/timeout so nothing ever stays hidden on mobile.
+  const kickReveals = () => { observeReveal(); revealVisible(); };
+  if (document.getElementById('preloader')){
+    document.addEventListener('zw:loaded', kickReveals, { once:true });
+    setTimeout(kickReveals, 2000);
+  } else {
+    kickReveals();
+  }
+  window.addEventListener('load', revealVisible);
+  window.addEventListener('scroll', revealVisible, { passive:true });
 });
