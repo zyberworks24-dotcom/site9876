@@ -38,15 +38,16 @@ function renderNav(){
   const nav = document.getElementById('nav');
   if (!nav) return;
   const path = location.pathname;
+  const TOOLS_RE = /(assessments|assessment|attack|phishing-game|password-check|password-generator|domain-check|ir-plan|e8-roadmap|breaches|service-finder|essential-eight-assessment)\.html$/;
   const active =
     (/\/services\//.test(path) || /services\.html$/.test(path)) ? 'services' :
     /frameworks\.html$/.test(path) ? 'frameworks' :
-    /partners\.html$/.test(path) ? 'partners' :
+    TOOLS_RE.test(path) ? 'tools' :
     /about\.html$/.test(path) ? 'about' : '';
   const links = [
     ['services', 'Services', BASE + 'services.html'],
     ['frameworks', 'Frameworks', BASE + 'frameworks.html'],
-    ['partners', 'Partners', BASE + 'partners.html'],
+    ['tools', 'Free tools', BASE + 'assessments.html'],
     ['about', 'About', BASE + 'about.html']
   ];
   nav.innerHTML = `
@@ -476,7 +477,7 @@ function renderFooter(){
         <ul>
           <li><a href="${BASE}about.html">About us</a></li>
           <li><a href="${BASE}frameworks.html">Frameworks</a></li>
-          <li><a href="${BASE}partners.html">Partners</a></li>
+          <li><a href="${BASE}assessments.html">Free tools</a></li>
           <li><a href="${BASE}about.html#faq">FAQ</a></li>
         </ul>
       </div>
