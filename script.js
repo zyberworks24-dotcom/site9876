@@ -69,10 +69,19 @@ async function initClients(){
     return;
   }
 
+  const GENERIC = new Set(['catholic','primary','central','school','college','high','senior','academy','the','of','and','st','saint']);
+  const initials = name => {
+    const words = name.replace(/[()'’.]/g, '').split(/\s+/).filter(Boolean);
+    const sig = words.filter(w => !GENERIC.has(w.toLowerCase()));
+    const use = sig.length ? sig : words;
+    const a = use[0] ? use[0][0] : '';
+    const b = use.length > 1 ? use[use.length - 1][0] : '';
+    return (a + b).toUpperCase() || '?';
+  };
   const renderItem = c => {
     const inner = c.logo
       ? `<img src="${BASE}assets/clients/${c.logo}" alt="${c.name} logo" loading="lazy">`
-      : `<span class="client-initial">${c.name.charAt(0)}</span>`;
+      : `<span class="client-initial">${initials(c.name)}</span>`;
     const body = `<div class="client-logo-circle">${inner}</div><span class="client-name">${c.name}</span>`;
     return c.url
       ? `<a class="client-item" href="${c.url}" target="_blank" rel="noopener">${body}</a>`
