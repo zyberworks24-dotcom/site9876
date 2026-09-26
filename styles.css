@@ -1302,6 +1302,7 @@ body.page-exit{opacity:0;transform:translateY(-8px)}
 .sp-error{max-width:600px;margin:160px auto;text-align:center;color:var(--text-dim);padding:0 24px}
 
 /* Partner callout on service pages */
+.sp-partners{display:flex;flex-direction:column;gap:18px}
 .sp-partner{
   display:flex;gap:28px;align-items:center;flex-wrap:wrap;
   padding:28px 30px;border:1px solid var(--border);border-radius:var(--radius-lg);

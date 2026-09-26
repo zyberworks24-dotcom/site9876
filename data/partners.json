@@ -3,8 +3,16 @@
     "name": "CrowdStrike",
     "logo": "crowdstrike.png",
     "tag": "EDR / MDR PARTNER",
-    "blurb": "We deploy and manage the CrowdStrike Falcon platform to bring enterprise grade endpoint detection and 24/7 managed threat hunting to organisations of every size.",
+    "blurb": "A Zyberworks technology partner. CrowdStrike delivers AI native endpoint detection and response and 24/7 managed threat hunting from a single lightweight agent, and we deploy, tune and manage it for organisations of every size.",
     "url": "https://www.crowdstrike.com",
+    "service": "edr-mdr"
+  },
+  {
+    "name": "SentinelOne",
+    "logo": "sentinelone.jpg",
+    "tag": "EDR / MDR PARTNER",
+    "blurb": "A Zyberworks technology partner. SentinelOne's Singularity platform brings autonomous, AI driven endpoint, identity and cloud protection with one agent and rapid one click remediation, and we deploy and manage it end to end.",
+    "url": "https://www.sentinelone.com",
     "service": "edr-mdr"
   },
   {

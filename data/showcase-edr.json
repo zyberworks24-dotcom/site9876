@@ -1,0 +1,54 @@
+{
+  "eyebrow": "PARTNERS WITH CROWDSTRIKE & SENTINELONE",
+  "title": "One managed service, the platform that fits you",
+  "intro": "Zyberworks is a technology partner with both CrowdStrike and SentinelOne, two of the world's leading endpoint security platforms. We assess your environment and deploy whichever fits, then wrap the same managed detection and response service around it: one lightweight agent covering endpoint, identity and cloud, with a 24/7 team stopping threats before they spread. You get enterprise grade protection without building a security operations centre of your own.",
+  "stats": [
+    { "num": "2", "label": "leading platforms we partner with" },
+    { "num": "24/7", "label": "managed detection and response" },
+    { "num": "1", "label": "lightweight agent and console" },
+    { "num": "minutes", "label": "to isolate a compromised host" }
+  ],
+  "pillars": [
+    {
+      "icon": "radar",
+      "title": "Endpoint protection & EDR",
+      "desc": "AI native prevention and detection across every endpoint, tuned to your environment instead of left on noisy defaults.",
+      "points": [
+        "Next generation antivirus that deploys in minutes",
+        "Endpoint and extended detection and response (EDR and XDR)",
+        "Device, firewall and USB control from a single policy",
+        "Coverage for Windows, macOS, Linux and mobile"
+      ]
+    },
+    {
+      "icon": "support",
+      "title": "Managed detection & response",
+      "desc": "An expert team watching your environment around the clock so you never have to.",
+      "points": [
+        "24/7 expert led, AI accelerated detection and response",
+        "Threats contained in your environment, not just alerted on",
+        "A documented response and escalation path",
+        "Clear reporting your board and insurer can rely on"
+      ]
+    },
+    {
+      "icon": "pentest",
+      "title": "Threat intelligence & hunting",
+      "desc": "Human threat hunters searching continuously for the faint signs of a sophisticated intrusion.",
+      "points": [
+        "Proactive managed threat hunting, not just automated alerting",
+        "Coverage across endpoint, identity and cloud",
+        "World class threat intelligence built in",
+        "Findings turned into hardening you can act on"
+      ]
+    }
+  ],
+  "extras": [
+    { "title": "Identity protection", "desc": "Unified protection for every identity, human and machine, across the attack chain." },
+    { "title": "Cloud security (CNAPP)", "desc": "Agent and agentless protection from code to cloud workloads." },
+    { "title": "XDR & SIEM integration", "desc": "Endpoint telemetry correlated with the rest of your stack in one place." },
+    { "title": "Exposure & vulnerability management", "desc": "Attack surface visibility with risk based, AI powered prioritisation." },
+    { "title": "Data protection", "desc": "Stops theft of sensitive information, deployed on the existing agent." },
+    { "title": "AI assisted operations", "desc": "Analyst copilots that speed triage and response on both platforms." }
+  ]
+}

@@ -48,10 +48,10 @@ async function renderServicePage(){
 
   const process = PROCESS_BY_CATEGORY[svc.cat] || PROCESS_BY_CATEGORY.strategy;
   const related = services.filter(s => s.cat === svc.cat && s.id !== svc.id).slice(0, 3);
-  const partner = svc.partner ? partners.find(p => p.name === svc.partner) : null;
+  const partnerNames = svc.partners || (svc.partner ? [svc.partner] : []);
+  const svcPartners = partnerNames.map(n => partners.find(p => p.name === n)).filter(Boolean);
 
-  const partnerBlock = partner ? `
-    <section class="sp-section reveal-scale">
+  const partnerCard = (partner) => `
       <div class="sp-partner">
         <div class="sp-partner-logo">
           ${partner.logo
@@ -63,6 +63,13 @@ async function renderServicePage(){
           <p>${partner.blurb || ''}</p>
           ${partner.url ? `<a class="partner-visit" href="${partner.url}" target="_blank" rel="noopener">Visit ${partner.name} ${ARROW_SVG}</a>` : ''}
         </div>
+      </div>`;
+
+  const partnerBlock = svcPartners.length ? `
+    <section class="sp-section reveal-scale">
+      ${svcPartners.length > 1 ? `<p class="sp-category reveal" style="margin-bottom:16px">TECHNOLOGY PARTNERS</p>` : ''}
+      <div class="sp-partners">
+        ${svcPartners.map(partnerCard).join('')}
       </div>
     </section>` : '';
 
