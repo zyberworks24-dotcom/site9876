@@ -1124,6 +1124,7 @@ a.why-card{display:flex;flex-direction:column}
   max-width:1200px;margin:clamp(40px,8vw,90px) auto;
   border:1px solid var(--border-soft);border-radius:var(--radius-lg);overflow:hidden;
 }
+.stats.about5{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .stat{background:var(--bg-elev);padding:36px 20px;text-align:center}
 .stat-num{
   display:block;font-size:clamp(28px,4vw,40px);font-weight:800;
